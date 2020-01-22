@@ -46,6 +46,8 @@ mkdir -p lumpy delly novobreak freec cnv
 * Install dependencies following [instructions on github](https://github.com/nriddiford/svParser#installation)
 
 ### 2. Filter, merge and annotate somatic variants (-fmas) using [svParser](https://github.com/nriddiford/svParser)
+
+#### Need to include the freec filtering step: `bash ~/Desktop/parserTest/script/freecFilt.sh *_sig_cnvs.txt`
 ```{bash}
 cd svParser
 dir=$(dirname "$0")
@@ -73,7 +75,7 @@ out_dir=filtered
 svSupport_dir=/Users/Nick_curie/Desktop/script_test/svSupport
 for file in ${svSupport_dir}/*_svSupport.txt
 do
-  python script/svStitch.py -i $file \
+  python $script_bin/svStitch.py -i $file \
   -w 5500 \
   -o $out_dir/summary/merged
 done
@@ -120,12 +122,15 @@ for file in ${out_dir}/*_snv_added.txt
   python ~/Desktop/script_test/svParser/script/extract_vars.py -v $file -o ${out_dir}/${output_base}_mh.txt --write_genes --write_breakpoints
 done
 
-cat *_microhomology.txt > all_bps_merged.txt
-rm *_microhomology.txt
+rm all_bps_merged.txt
+rm all_genes_merged.txt
+cat *_mh.txt > all_bps_merged.txt
 cat *_hit_genes.txt > all_genes_merged.txt
-rm *_hit_genes.txt
 
 python ~/Desktop/script_test/svParser/script/merge_files.py -e _snv_added.txt -d $out_dir -o all_samples_merged.txt
+
+rm *_mh.txt
+rm *_hit_genes.txt
 ```
 
 
