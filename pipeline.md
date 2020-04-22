@@ -136,14 +136,13 @@ rm *_hit_genes.txt
 
 # SNV Pipeline
 
-### 1. Align reads to dmel6 and remove clipped reads
+### 1. Align reads to dmel6 and remove clipped reads (~ 10 hours)
 * Run `bwa_SNV_submit.sh`
 * Dependencies: [samclip](https://github.com/tseemann/samclip)
-    * Assumes files are named : '${group}${sample}.info.fq'
+    * Assumes files are named : '${group}${sample}.${whatever}.fq'
     * Assumes tumour/normal are sequentially named (tumour: R1, normal R2, tumour R3, normal R4)
 
-
-### 2. Make Mutect2 Panel Of Normals
+### 2. Make Mutect2 Panel Of Normals (~ 20 mins)
 * Run Mutect2 in tumour-only mode (`run_mutect2_pon.pbs`)
 * Run `mutect2_combineNormals.sh` to combine all into `panel_of_normals.vcf.gz`
 
@@ -188,3 +187,14 @@ rm *_hit_genes.txt
 
 ### 5. Annotate calls
 #### 5.1 Annotate with SnpEff
+
+
+
+
+
+
+# LOH Pipeline
+
+### 1. Run SNV pipeline steps 1, 3.2 & 3.3
+
+### 2. 
