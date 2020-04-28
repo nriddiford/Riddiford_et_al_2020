@@ -8,9 +8,160 @@ excluded_samples <- c(excluded_samples, "D106R1", "D106R3", "D106R5", "D106R7", 
 excluded_samples <- c(excluded_samples, "D197R09", "D197R11", "D197R13", "D197R15")
 excluded_samples <- c(excluded_samples, "D265R01", "D265R03", "D265R05", "D265R07", "D265R09", "D265R11", "D265R13")
 
-# snv_data <- getData(infile = "data/combined_annotated_snvs_91019.txt", exclude = F)
-snv_data <- getData(!sample %in% excluded_samples, infile = "data/annotated_snvs.txt", exclude = F)
 
+####### mutationalPatterns #####
+library(BSgenome)
+library("gridExtra")
+
+
+ref_genome <- ("BSgenome.Dmelanogaster.UCSC.dm6")
+# BiocManager::install("TxDb.Dmelanogaster.UCSC.dm6.ensGene", version = "3.8")
+
+library(ref_genome, character.only = TRUE)
+library(MutationalPatterns)
+
+
+vcf_files <- list.files(pattern = "_consensus_filt.vcf", full.names = TRUE)
+# Remove excluded samples
+vcf_files <- grep(vcf_files, pattern = paste(excluded_samples, collapse = '|'), value = T, invert = T)
+
+
+sample_names <- basename(vcf_files)
+sample_names <- gsub("_.*", "", sample_names)
+
+vcfs <- read_vcfs_as_granges(vcf_files, sample_names, ref_genome)
+
+# vcfs <- read_vcfs_as_granges(vcf_files, 'combined', ref_genome)
+
+tissue <- rep("Male", length(sample_names))
+
+muts <- mutations_from_vcf(vcfs[[1]])
+types <- mut_type(vcfs[[1]])
+context <- mut_context(vcfs[[1]], ref_genome)
+type_context <- type_context(vcfs[[1]], ref_genome)
+
+
+type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
+
+## Rainfall
+# chromosomes <- c("chr2L", "chr2R", "chr3L", "chr3R", "chr4", "X", "Y")
+# plot_rainfall(vcfs[[1]], chromosomes,
+#               title = "", cex = 2.5,
+#               cex_text = 3, ylim = 1e+08
+# )
+
+# # plot spectrum
+# p1 = plot_spectrum(type_occurrences)
+# p1
+#
+
+# # Plot the mutation spectrum with distinction between C>T at CpG sites:
+p2 <- plot_spectrum(type_occurrences, CT = TRUE, legend = FALSE)
+p2
+p4 <- plot_spectrum(type_occurrences, by = tissue, CT = TRUE, legend = TRUE)
+p4
+# # Plot spectrum without legend:
+# p3 = plot_spectrum(type_occurrences, CT = TRUE, legend = TRUE)
+# grid.arrange(p1, p2, p3, ncol=3, widths=c(2,2,3))
+
+mut_mat <- mut_matrix(vcf_list = vcfs, ref_genome = ref_genome)
+# plot_96_profile(mut_mat[, c(1, 5)], condensed = TRUE)
+# plot_96_profile(mut_mat, condensed = TRUE)
+
+# Download signatures from pan-cancer study (Alexandrov et al., 2013):
+
+# sp_url <- paste("http://cancer.sanger.ac.uk/cancergenome/assets/", "signatures_probabilities.txt", sep = "")
+sp_url <- paste("https://cancer.sanger.ac.uk/cancergenome/assets/", "signatures_probabilities.txt", sep = "")
+
+cancer_signatures <- read.table(sp_url, sep = "\t", header = TRUE)
+
+new_order <- match(row.names(mut_mat), cancer_signatures$Somatic.Mutation.Type)
+# Reorder cancer signatures dataframe
+cancer_signatures <- cancer_signatures[as.vector(new_order), ]
+# Add trinucletiode changes names as row.names
+row.names(cancer_signatures) <- cancer_signatures$Somatic.Mutation.Type
+# Keep only 96 contributions of the signatures in matrix
+cancer_signatures <- as.matrix(cancer_signatures[, 4:33])
+
+# Plot some signatures
+# plot_96_profile(cancer_signatures[, c("Signature.15", "Signature.12", "Signature.25")], condensed = TRUE, ymax = 0.3)
+
+# Do some similarity clustering between signatures
+hclust_cosmic <- cluster_signatures(cancer_signatures, method = "average")
+# store signatures in new order
+cosmic_order <- colnames(cancer_signatures)[hclust_cosmic$order]
+# plot(hclust_cosmic)
+
+
+# Similarity between mutational profiles and COSMIC signatures
+# The cosine similarity re- flects how well each mutational profile can be explained by each signature individually.
+
+# for (n in colnames(mut_mat)) {
+#   print(paste(n, round(cos_sim(mut_mat[, n], cancer_signatures[, 14]), 2)))
+# }
+# plot_contribution(fit_res$contribution[select,], cancer_signatures[,select], coord_flip = FALSE, mode = "absolute")
+
+# Calculate pairwise cosine similarity between mutational profiles and COSMIC signatures
+cos_sim_samples_signatures <- cos_sim_matrix(mut_mat, cancer_signatures)
+plot_cosine_heatmap(cos_sim_samples_signatures, col_order = cosmic_order, cluster_rows = TRUE)
+
+fit_res <- fit_to_signatures(mut_mat, cancer_signatures)
+
+# Select signatures with some contribution
+select <- which(rowSums(fit_res$contribution) > 30)
+# Plot contribution barplot
+plot_contribution(fit_res$contribution[select, ],
+                  cancer_signatures[, select],
+                  coord_flip = FALSE,
+                  mode = "absolute"
+)
+
+# Plot relative contribution of the cancer signatures in each sample as a heatmap with sample clustering:
+plot_contribution_heatmap(fit_res$contribution[select, ],
+                          cluster_samples = TRUE,
+                          method = "complete"
+)
+
+plot_compare_profiles(mut_mat[, 2], fit_res$reconstructed[, 1], profile_names = c("Original", "Reconstructed"), condensed = TRUE)
+
+
+# calculate all pairwise cosine similarities
+cos_sim_ori_rec <- cos_sim_matrix(mut_mat, fit_res$reconstructed)
+# extract cosine similarities per sample between original and reconstructed
+cos_sim_ori_rec <- as.data.frame(diag(cos_sim_ori_rec))
+
+
+colnames(cos_sim_ori_rec) <- "cos_sim"
+cos_sim_ori_rec$sample <- row.names(cos_sim_ori_rec)
+
+ggplot(cos_sim_ori_rec, aes(y = cos_sim, x = sample)) +
+  geom_bar(stat = "identity", fill = "skyblue4") +
+  coord_cartesian(ylim = c(0.8, 1)) +
+  # coord_flip(ylim=c(0.8,1)) +
+  ylab("Cosine similarity\n original VS reconstructed") +
+  xlab("") +
+  # Reverse order of the samples such that first is up
+  xlim(rev(levels(factor(cos_sim_ori_rec$sample)))) +
+  theme_bw() +
+  theme(
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    axis.text.x = element_text(angle = 90)
+  ) +
+  # Add cut.off line
+  geom_hline(aes(yintercept = .90)) +
+  coord_flip()
+
+
+
+
+
+
+
+
+
+# snv_data <- getData(infile = "data/combined_annotated_snvs_91019.txt", exclude = F)
+snv_data <- getData(!sample %in% excluded_samples, infile = "data/annotated_snvs.txt")
 
 # signatures.genome.cosmic.v3.may2019
 # signatures.nature2013
@@ -37,7 +188,6 @@ ann_contributions <- plyr::join(contributions, name_conversion, "sample", type =
 
 ann_contributions <- ann_contributions %>%
   dplyr::mutate(sex = as.factor(ifelse(assay == "whole-gut", "whole-gut", as.character(sex))))
-
 
 males <- levels(as.factor(ann_contributions$sample[ann_contributions$sex == "male"]))
 females <- levels(as.factor(ann_contributions$sample[ann_contributions$sex == "female"]))
@@ -91,157 +241,5 @@ pheatmap::pheatmap(t(contribution_matrix),
                    angle_col = 90, annotation_row = group
 )
 
-
-
 library(d3heatmap)
 d3heatmap(t(contribution_matrix), scale = "row")
-
-
-
-
-
-####### mutationalPatterns #####
-library(BSgenome)
-library("gridExtra")
-
-
-ref_genome <- ("BSgenome.Dmelanogaster.UCSC.dm6")
-# BiocManager::install("TxDb.Dmelanogaster.UCSC.dm6.ensGene", version = "3.8")
-
-library(ref_genome, character.only = TRUE)
-library(MutationalPatterns)
-
-
-vcf_files <- list.files(pattern = "_consensus_filt.vcf", full.names = TRUE)
-# Remove excluded samples
-vcf_files <- grep(vcf_files, pattern = "D050|A785-|A373R7|A512R17|D197|B241R41-2", value = T, invert = T)
-
-
-sample_names <- basename(vcf_files)
-sample_names <- gsub("_.*", "", sample_names)
-
-vcfs <- read_vcfs_as_granges(vcf_files, sample_names, ref_genome)
-
-
-tissue <- rep("Male", length(sample_names))
-
-muts <- mutations_from_vcf(vcfs[[1]])
-types <- mut_type(vcfs[[1]])
-context <- mut_context(vcfs[[1]], ref_genome)
-type_context <- type_context(vcfs[[1]], ref_genome)
-
-
-type_occurrences <- mut_type_occurrences(vcfs, ref_genome)
-
-## Rainfall
-# chromosomes <- c("chr2L", "chr2R", "chr3L", "chr3R", "chr4", "X", "Y")
-# plot_rainfall(vcfs[[1]], chromosomes,
-#               title = "", cex = 2.5,
-#               cex_text = 3, ylim = 1e+08
-# )
-
-# # plot spectrum
-# p1 = plot_spectrum(type_occurrences, legend = FALSE)
-# p1
-#
-
-# # Plot the mutation spectrum with distinction between C>T at CpG sites:
-p2 <- plot_spectrum(type_occurrences, CT = TRUE, legend = FALSE)
-p2
-p4 <- plot_spectrum(type_occurrences, by = tissue, CT = TRUE, legend = TRUE)
-p4
-# # Plot spectrum without legend:
-# p3 = plot_spectrum(type_occurrences, CT = TRUE, legend = TRUE)
-# grid.arrange(p1, p2, p3, ncol=3, widths=c(2,2,3))
-
-mut_mat <- mut_matrix(vcf_list = vcfs, ref_genome = ref_genome)
-
-plot_96_profile(mut_mat[, c(1, 5)], condensed = TRUE)
-# plot_96_profile(mut_mat, condensed = TRUE)
-
-
-
-# Download signatures from pan-cancer study (Alexandrov et al., 2013):
-
-# sp_url <- paste("http://cancer.sanger.ac.uk/cancergenome/assets/", "signatures_probabilities.txt", sep = "")
-sp_url <- paste("https://cancer.sanger.ac.uk/cancergenome/assets/", "signatures_probabilities.txt", sep = "")
-
-
-cancer_signatures <- read.table(sp_url, sep = "\t", header = TRUE)
-
-new_order <- match(row.names(mut_mat), cancer_signatures$Somatic.Mutation.Type)
-# Reorder cancer signatures dataframe
-cancer_signatures <- cancer_signatures[as.vector(new_order), ]
-# Add trinucletiode changes names as row.names
-row.names(cancer_signatures) <- cancer_signatures$Somatic.Mutation.Type
-# Keep only 96 contributions of the signatures in matrix
-cancer_signatures <- as.matrix(cancer_signatures[, 4:33])
-
-# Plot some signatures
-# plot_96_profile(cancer_signatures[, c("Signature.15", "Signature.12", "Signature.25")], condensed = TRUE, ymax = 0.3)
-
-# Do some similarity clustering between signatures
-# hclust_cosmic <- cluster_signatures(cancer_signatures, method = "average")
-# store signatures in new order
-cosmic_order <- colnames(cancer_signatures)[hclust_cosmic$order]
-# plot(hclust_cosmic)
-
-
-# Similarity between mutational profiles and COSMIC signatures
-# The cosine similarity re- flects how well each mutational profile can be explained by each signature individually.
-
-for (n in colnames(mut_mat)) {
-  print(paste(n, round(cos_sim(mut_mat[, n], cancer_signatures[, 14]), 2)))
-}
-# plot_contribution(fit_res$contribution[select,], cancer_signatures[,select], coord_flip = FALSE, mode = "absolute")
-
-# Calculate pairwise cosine similarity between mutational profiles and COSMIC signatures
-cos_sim_samples_signatures <- cos_sim_matrix(mut_mat, cancer_signatures)
-plot_cosine_heatmap(cos_sim_samples_signatures, col_order = cosmic_order, cluster_rows = TRUE)
-
-fit_res <- fit_to_signatures(mut_mat, cancer_signatures)
-
-# Select signatures with some contribution
-select <- which(rowSums(fit_res$contribution) > 50)
-# Plot contribution barplot
-plot_contribution(fit_res$contribution[select, ],
-                  cancer_signatures[, select],
-                  coord_flip = FALSE,
-                  mode = "absolute"
-)
-
-# Plot relative contribution of the cancer signatures in each sample as a heatmap with sample clustering:
-plot_contribution_heatmap(fit_res$contribution[select, ],
-                          cluster_samples = TRUE,
-                          method = "complete"
-)
-
-plot_compare_profiles(mut_mat[, 1], fit_res$reconstructed[, 1], profile_names = c("Original", "Reconstructed"), condensed = TRUE)
-
-
-# calculate all pairwise cosine similarities
-cos_sim_ori_rec <- cos_sim_matrix(mut_mat, fit_res$reconstructed)
-# extract cosine similarities per sample between original and reconstructed
-cos_sim_ori_rec <- as.data.frame(diag(cos_sim_ori_rec))
-
-
-colnames(cos_sim_ori_rec) <- "cos_sim"
-cos_sim_ori_rec$sample <- row.names(cos_sim_ori_rec)
-
-ggplot(cos_sim_ori_rec, aes(y = cos_sim, x = sample)) +
-  geom_bar(stat = "identity", fill = "skyblue4") +
-  coord_cartesian(ylim = c(0.8, 1)) +
-  # coord_flip(ylim=c(0.8,1)) +
-  ylab("Cosine similarity\n original VS reconstructed") +
-  xlab("") +
-  # Reverse order of the samples such that first is up
-  xlim(rev(levels(factor(cos_sim_ori_rec$sample)))) +
-  theme_bw() +
-  theme(
-    panel.grid.minor.y = element_blank(),
-    panel.grid.major.y = element_blank(),
-    axis.text.x = element_text(angle = 90)
-  ) +
-  # Add cut.off line
-  geom_hline(aes(yintercept = .90)) +
-  coord_flip()

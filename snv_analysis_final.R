@@ -42,11 +42,14 @@ snvStats(snv_data = male_snvs)
 # Median INDELS + Ts/Tv ratio
 snvStats(snv_data = male_indels)
 
+########################
+#####  S. FIG. 6   #####
+########################
 
-# S. fig 8 - all SNVs + INDEL per sample
+# S. fig 6 - all SNVs + INDEL per sample
 
 plot_snvs(snv_data = male_snvs)
-plot_snvs(snv_data = male_indels)
+# plot_snvs(snv_data = male_indels)
 indel_lengths(indel_data = male_indels)
 
 # Attach function impact to data
@@ -64,16 +67,16 @@ muts <- combineData(male_snvs, male_indels)
 
 # SNVS + INDELS
 all_mutations <- selctionDetect(snv_data = muts)
+# save(all_mutations, file = "data/snv_indel_final_dnds")
+# all_mutations <- load("data/snv_indel_final_dnds")
 
 # Run per-sample INDELS + SNVS
 # per_sample_dNdS <- selctionDetect(per_sample = T, snv_data = muts)
-
-# save(all_mutations, file = "data/snv_indel_final_dnds")
 # per_sample_dNdS <- load("data/snv_indel_per_sample_dnds")
 
 
 ########################
-#### For combined data
+## For combined data  ##
 ########################
 
 
@@ -134,6 +137,9 @@ median(tally_impacts$total)
 table(tally_impacts$impact)
 
 
+########################
+#####  S. FIG. 8   #####
+########################
 
 mutSpectrum(snv_data = male_snvs, max_y = 10)
 

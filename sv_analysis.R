@@ -1,6 +1,8 @@
 # library(svBreaks)
 library(tidyverse)
 library(stringr)
+devtools::install(paste0(rootDir, 'Desktop/script_test/svBreaks'))
+
 # all_samples <- paste0(desktop, '/final_analysis/filtered/summary/merged/all_samples_merged.txt'
 # infile <- paste0(desktop, '/final_analysis/filtered/summary/merged/all_bps_merged.txt'
 
@@ -29,7 +31,8 @@ plot_tes_at_breakpoints <- function(x){
 all_samples <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_samples_merged.txt')
 infile <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_bps_merged.txt')
 
-all_sample_names <- read.delim(paste0(rootDir, 'Desktop/samples_names_conversion.txt'), header = F)
+attach_info <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/samples_names_conversion.txt')
+all_sample_names <- read.delim(attach_info, header = F)
 colnames(all_sample_names) <- c("sample", "marius", "sex", "assay")
 
 excluded_samples <- c("B241R41-2",  "A373R7", "A512R17")
@@ -53,14 +56,15 @@ grey <- "grey"
 svBreaks::geneHit(!sample %in% excluded_samples, all_samples = all_samples, show_sample = F, drivers = c("N", "kuz"))
 
 # Fig 2b: Svs in Notch region
-svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, show_samples = F)
-
-# Fig 2c: Breakpoint density over Notch region
 svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, show_samples = F, bp_density = T)
 
-# S.fig 1
-svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, from=3.12, to=3.173, show_samples = F, bp_density = F, ticks = 5)
-svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, from=3.12, to=3.173, show_samples = F, bp_density = T, ticks = 5)
+# Fig 2b2: Breakpoint density over Notch region
+# svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, show_samples = F, bp_density = T)
+ 
+
+# S.fig 3
+svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, from=3.12, to=3.173, show_samples = F, bp_density = T, adjust = 0.1, ticks = 2.5)
+# svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, from=3.12, to=3.173, show_samples = F, bp_density = T, ticks = 5)
 
 
 ## Write breakpoints +/- 5kb for Notch SVs
@@ -243,7 +247,7 @@ tally_impacts %>%
   dplyr::summarise(total = sum(type_count)) %>% 
   ggplot2::ggplot(.) + 
   ggplot2::geom_bar(aes(fct_reorder(impact, -total), total), colour = blue, fill = blue, alpha=0.6, stat = 'identity') +
-  slideTheme() +
+  cleanTheme() +
   theme(
     axis.title.y = element_text(size=18),
     panel.grid.major.y = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
@@ -262,7 +266,7 @@ tally_impacts %>%
 # snv_indel_df <- plyr::join(snv_indel_df, dat, type='full')
 
 p2 <- ggplot(tally_impacts)
-p2 <- p2 + geom_bar(aes(sample, type_count, colour = impact, fill = impact), alpha=0.6, stat = 'identity')
+p2 <- p2 + geom_bar(aes(sample_old, type_count, colour = impact, fill = impact), alpha=0.6, stat = 'identity')
 p2 <- p2 + guides(color = FALSE, impact=FALSE, type_count=FALSE)
 p2 <- p2 + slideTheme() +
   theme(
@@ -326,6 +330,269 @@ cowplot::plot_grid(p1 + coord_flip(),
 
 
 ########################
+######   FIG. 5   ######
+########################
+bedDir = "/Users/Nick_curie/Desktop/misc_bed"
+
+
+hits_in_genes <- function(..., df, out_file){
+  dataType='svBreaks'
+  if("pos" %in% colnames(df)) dataType='mutationProfiles'
+  
+  non_notch_genes <- df %>% 
+    dplyr::filter(..., gene != 'intergenic')
+  # all_genes <- bpRegionEnrichment(bp_data = non_notch_genes, dataType=dataType, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+  
+  # all_genes$group <- factor("All genes")
+  # comb2 <- all_genes
+  
+  just_genes <- non_notch_genes %>% 
+    dplyr::distinct(gene, .keep_all=TRUE)
+  
+  top_20_percent <- as.integer(0.2*nrow(just_genes))
+  bottom_20_percent <- as.integer(0.8*nrow(just_genes))
+  
+  non_notch_ranked <- non_notch_genes %>% 
+    dplyr::arrange(-fpkm) %>% 
+    dplyr::mutate(exp_rank = rank(desc(fpkm)))
+  # dplyr::filter(rank(desc(fpkm)) <= top_10_percent) %>% View()
+  
+  exp_genes <- dplyr::filter(non_notch_genes, fpkm > 1)
+  
+  bps_in_exp_genes <- bpRegionEnrichment(bp_data = exp_genes, dataType=dataType, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+  bps_in_exp_genes$group <- factor('All expressed genes')
+  comb2 <- bps_in_exp_genes
+
+  high_exp_genes <- dplyr::filter(non_notch_ranked, exp_rank < top_20_percent)
+  if(nrow(high_exp_genes)>0) {
+    bps_in_high_exp_genes <- bpRegionEnrichment(bp_data = high_exp_genes, dataType=dataType, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+    bps_in_high_exp_genes$group <- factor('Top 20% FPKM')
+    comb2 <- rbind(comb2, bps_in_high_exp_genes)
+  }
+  
+  # low_exp_genes <- dplyr::filter(non_notch_ranked, exp_rank >= bottom_20_percent & fpkm > 1)
+  # if(nrow(low_exp_genes)>0) {
+  #   bps_in_low_exp_genes <- bpRegionEnrichment(bp_data = low_exp_genes, dataType=dataType, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+  #   bps_in_low_exp_genes$group <- factor('Bottom 20% FPKM')
+  #   comb2 <- rbind(comb2, bps_in_low_exp_genes)
+  # }
+  
+  non_exp_genes <- dplyr::filter(non_notch_genes, fpkm <= 1)
+  bps_in_non_exp_genes <- bpRegionEnrichment(bp_data = non_exp_genes, dataType=dataType, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+  
+  bps_in_non_exp_genes$group <- factor('Non-expressed genes')
+
+  comb2 <- rbind(comb2, bps_in_non_exp_genes)
+  
+  # comb2 <- rbind(all_genes, bps_in_high_exp_genes, bps_in_low_exp_genes, bps_in_non_exp_genes)
+  
+  comb2 <- comb2 %>% 
+    tidyr::complete(group, feature) %>% 
+    dplyr::mutate(Log2FC = ifelse(is.na(Log2FC), 0, Log2FC),
+                  label = ifelse(sig %in% c(NA,'-'), '', sig)) %>% 
+    dplyr::select(group:eScore, label) %>% 
+    as.data.frame()
+
+  gf_exp_grouped <- ggbarplot(comb2, x = "feature", y = "Log2FC",
+                              fill = "group", color = "group", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6, 
+                              label = 'label', lab.vjust = -.1,
+                              orientation = "horiz", x.text.angle = 90,
+                              xlab = FALSE, ylab = "Log2(FC)")
+  
+  gf_exp_grouped <- ggpar(gf_exp_grouped, ylim = c(-2.2,2.2))
+  p1 <- facet(gf_exp_grouped, facet.by = 'group', nrow = 1)
+  
+  df1 <- comb2 %>% 
+    dplyr::select(feature:padj, group) %>% 
+    dplyr::filter(!is.na(test)) %>% 
+    write_tsv(., path = paste0(rootDir, 'Desktop/final_analysis/', out_file))
+  
+  return(list(p1, df1))
+}
+
+
+r <- hits_in_genes(sample != "A373R1", df = non_notch, out_file='bps_in_genes.txt')
+# Fig 5a - Breakpoints in gene features
+r[1]
+# Table X
+bps_in_genes <- r[[2]]
+bps_in_genes$mut <- 'sv'
+
+####################
+## SNVS + INDELS  ##
+####################
+
+# devtools::install(paste0(rootDir, 'Desktop/script_test/mutationProfiles'))
+devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/mutationProfiles'))
+
+snvs <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_snvs.txt')
+indels <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_indels.txt')
+
+male_snvs <- mutationProfiles::getData(infile = snvs, type='snv', sex=='male', !sample %in% excluded_samples,
+                                       assay %in% c("neoplasia", "delta-neoplasia"),
+                                       attach_info = attach_info)
+
+male_indels <- mutationProfiles::getData(infile = indels, type='indel', sex=='male', !sample %in% excluded_samples,
+                                         assay %in% c("neoplasia", "delta-neoplasia"),
+                                         attach_info = attach_info )
+
+male_snvs <- male_snvs %>%
+  dplyr::rename(sample_old = sample,
+                sample = sample_paper) %>%
+  dplyr::select(sample, everything())
+
+male_indels <- male_indels %>%
+  dplyr::rename(sample_old = sample,
+                sample = sample_paper) %>%
+  dplyr::select(sample, everything())
+
+combined_muts <- plyr::join(male_snvs, male_indels, type='full')
+
+r <- hits_in_genes(sample_old != "A373R1", df = male_snvs, out_file='snvs_in_genes.txt')
+# Fig 5a - Breakpoints in gene features
+r[1]
+# Table X
+snvs_in_genes <- r[[2]]
+
+snvs_in_genes$mut <- 'snv'
+
+r <- hits_in_genes(sample_old != "A373R1", df = male_indels, out_file='indels_in_genes.txt')
+r[1]
+indels_in_genes <- r[[2]]
+indels_in_genes$mut <- 'indel'
+
+
+comb <- rbind(bps_in_genes, snvs_in_genes, indels_in_genes)
+
+comb <- comb %>% 
+  tidyr::complete(group, feature, mut) %>% 
+  dplyr::mutate(Log2FC = ifelse(is.na(Log2FC), 0, Log2FC),
+                label = ifelse(sig %in% c(NA,'-'), '', sig)) %>% 
+  dplyr::mutate(observed = replace_na(observed, 0)) %>% 
+  as.data.frame()
+
+
+comb$mut = factor(comb$mut, levels=c("sv","snv", "indel"), labels=c("SV","SNV", "INDEL")) 
+comb$group = factor(comb$group, levels=c("All expressed genes", "Top 20% FPKM", "Non-expressed genes"), labels=c("All expressed genes", "Top 20% FPKM", "Non-expressed genes")) 
+
+
+gf_exp_grouped <- ggbarplot(comb, x = "feature", y = "Log2FC",
+                            fill = "mut", color = "mut", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6, 
+                            label = 'label', lab.vjust = -.1,
+                            orientation = "horizontal", x.text.angle = 90, position = position_dodge(0.9), 
+                            xlab = FALSE, ylab = "Log2(FC)")
+
+gf_exp_grouped <- ggpar(gf_exp_grouped, ylim = c(-2.2,2.2))
+facet(gf_exp_grouped, facet.by = 'group', nrow = 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+non_notch_genes <- dplyr::filter(non_notch, gene != 'intergenic')
+all_genes <- bpRegionEnrichment(bp_data = non_notch_genes, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+
+just_genes <- non_notch_genes %>% 
+  dplyr::distinct(gene, .keep_all=TRUE)
+
+
+top_20_percent <- as.integer(0.2*nrow(just_genes))
+bottom_20_percent <- as.integer(0.8*nrow(just_genes))
+
+non_notch_ranked <- non_notch_genes %>% 
+  dplyr::arrange(-fpkm) %>% 
+  dplyr::mutate(exp_rank = rank(desc(fpkm)))
+# dplyr::filter(rank(desc(fpkm)) <= top_10_percent) %>% View()
+
+exp_genes <- dplyr::filter(non_notch_genes, fpkm > 1)
+non_exp_genes <- dplyr::filter(non_notch_genes, fpkm <= 1)
+
+low_exp_genes <- dplyr::filter(non_notch_ranked, exp_rank >= bottom_20_percent & fpkm > 1)
+high_exp_genes <- dplyr::filter(non_notch_ranked, exp_rank < top_20_percent)
+
+bps_in_non_exp_genes <- bpRegionEnrichment(bp_data = non_exp_genes, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+
+bps_in_low_exp_genes <- bpRegionEnrichment(bp_data = low_exp_genes, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+bps_in_high_exp_genes <- bpRegionEnrichment(bp_data = high_exp_genes, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), plot=F)
+
+all_genes$group <- factor("All genes")
+bps_in_high_exp_genes$group <- factor('Top 20% FPKM')
+bps_in_low_exp_genes$group <- factor('Bottom 20% FPKM')
+bps_in_non_exp_genes$group <- factor('Non-expressed genes')
+
+comb2 <- rbind(all_genes, bps_in_high_exp_genes, bps_in_low_exp_genes, bps_in_non_exp_genes)
+
+comb2 <- comb2 %>% 
+  tidyr::complete(group, feature) %>% 
+  dplyr::mutate(Log2FC = ifelse(is.na(Log2FC), 0, Log2FC),
+                label = ifelse(sig %in% c(NA,'-'), '', sig)) %>% 
+  dplyr::select(group:eScore, label) %>% 
+  as.data.frame()
+
+
+# Fig 5a - Breakpoints in gene features
+gf_exp_grouped <- ggbarplot(comb2, x = "feature", y = "Log2FC",
+                            fill = "group", color = "group", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6, 
+                            label = 'label', lab.vjust = -.1,
+                            orientation = "horiz", x.text.angle = 90,
+                            xlab = FALSE, ylab = "Log2(FC)")
+
+gf_exp_grouped <- ggpar(gf_exp_grouped, ylim = c(-2.2,2.2))
+facet(gf_exp_grouped, facet.by = 'group', nrow = 1)
+
+
+
+
+
+
+
+
+
+
+### distance to tss
+featureDir = paste0(rootDir, 'Desktop/misc_bed/tss_locs/')
+featureDir = paste0(rootDir, 'Desktop/misc_bed/Meers_2108/')
+featureDir = paste0(rootDir, 'Desktop/misc_bed/repStress/')
+featureDir = paste0(rootDir, 'Desktop/misc_bed/nonBform/')
+featureDir = paste0(rootDir, 'Desktop/misc_bed/damID/')
+
+
+nhej <- all_hits %>%  dplyr::filter(stringr::str_detect(mechanism, 'NHEJ')) %>% droplevels()
+alt <- all_hits %>%  dplyr::filter(stringr::str_detect(mechanism, 'Alt-EJ')) %>% droplevels()
+fostes <- all_hits %>%  dplyr::filter(stringr::str_detect(mechanism, 'FoSTeS')) %>% droplevels()
+                                                            
+all_dels <- all_hits %>% dplyr::filter(stringr::str_detect(type, 'DEL'),
+                                       confidence=='precise') %>% droplevels()
+
+notch_dels <- notch %>% dplyr::filter(stringr::str_detect(type, 'DEL'),
+                                      confidence=='precise') %>% droplevels()
+
+d <- svBreaks::distOverlay2(df = high_exp_genes,
+                            featureDir = featureDir,
+                            position = 'edge',
+                            lim = 2,
+                            n = 10,
+                            plot=T,  threshold = 0.01, write=F, out_dir = paste0(rootDir, 'Desktop/misc_bed/bpSimulations'))
+                            
+                            
+
+
+
+
+
+
+
+
+########################
 ######   FIG. 6   ######
 ########################
 
@@ -380,9 +647,9 @@ combined %>%
 
 mappable_regions = '~/Documents/Curie/Data/Genomes/Dmel_v6.12/Mappability/dmel6_mappable.bed'
 chrom_lengths = '~/Documents/Curie/Data/Genomes/Dmel_v6.12/chrom.sizes.txt'
-bpRegioneR(regionA = paste0(desktop, '/misc_bed/breakpoints/Notch_CFS/notch_10kb_merged_breakpoints.bed'),
-           regionB = paste0(desktop, '/misc_bed/motifs/motif_1.mappable.bed'),
-           mappable_regions =  n=5000, from=2700000, to=3400000)
+bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_5k_mappable.bed'),
+           regionB = paste0(rootDir, 'Desktop/misc_bed/motifs/motif_1.mappable.bed'),
+           mappable_regions = mappable_regions, n=5000, from=2700000, to=3400000)
 
 
 # Get svs in Notch
@@ -556,7 +823,7 @@ p
 
 ggbarplot(mechs, x = "mechanism", y = "freq", sort.val = "desc",
                     fill = "group", color = "group", palette = "jco", alpha = 0.8, 
-                    x.text.angle = 90 )
+                    x.text.angle = 90)
 
 
 # ggbarplot(mechs, "mechanism", "freq",
