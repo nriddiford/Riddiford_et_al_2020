@@ -182,7 +182,7 @@ contributions <- as.data.frame(contributions)
 attach_info <- "data/samples_names_conversion.txt"
 
 name_conversion <- read.delim(attach_info, header = F)
-colnames(name_conversion) <- c("sample", "sample_short", "sex", "assay")
+colnames(name_conversion) <- c("sample", "sample_short", "sample_paper", "sex", "assay")
 
 ann_contributions <- plyr::join(contributions, name_conversion, "sample", type = "left")
 
@@ -202,7 +202,7 @@ rownames(group) <- c(
 )
 
 cont <- ann_contributions %>%
-  dplyr::select(-total, -sample_short, -sex, -assay) %>%
+  dplyr::select(-total, -sample_short,-sample_paper, -sex, -assay) %>%
   as.data.frame()
 
 wide <- cont %>% tidyr::spread(sample, score)
