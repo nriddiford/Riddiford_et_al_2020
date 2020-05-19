@@ -74,6 +74,7 @@ hits_in_genes <- function(..., df, bedDir, out_file){
   return(list(p1, df1))
 }
 
+
 run_all <- function(..., bps, snvs, indels, dir, plot=F, slop=0){
   bps_table <- bpRegionEnrichment(..., bp_data = bps, dataType='svBreaks', bedDir = dir, plot=F, slop=slop) %>% 
     dplyr::mutate(group = 'sv')
@@ -157,8 +158,8 @@ plot_all <- function(l, escore_threshold=5){
 }
 
 
-run_reldist <- function(a, b, verbose = FALSE, print=TRUE, chroms = chromosomes, type='bed', sim=FALSE){
-  if(nrow(a)) {
+run_reldist <- function(a, b, verbose = FALSE, print=TRUE, chroms = chromosomes, type='bed', sim=FALSE, merge_regions=FALSE){
+  if(!is.null(nrow(a))) {
     a_bed <- getBed(f = a, verbose = verbose, type=type, chr %in% chroms) %>% 
       droplevels()
     rownames(a_bed) <- paste0(a_bed$chr, ":", a_bed$start, "-", a_bed$end)
@@ -167,15 +168,20 @@ run_reldist <- function(a, b, verbose = FALSE, print=TRUE, chroms = chromosomes,
   }
   
   # a_bed <- bedr.merge.region(a_bed, check.chr = FALSE, verbose = verbose)
-  
-  b_bed <- getBed(f = b, verbose = verbose, chr %in% chroms)
-  b_bed <- bedr.merge.region(b_bed, check.chr = FALSE, verbose = verbose)
+  if(!is.null(nrow(b))) {
+    b_bed <- getBed(f = b, verbose = verbose, type=type, chr %in% chroms) %>% 
+      droplevels()
+    rownames(b_bed) <- paste0(b_bed$chr, ":", b_bed$start, "-", b_bed$end)
+  } else {
+    b_bed <- getBed(f = b, verbose = verbose, chr %in% chroms)
+    if(merge_regions) b_bed <- bedr.merge.region(b_bed, check.chr = FALSE, verbose = verbose)
+  }
+
   cat("Running reldist...\n")
   
   dist <- reldist(rownames(a_bed), rownames(b_bed), check.chr = FALSE, verbose = verbose);
-  
-  if(print) print(plot_reldist(dist))
   dist$group <- 'real'
+  if(print) print(plot_reldist(dist))
   if(sim){
     cat("Simulating data for comparison\n")
     s <- svBreaks::bpSim(nSites = nrow(a_bed)*10)
@@ -221,7 +227,7 @@ getBed <- function(..., f, verbose=FALSE, type='bed'){
     colnames(b) <- c('chr', 'start', 'end')
   }
   b <- b %>% 
-    # dplyr::filter(...) %>% 
+    dplyr::filter(...) %>% 
     dplyr::select(chr, start, end) %>% 
     droplevels() %>% 
     as.data.frame()
@@ -235,7 +241,7 @@ getBed <- function(..., f, verbose=FALSE, type='bed'){
 plot_reldist <- function(d){
   
   blue <- '#259FBF'
-  cols <- c(green, grey)
+  cols <- c(blue, grey)
   
   p <- ggplot(d, aes(reldist, fraction, colour=group), alpha = .7)
   p <- p + geom_point()
@@ -247,5 +253,6 @@ plot_reldist <- function(d){
       panel.grid.major.y = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
       axis.title =element_text(size=rel(1.2))
     )
+  p <- p + guides(fill=FALSE, colour=FALSE)
   print(p)
 }
