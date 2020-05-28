@@ -120,31 +120,42 @@ run_all <- function(..., bps, snvs, indels, dir, plot=F, slop=0){
 }
 
 
-plot_all <- function(l, escore_threshold=5){
+plot_all <- function(l, escore_threshold=5, maxp=50){
   # devtools::install_github("stefanedwards/lemon", ref='v0.3.3')
   library(lemon)
   
   df <- plyr::join_all(d, type='full')
   
+  cols <- c("enriched" = blue,
+    "depleted" = red,
+    "ns" = grey)
+  
+  
   maxLog2 <- max(abs(df$Log2FC))
   maxLog2 <- round_any(maxLog2, 1, ceiling)
   
-  df$colour <- ifelse(df$eScore >= escore_threshold, 'yes', 'no')
-  df$label <- ifelse(df$eScore >= escore_threshold, df$feature, '')
-  df$colour = factor(df$colour, levels=c("yes","no"), labels=c("***","ns")) 
+  df$colour <- ifelse(df$eScore >= escore_threshold, 
+                      ifelse(df$test=='enrichment', 'enriched', 'depleted'),
+                      'ns')
   
-  blue <- '#259FBF'
-  cols = c(blue, grey)
+  df$label <- ifelse(df$eScore >= escore_threshold, df$feature, '')
+  # df$colour = factor(df$colour, levels=c("yes","no"), labels=c("***","ns")) 
+  
+ 
+  # cols = c(blue, red, grey)
   if(!nrow(df[df$eScore >= escore_threshold,])) cols = c(grey)
   
   df$group = factor(df$group, levels=c("sv","snv", "indel"), labels=c("SV","SNV", "INDEL")) 
+  # df$colour = factor(df$colour, levels=c("enriched","depleted", "ns"), labels=c("enriched","depleted", "ns")) 
   
   
-  p <- ggplot(df, aes(Log2FC, -log10(padj)))
+  df$maxp <- ifelse(-log10(df$padj)>maxp, maxp, -log10(df$padj))
+  
+  p <- ggplot(df, aes(Log2FC, maxp))
   p <- p + geom_point(aes(colour = colour), size=3, alpha=0.7)
   p <- p + scale_fill_manual(values = cols)
   p <- p + scale_colour_manual(values = cols)
-  p <- p + geom_text_repel(aes(label = label), inherit.aes = TRUE)
+  p <- p + geom_text_repel(aes(label = label), size=3, inherit.aes = TRUE)
   p <- p + guides(size = FALSE, colour = FALSE) 
   p <- p + cleanTheme() +
     theme(

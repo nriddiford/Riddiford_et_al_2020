@@ -1,18 +1,30 @@
 # library(svBreaks)
 library(tidyverse)
 library(stringr)
+library(bedr)
 
-# all_samples <- paste0(desktop, '/final_analysis/filtered/summary/merged/all_samples_merged.txt'
-# infile <- paste0(desktop, '/final_analysis/filtered/summary/merged/all_bps_merged.txt'
-
+dfsObj <- paste0(dirname(rstudioapi::getSourceEditorContext()$path), "/muts.RData")
+load(dfsObj)
 rootDir <- ifelse(dir.exists('/Users/Nick_curie/'), '/Users/Nick_curie/', '/Users/Nick/iCloud/')
+source(paste0(rootDir, 'Desktop/Analysis_pipelines/figs_for_paper_1/R/misc_funs.R'))
+
 # devtools::install(paste0(rootDir, 'Desktop/script_test/svBreaks'))
 devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/svBreaks'))
 devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/mutationProfiles'))
-
 bedDir = paste0(rootDir, 'Desktop/misc_bed')
-
 all_samples <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_samples_merged.txt')
+
+red <- "#FC4E07"
+blue <- "#259FBF"
+yellow <- "#E7B800"
+grey <- "#333333"
+
+chromosomes <- c("2L", "2R", "3L", "3R", "X", "Y", "4")
+
+######
+######
+
+## Need to update this to include INVersion in notch...
 infile <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_bps_merged.txt')
 
 attach_info <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/samples_names_conversion.txt')
@@ -27,14 +39,6 @@ excluded_samples <- c(excluded_samples, "D197R09", "D197R11", "D197R13", "D197R1
 excluded_samples <- c(excluded_samples, "D265R01", "D265R03", "D265R05", "D265R07", "D265R09", "D265R11", "D265R13")
 
 all_sample_names <- all_sample_names %>% dplyr::filter(!sample %in% excluded_samples)
-
-red <- "#FC4E07"
-# blue <- "#00AFBB"
-blue <- "#259FBF"
-yellow <- "#E7B800"
-grey <- "#333333"
-
-chromosomes <- c("2L", "2R", "3L", "3R", "X", "Y", "4")
 
 all_hits <- svBreaks::getData(!sample %in% excluded_samples, infile=infile)
 
@@ -65,8 +69,6 @@ notch <- all_hits %>%
   dplyr::select(-key2) %>% 
   ungroup()
 
-
-
 snvs <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_snvs.txt')
 indels <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_indels.txt')
 
@@ -78,15 +80,19 @@ male_indels <- mutationProfiles::getData(infile = indels, type='indel', sex=='ma
                                          assay %in% c("neoplasia", "delta-neoplasia"), chrom %in% chromosomes,
                                          attach_info = attach_info )
 
-combined_muts <- plyr::join(male_snvs, male_indels, type='full')
+combined_muts <- plyr::join(male_snvs, male_indels, type='full') %>% 
+  dplyr::rename(allele_frequency = af, chr = chrom)
 
+combined_muts <- addPurity(df=combined_muts) %>% 
+  dplyr::rename(af = allele_frequency, chrom = chr)
+
+dfsObj <- paste0(dirname(rstudioapi::getSourceEditorContext()$path), "/muts.RData")
+save(male_snvs, male_indels, combined_muts, excluded_samples, all_sample_names, notch, non_notch, file = dfsObj)
 
 
 ########################
 ######   FIG. 2   ######
 ########################
-
- 
 
 all_samples_df <- read.delim(all_samples, header = T) %>% 
   dplyr::filter(!sample %in% excluded_samples)
@@ -258,20 +264,33 @@ notch <- all_hits %>%
 
 
 # Fig. 4b Svs type percentages 
-svs_condensed_types <- non_notch %>%
+gw_sv_types <- non_notch %>%
   dplyr::mutate(type2 = factor(type2)) %>% 
   dplyr::group_by(type2) %>%
   dplyr::distinct(chrom, event, .keep_all=TRUE) %>%
   dplyr::tally() %>% 
-  dplyr::mutate(perc = plyr::round_any( (100*n/sum(n)), 1)) %>% 
+  dplyr::mutate(perc = plyr::round_any( (100*n/sum(n)), 1),
+                group = 'genome-wide') %>% 
   as.data.frame()
 
-order <- levels(fct_reorder(svs_condensed_types$type2, -svs_condensed_types$perc))
+notch_sv_types <- notch %>% 
+  dplyr::filter(bp_no=='bp1') %>% 
+  dplyr::mutate(type2 = factor(type2)) %>% 
+  dplyr::group_by(type2) %>%
+  dplyr::distinct(event, .keep_all=TRUE) %>%
+  dplyr::tally() %>% 
+  dplyr::mutate(perc = plyr::round_any( (100*n/sum(n)), 1),
+                group = 'Notch') %>% 
+  as.data.frame()
 
-svs_condensed_types %>% 
+combined_sv_types <- plyr::join(gw_sv_types, notch_sv_types, type='full')
+
+order <- levels(fct_reorder(gw_sv_types$type2, -gw_sv_types$perc))
+
+combined_sv_types %>% 
   ggplot2::ggplot(.) +
-  ggplot2::geom_bar(aes(fct_reorder(type2, -perc), perc), colour = grey, fill = grey, alpha=0.6, stat='identity') + 
-  ggplot2::scale_y_continuous("Percentage", limits=c(0,100)) + 
+  ggplot2::geom_bar(aes(fct_reorder(type2, -perc), perc, fill = group), colour = 'transparent', alpha=0.6, stat='identity') + 
+  ggplot2::scale_y_continuous("Percentage", limits=c(0,100)) +  
   ggplot2::scale_colour_manual(values = colours) +
   cleanTheme() +
   theme(
@@ -282,17 +301,23 @@ svs_condensed_types %>%
     axis.title.y =element_text(size=15)
   )
 
+
 noR1 <- non_notch %>% dplyr::filter(sample != "A373R1")
 # noR1 <- transform_types(noR1)
 noR1_samples <- c("A373R1", excluded_samples)
 # Get SV tpes per sample
 
-sv_data <- svTypes(!sample %in% noR1_samples, bp_data = non_notch, plot = F)
+sv_data <- svTypes(!sample %in% excluded_samples, bp_data = non_notch, plot = F)
 
 sv_df <- sv_data[[1]]
 
 sv_df2 <- swapSampleNames(df=sv_df)
 levels(sv_df2$sample)
+
+sv_df %>% 
+  group_by(type2) %>% 
+  summarise(Freq = sum(type_count))
+
 
 sv_df2$sample <- fct_reorder(sv_df2$sample, -sv_df2$sv_count)
 
@@ -318,7 +343,7 @@ snv_indel_df <- read.csv(paste0(rootDir, 'Desktop/final_analysis/annotated_mutat
 tally_impacts <- snv_indel_df %>%
   dplyr::filter(!is.na(impact),
                 sex == 'male',
-                !sample_old %in% noR1_samples) %>%
+                !sample_old %in% excluded_samples) %>%
   dplyr::group_by(sample, impact) %>%
   dplyr::mutate(type_count = n()) %>% 
   dplyr::group_by(sample) %>%
@@ -344,7 +369,7 @@ tally_impacts %>%
   theme(
     axis.title.y = element_text(size=18),
     panel.grid.major.y = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
-    axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size=15),
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size=15),
     axis.title.x = element_blank(),
     legend.position = 'none'
   )
@@ -466,43 +491,43 @@ male_indels <- mutationProfiles::getData(infile = indels, type='indel', sex=='ma
 combined_muts <- plyr::join(male_snvs, male_indels, type='full')
 
 
-## Old - muts in genes by expression
-# r <- hits_in_genes(sample != "A373R1", df = non_notch, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), out_file='bps_in_genes.txt')
-# bps_in_genes <- r[[2]]
-# bps_in_genes$mut <- 'sv'
-# 
-# 
-# r <- hits_in_genes(sample != "A373R1", df = male_snvs, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), out_file='snvs_in_genes.txt')
-# snvs_in_genes <- r[[2]]
-# snvs_in_genes$mut <- 'snv'
-# 
-# r <- hits_in_genes(sample != "A373R1", df = male_indels, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), out_file='indels_in_genes.txt')
-# indels_in_genes <- r[[2]]
-# indels_in_genes$mut <- 'indel'
-# 
-# comb <- rbind(bps_in_genes, snvs_in_genes, indels_in_genes)
-# 
-# comb <- comb %>% 
-#   tidyr::complete(group, feature, mut) %>% 
-#   dplyr::mutate(Log2FC = ifelse(is.na(Log2FC), 0, Log2FC),
-#                 label = ifelse(sig %in% c(NA,'-'), '', sig)) %>% 
-#   dplyr::mutate(observed = replace_na(observed, 0)) %>% 
-#   as.data.frame()
-# 
-# 
-# comb$mut = factor(comb$mut, levels=c("sv","snv", "indel"), labels=c("SV","SNV", "INDEL")) 
-# # comb$group = factor(comb$group, levels=c("All expressed genes", "Top 20% FPKM", "Non-expressed genes"), labels=c("All expressed genes", "Top 20% FPKM", "Non-expressed genes")) 
-# comb$group = factor(comb$group, levels=c("All expressed genes", "Non-expressed genes"), labels=c("ISC-expressed genes", "Non-expressed genes")) 
-# 
-# # Figure 5 a - mutations in gene features
-# gf_exp_grouped <- ggbarplot(comb, x = "feature", y = "Log2FC",
-#                             fill = "mut", color = "mut", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6, 
-#                             label = 'label', lab.vjust = -.1,
-#                             orientation = "horizontal", x.text.angle = 90, position = position_dodge(0.8), 
-#                             xlab = FALSE, ylab = "Log2(FC)", ggtheme = theme_pubr())
-# 
-# gf_exp_grouped <- ggpar(gf_exp_grouped, ylim = c(-2.2,2.2))
-# facet(gf_exp_grouped, facet.by = 'group', nrow = 1)
+## Fig 5 S. 1 - muts in genes by expression
+r <- hits_in_genes(sample != "A373R1", df = non_notch, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), out_file='bps_in_genes.txt')
+bps_in_genes <- r[[2]]
+bps_in_genes$mut <- 'sv'
+
+
+r <- hits_in_genes(sample != "A373R1", df = male_snvs, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), out_file='snvs_in_genes.txt')
+snvs_in_genes <- r[[2]]
+snvs_in_genes$mut <- 'snv'
+
+r <- hits_in_genes(sample != "A373R1", df = male_indels, bedDir = paste(bedDir, '/umr_gene_features/paper/', sep=''), out_file='indels_in_genes.txt')
+indels_in_genes <- r[[2]]
+indels_in_genes$mut <- 'indel'
+
+comb <- rbind(bps_in_genes, snvs_in_genes, indels_in_genes)
+
+comb <- comb %>%
+  tidyr::complete(group, feature, mut) %>%
+  dplyr::mutate(Log2FC = ifelse(is.na(Log2FC), 0, Log2FC),
+                label = ifelse(sig %in% c(NA,'-'), '', sig)) %>%
+  dplyr::mutate(observed = replace_na(observed, 0)) %>%
+  as.data.frame()
+
+
+comb$mut = factor(comb$mut, levels=c("sv","snv", "indel"), labels=c("SV","SNV", "INDEL"))
+# comb$group = factor(comb$group, levels=c("All expressed genes", "Top 20% FPKM", "Non-expressed genes"), labels=c("All expressed genes", "Top 20% FPKM", "Non-expressed genes"))
+comb$group = factor(comb$group, levels=c("All expressed genes", "Non-expressed genes"), labels=c("ISC-expressed genes", "Non-expressed genes"))
+
+# Figure 5 a - mutations in gene features
+gf_exp_grouped <- ggbarplot(comb, x = "feature", y = "Log2FC",
+                            fill = "mut", color = "transparent", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6,
+                            label = 'label', lab.vjust = -.1,
+                            orientation = "horizontal", x.text.angle = 90, position = position_dodge(0.8),
+                            xlab = FALSE, ylab = "Log2(FC)", ggtheme = theme_pubr())
+
+gf_exp_grouped <- ggpar(gf_exp_grouped, ylim = c(-2.2,2.2))
+facet(gf_exp_grouped, facet.by = 'group', nrow = 1)
 
 
 # Gene features
@@ -522,7 +547,7 @@ comb$feature = factor(comb$feature, levels=c("gene", "5UTR", "3UTR", "CDS", "Int
 
 # Figure 5 a - mutations in gene features
 gf_exp_grouped <- ggbarplot(comb, x = "feature", y = "Log2FC",
-                            fill = "group", color = "group", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6, 
+                            fill = "group", color = "transparent", group = "group", palette =c(blue, yellow, red, grey), alpha = 0.6, 
                             label = 'label', lab.vjust = 2,
                             orientation = "horizontal", x.text.angle = 90, position = position_dodge(0.8), 
                             xlab = FALSE, ylab = "Log2(FC)", ggtheme = theme_pubr())
@@ -593,7 +618,6 @@ plot_tumour_evolution(all_samples = all_samples,
                       tes = FALSE, 
                       annotate_with = paste0(rootDir, 'Desktop/gene2bed/dna_damage_merged.bed'))
 
-
 tumour_evolution <- plot_tumour_evolution(all_samples = all_samples, 
                                           !sample %in% samples_with_no_N_sv, 
                                           tes = FALSE, annotate_with = paste0(rootDir, 'Desktop/gene2bed/merged_groups.bed'),
@@ -617,7 +641,7 @@ all_muts$medN <- 1-(median(notch_hits$highest_n))
 
 ggplot(all_muts, aes(time, colour = group)) + 
   geom_line(stat='ecdf', size=1.5, alpha=.7) + 
-  scale_y_continuous('ECDF') +
+  scale_y_continuous('Cumulative mutations') +
   scale_x_continuous('Pseudotime (1 - cell fraction)') +
   cleanTheme() +
   theme(
@@ -644,55 +668,90 @@ ggplot(all_muts, aes(time, colour = group)) +
 # 
 # facet(p, facet.by = "group", ncol = 1, scales = 'free_y')
 
+addPurity <- function(df, purity_file='/Users/Nick_curie/Desktop/script_test/svSupport/data/tumour_purity.txt'){
+  purity <- read.delim(purity_file, header = F)
+  colnames(purity) <- c('sample', 'purity')
+  
+  df <- plyr::join(df, purity, by='sample')
+  df$corrected_af <- df$allele_frequency + (1-df$purity) * df$allele_frequency
+  
+  
+  df <- df %>% 
+    dplyr::mutate(corrected_af = ifelse(corrected_af>1, 1, corrected_af)) %>% 
+    dplyr::rename(af_old = allele_frequency,
+                  allele_frequency = corrected_af) %>% 
+    dplyr::mutate(cell_fraction = ifelse(chr %in% c('X', 'Y'), allele_frequency,
+                                         ifelse(allele_frequency*2>1, 1, allele_frequency*2)))
+  
+  return(df)
+}
+
 # Pre and post Notch hits
 snv_indel_df <- read.csv(paste0(rootDir, 'Desktop/final_analysis/annotated_mutations_filt.csv')) %>% 
   dplyr::rename(sample_new = sample,
-                sample = sample_old) 
+                sample = sample_old,
+                allele_frequency = af) 
 
+# Correct af and cell fraction for tumour purity
+snv_indel_df <- addPurity(df=snv_indel_df) %>% 
+  dplyr::rename(sample_old = sample,
+                sample = sample_new) 
 
+# Here
 notch_svs <- notch_hits %>% dplyr::select(sample, highest_n)
-combined <- plyr::join(all_muts, notch_svs, c("sample"), type = "left")
-
 
 coding2notch <- plyr::join(snv_indel_df, notch_svs, c("sample"), type = "left") %>% 
-  dplyr::filter(!sample %in% samples_with_no_N_sv) %>% 
+  dplyr::filter(!sample_old %in% samples_with_no_N_sv) %>% 
   dplyr::mutate(clonality = ifelse(cell_fraction > highest_n, 'pre', 'post'),
                 time = 1 - cell_fraction)
 
+coding2notch %>% 
+  dplyr::filter(impact != 'NA') %>% 
+  ggplot(., aes(impact, colour=impact, fill=impact)) +
+  geom_histogram(alpha=0.4, stat='count') +
+  geom_rug() +
+  facet_wrap(~clonality)
 
-ggplot(coding2notch) +
-  geom_density(aes(time, colour=impact, fill=impact), alpha=0.2) +
-  geom_rug(aes(time, colour=impact) )
 
 
-combined %>% 
-  dplyr::filter(group != 'Notch', !sample %in% samples_with_no_N_sv) %>% 
-  dplyr::group_by(sample, group) %>% 
-  # dplyr::add_count(name = 'total') %>% 
-  dplyr::mutate(rel_to_notch = ifelse(cell_fraction > highest_n, 'pre', 'post')) %>% 
-  dplyr::group_by(rel_to_notch) %>% 
-  dplyr::tally() 
 
+# All muts = coding and non-coding
+combined <- plyr::join(all_muts, notch_svs, c("sample"), type = "left")
+
+rel2notch <- combined %>% 
+  dplyr::filter(!sample_old %in% c('A373R1', samples_with_no_N_sv)) %>% 
+  dplyr::group_by(sample) %>% 
+  dplyr::mutate(clonality = ifelse(cell_fraction > highest_n, 'pre', 'post'))
+
+  # dplyr::group_by(rel_to_notch) %>% 
+  # dplyr::tally() 
+
+rel2notch %>% 
+  dplyr::filter(grouped_trans != 'NA') %>% 
+  ggplot(., aes(grouped_trans, colour=grouped_trans, fill=grouped_trans)) +
+  geom_bar(aes(y = ..prop..), alpha=0.35, stat='count') +
+  scale_y_continuous(labels=scales::percent) +
+  geom_rug() +
+  facet_wrap(~clonality)
+
+combined_muts <- combined_muts %>% 
+  dplyr::rename(sample_old = sample,
+                sample = sample_paper)
 
 # Annotate notch inactivating mut on all hits
-rel2notch <- plyr::join(combined_muts, notch_svs, c("sample"), type = "left") %>% 
-  dplyr::filter(!sample %in% samples_with_no_N_sv) %>% 
-  dplyr::mutate(clonality = ifelse(cell_fraction > highest_n, 'pre', 'post') )
+# rel2notch <- plyr::join(combined_muts, notch_svs, c("sample"), type = "left") %>% 
+#   dplyr::filter(!sample %in% samples_with_no_N_sv) %>% 
+#   dplyr::mutate(clonality = ifelse(cell_fraction > highest_n, 'pre', 'post') )
   # dplyr::select(-c(pos:decomposed_tri, af, caller, status, snpEff_anno, sample_short, id, sex, assay, type) ) %>% 
   # dplyr::group_split(clonality)
 
+ggplot(rel2notch) + 
+  geom_histogram(aes(grouped_trans), stat='count')
 
-
-rel2notch[[2]] %>% 
-  group_by(gene) %>% 
-  tally() %>% 
-  arrange(-n)
-
-
-d1 <- bpRegionEnrichment(sample != "A373R1", clonality =='pre', bp_data = rel2notch, dataType='mutationProfiles', bedDir = paste0(bedDir, '/enriched/merged/'), plot=F) %>% 
+d1 <- bpRegionEnrichment(sample_old != "A373R1", clonality =='pre', bp_data = rel2notch, dataType='mutationProfiles', bedDir = paste0(bedDir, '/enriched/merged/'), plot=F) %>% 
   dplyr::mutate(group = 'pre-notch')
 
-d2 <- bpRegionEnrichment(sample != "A373R1", clonality == 'post', bp_data = rel2notch, dataType='mutationProfiles', bedDir = paste0(bedDir, '/enriched/merged/'), plot=F) %>% 
+d2 <- bpRegionEnrichment(sample_old != "A373R1", clonality == 'post', bp_data = rel2notch, dataType='mutationProfiles', bedDir = paste0(bedDir, '/enriched/merged/'), plot=F) %>% 
   dplyr::mutate(group = 'post-notch')
 
 plot_all(l = list(d1, d2)) 
