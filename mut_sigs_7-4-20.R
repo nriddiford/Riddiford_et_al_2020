@@ -20,11 +20,9 @@ ref_genome <- ("BSgenome.Dmelanogaster.UCSC.dm6")
 library(ref_genome, character.only = TRUE)
 library(MutationalPatterns)
 
-
 vcf_files <- list.files(pattern = "_consensus_filt.vcf", full.names = TRUE)
 # Remove excluded samples
 vcf_files <- grep(vcf_files, pattern = paste(excluded_samples, collapse = '|'), value = T, invert = T)
-
 
 sample_names <- basename(vcf_files)
 sample_names <- gsub("_.*", "", sample_names)
