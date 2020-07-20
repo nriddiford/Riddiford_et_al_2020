@@ -64,11 +64,6 @@ non_notch <- all_hits %>%
   dplyr::select(-key2) %>% 
   ungroup()
 
-non_notch %>% 
-  dplyr::filter(bp_no=='bp1') %>% 
-  dplyr::group_by(sample, event) %>% 
-  dplyr::summarise(median(n()))
-
 notch <- all_hits %>% 
   dplyr::mutate(key2 = paste0(sample, "_", event)) %>% 
   dplyr::group_by(sample, event) %>% 
@@ -110,9 +105,14 @@ all_samples_df <- plyr::join(all_samples_df, all_sample_names, "sample", type = 
                 sample = sample_paper) %>% 
   dplyr::select(sample, everything())
 
+non_inactivating_events <- c('D1_63', 'P7_2148')
+
+all_samples_df <- all_samples_df %>% 
+  dplyr::filter(!paste(sample, event, sep = '_') %in% non_inactivating_events)
+
 
 # Fig 2a: SVs affecting Notch
-svBreaks::geneHit(!sample %in% excluded_samples, all_samples_df = all_samples_df, show_sample = T, drivers = c("N", "kuz"), plot=T)
+svBreaks::geneHit(!sample %in% excluded_samples, all_samples_df = all_samples_df, show_sample = T, drivers = c("N"), plot=T)
 
 # Supp Table 1 - Notch events
 nnn <- svBreaks::geneHit(!sample %in% excluded_samples, all_samples_df = all_samples_df, show_sample = T, drivers = c("N", "kuz"), plot=F) %>% 
@@ -124,6 +124,16 @@ all_samples_df %>%
   dplyr::filter(key %in% nnn) %>% 
   dplyr::select(-sample_old, -key, -sample_short) %>% 
   write.table(., file = paste0(rootDir, '/Documents/Curie/Documents/SV_paper/Tables/S_table_1.txt'), quote=FALSE, sep='\t', row.names = FALSE)
+
+
+sv_count <- all_hits %>% 
+  dplyr::filter(bp_no=='bp1') %>% 
+  dplyr::distinct(sample, event, .keep_all=TRUE) %>% 
+  dplyr::group_by(sample) %>% 
+  dplyr::tally()
+
+sum(sv_count$n)
+median(sv_count$n)
 
 # Supp Table 2 - gw events
 all_samples_df %>% 
@@ -143,17 +153,22 @@ all_samples_df %>%
 # Fig 2b: Svs in Notch region
 svBreaks::notchHits(!sample %in% excluded_samples, all_samples_df = all_samples_df, show_samples = T, bp_density = T)
 
-# Fig 2b2: Breakpoint density over Notch region
-# svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, show_samples = F, bp_density = T)
- 
-
 # S.fig 3
 svBreaks::notchHits(!sample %in% excluded_samples, all_samples_df = all_samples_df, from=3.12, to=3.173, show_samples = T, bp_density = T, adjust = 0.1, ticks = 2.5)
 # svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, from=3.12, to=3.173, show_samples = F, bp_density = T, ticks = 5)
 
 
 ## Write breakpoints +/- 5kb for Notch SVs
-n_hits <- svBreaks::geneHit(!sample %in% excluded_samples, plot = F, all_samples = all_samples)
+n_hits <- svBreaks::geneHit(!sample %in% excluded_samples, plot = F, all_samples_df = all_samples_df, drivers = c("N"))
+
+notch_tss <- 3.135669 * 1e6
+dist <- 2000
+
+n_hits %>% 
+  dplyr::mutate(distbp1 = abs(start - notch_tss) < dist,
+                distbp2 = abs(end - notch_tss) < dist) %>% 
+  dplyr::select(sample, event, distbp1, distbp2) %>% 
+  dplyr::filter(distbp1 | distbp2) 
 
 # expand_by <- 5000
 expand_by = 500
@@ -181,7 +196,7 @@ mappable_regions = '~/Documents/Curie/Data/Genomes/Dmel_v6.12/Mappability/dmel6_
 chrom_lengths = '~/Documents/Curie/Data/Genomes/Dmel_v6.12/chrom.sizes.txt'
 overlaps <- bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_500_mappable.bed'),
            regionB = paste0(rootDir, 'Desktop/misc_bed/motifs/motif_1.mappable.bed'),
-           mappable_regions = mappable_regions, n=10000, from=2700000, to=3400000, chrom = 'X', plot=F)
+           mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=F)
 
 plot_bpRegioner(overlaps, bins = 10)
 
