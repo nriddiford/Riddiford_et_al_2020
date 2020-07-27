@@ -49,12 +49,8 @@ chromosomes <- c("2L", "2R", "3L", "3R", "X", "Y", "4")
 ######
 ######
 
-## Need to update this to include INVersion in notch...
-# infile <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_bps_merged.txt')
-infile <- 'data/all_bps_merged.txt'
-
-# attach_info <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/samples_names_conversion.txt')
 attach_info <- 'data/samples_names_conversion.txt'
+
 all_sample_names <- read.delim(attach_info, header = F)
 colnames(all_sample_names) <- c("sample", "sample_short", "sample_paper", "sex", "assay")
 
@@ -66,6 +62,8 @@ excluded_samples <- c(excluded_samples, "D197R09", "D197R11", "D197R13", "D197R1
 excluded_samples <- c(excluded_samples, "D265R01", "D265R03", "D265R05", "D265R07", "D265R09", "D265R11", "D265R13")
 
 all_sample_names <- all_sample_names %>% dplyr::filter(!sample %in% excluded_samples)
+
+infile <- 'data/all_bps_merged.txt'
 
 all_hits <- svBreaks::getData(!sample %in% excluded_samples,
                               !paste(sample, event, sep = '_') %in% excluded_events,
