@@ -1,18 +1,37 @@
-# library(svBreaks)
+### INIT START #####
+
+library(devtools)
+# devtools::install_github("nriddiford/svBreaks", force = T)
+# devtools::install_github("nriddiford/mutationProfiles", force = T)
+
+devtools::load_all(path = '~/Desktop/script_test/svBreaks')
+devtools::load_all('~/Desktop/script_test/mutationProfiles')
+
+library(svBreaks)
+library(mutationProfiles)
+
 library(tidyverse)
 library(stringr)
 library(bedr)
 
 dfsObj <- paste0(dirname(rstudioapi::getSourceEditorContext()$path), "/muts.RData")
 load(dfsObj)
-rootDir <- ifelse(dir.exists('/Users/Nick_curie/'), '/Users/Nick_curie/', '/Users/Nick/iCloud/')
-source(paste0(rootDir, 'Desktop/Analysis_pipelines/figs_for_paper_1/R/misc_funs.R'))
+# rootDir <- ifelse(dir.exists('/Users/Nick_curie/'), '/Users/Nick_curie/', '/Users/Nick/iCloud/')
+rootDir <- getwd()
+
+source('R/misc_funs.R')
+
+### INIT END #####
+
 
 # devtools::install(paste0(rootDir, 'Desktop/script_test/svBreaks'))
-devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/svBreaks'))
-devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/mutationProfiles'))
-bedDir = paste0(rootDir, 'Desktop/misc_bed')
-all_samples <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_samples_merged.txt')
+# devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/svBreaks'))
+# devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/mutationProfiles'))
+
+# bedDir = paste0(rootDir, 'Desktop/misc_bed')
+# all_samples <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_samples_merged.txt')
+
+all_samples <- 'data/all_samples_merged.txt'
 
 excluded_events <- read.delim(all_samples) %>% 
   dplyr::filter(status == 'FALSE') %>% 
@@ -31,9 +50,11 @@ chromosomes <- c("2L", "2R", "3L", "3R", "X", "Y", "4")
 ######
 
 ## Need to update this to include INVersion in notch...
-infile <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_bps_merged.txt')
+# infile <- paste0(rootDir, 'Desktop/parserTest/all_combined_23719/all_bps_merged.txt')
+infile <- 'data/all_bps_merged.txt'
 
-attach_info <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/samples_names_conversion.txt')
+# attach_info <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/samples_names_conversion.txt')
+attach_info <- 'data/samples_names_conversion.txt'
 all_sample_names <- read.delim(attach_info, header = F)
 colnames(all_sample_names) <- c("sample", "sample_short", "sample_paper", "sex", "assay")
 
@@ -48,7 +69,7 @@ all_sample_names <- all_sample_names %>% dplyr::filter(!sample %in% excluded_sam
 
 all_hits <- svBreaks::getData(!sample %in% excluded_samples,
                               !paste(sample, event, sep = '_') %in% excluded_events,
-                              infile=infile)
+                              infile=infile, attach_info = 'data/samples_names_conversion.txt')
 
 n_hits <- svBreaks::geneHit(!sample %in% excluded_samples, plot = F, all_samples = all_samples)
 
@@ -72,8 +93,10 @@ notch <- all_hits %>%
   dplyr::select(-key2) %>% 
   ungroup()
 
-snvs <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_snvs.txt')
-indels <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_indels.txt')
+# snvs <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_snvs.txt')
+# indels <- paste0(rootDir, 'Desktop/script_test/mutationProfiles/data/annotated_indels.txt')
+snvs <- 'data/annotated_snvs.txt'
+indels <- 'data/annotated_indels.txt'
 
 male_snvs <- mutationProfiles::getData(infile = snvs, type='snv', sex=='male', !sample %in% excluded_samples,
                                        assay %in% c("neoplasia", "delta-neoplasia"), chrom %in% chromosomes,
@@ -90,8 +113,11 @@ combined_muts <- addPurity(df=combined_muts) %>%
   dplyr::rename(af = allele_frequency, chrom = chr)
 
 dfsObj <- paste0(dirname(rstudioapi::getSourceEditorContext()$path), "/muts.RData")
-save(male_snvs, male_indels, combined_muts, excluded_samples, excluded_events, all_sample_names, notch, non_notch, file = dfsObj)
+# save(male_snvs, male_indels, combined_muts, excluded_samples, excluded_events, all_sample_names, notch, non_notch, file = dfsObj)
+save(file = dfsObj, all_samples, excluded_events, chromosomes, infile, attach_info, all_sample_names, excluded_samples, all_hits, non_notch, notch, male_snvs, male_indels, combined_muts)
 
+
+### ANALYSIS START #####
 
 ########################
 ######   FIG. 2   ######
@@ -123,7 +149,7 @@ all_samples_df %>%
   dplyr::mutate(key = paste(sample, event, sep = '_')) %>%
   dplyr::filter(key %in% nnn) %>% 
   dplyr::select(-sample_old, -key, -sample_short) %>% 
-  write.table(., file = paste0(rootDir, '/Documents/Curie/Documents/SV_paper/Tables/S_table_1.txt'), quote=FALSE, sep='\t', row.names = FALSE)
+  write.table(., file = 'tables/S_table_1.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
 
 sv_count <- all_hits %>% 
@@ -139,7 +165,7 @@ median(sv_count$n)
 all_samples_df %>% 
   dplyr::select(-sample_old) %>% 
   dplyr::mutate(status = tidyr::replace_na(status, '')) %>% 
-  write.table(., file = paste0(rootDir, '/Documents/Curie/Documents/SV_paper/Tables/S_table_2.txt'), quote=FALSE, sep='\t', row.names = FALSE)
+  write.table(., file = 'tables/S_table_2.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
 # Supp Table 5 - Excluded CN events
 all_samples_df %>% 
@@ -147,7 +173,7 @@ all_samples_df %>%
   dplyr::mutate(key = paste(sample_old, event, sep = '_')) %>%
   dplyr::filter(key %in% excluded_events) %>% 
   dplyr::select(-sample_old, -key, -sample_short, -sex, -assay) %>% 
-  write.table(., file = paste0(rootDir, '/Documents/Curie/Documents/SV_paper/Tables/S_table_5.txt'), quote=FALSE, sep='\t', row.names = FALSE)
+  write.table(., file = 'tables/S_table_5.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
 
 # Fig 2b: Svs in Notch region
@@ -156,7 +182,6 @@ svBreaks::notchHits(!sample %in% excluded_samples, all_samples_df = all_samples_
 # S.fig 3
 svBreaks::notchHits(!sample %in% excluded_samples, all_samples_df = all_samples_df, from=3.12, to=3.173, show_samples = T, bp_density = T, adjust = 0.1, ticks = 2.5)
 # svBreaks::notchHits(!sample %in% excluded_samples, all_samples = all_samples, from=3.12, to=3.173, show_samples = F, bp_density = T, ticks = 5)
-
 
 ## Write breakpoints +/- 5kb for Notch SVs
 n_hits <- svBreaks::geneHit(!sample %in% excluded_samples, plot = F, all_samples_df = all_samples_df, drivers = c("N"))
@@ -182,7 +207,7 @@ N_breakpoints <- n_hits %>%
                 rend = pos + expand_by) %>% 
   dplyr::select(-bp, -pos) %>% 
   droplevels() %>% 
-  svBreaks::writeBed(df=., outDir = paste0(rootDir, 'Desktop/misc_bed/breakpoints'), name = paste0('notch_breakpoints_', expand_by, '_', today, '.bed'))
+  svBreaks::writeBed(df=., outDir = 'data', name = paste0('notch_breakpoints_', expand_by, '_', today, '.bed'))
 
 # Run `bash extract_breakpoints.sh -i ../notch_breakpoints_5k_10.3.20.bed -n 100`
 
@@ -192,10 +217,10 @@ read.delim(paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpo
   dplyr::mutate(length = V3 - V2) %>% 
   dplyr::summarise(median_length = median(length, na.rm = TRUE))
 
-mappable_regions = '~/Documents/Curie/Data/Genomes/Dmel_v6.12/Mappability/dmel6_mappable.bed'
-chrom_lengths = '~/Documents/Curie/Data/Genomes/Dmel_v6.12/chrom.sizes.txt'
-overlaps <- bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_500_mappable.bed'),
-           regionB = paste0(rootDir, 'Desktop/misc_bed/motifs/motif_1.mappable.bed'),
+mappable_regions = 'data/dmel6_mappable.bed'
+chrom_lengths = 'data/chrom.sizes.txt' 
+overlaps <- bpRegioneR(regionA = 'data/notch_breakpoint_regions_500_mappable.bed',
+           regionB = 'data/motif_1.mappable.bed',
            mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=F)
 
 plot_bpRegioner(overlaps, bins = 10)
@@ -337,8 +362,6 @@ combined_sv_types <- plyr::join(gw_sv_types, notch_sv_types, type='full')
 order <- levels(fct_reorder(gw_sv_types$type2, -gw_sv_types$perc))
 
 combined_sv_types$type2 <- factor(combined_sv_types$type2, levels = order, labels=c("Translocation","Inversion", "Duplication", "Complex", "Deletion", "Tandem Duplication"))
-
-
 
 combined_sv_types <- complete(combined_sv_types, group, type2, fill = list(n=0, perc = 0))
 
