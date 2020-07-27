@@ -76,49 +76,18 @@ hits_in_genes <- function(..., df, bedDir, out_file){
 
 
 run_all <- function(..., bps, snvs, indels, dir, plot=F, slop=0){
-  bps_table <- bpRegionEnrichment(..., bp_data = bps, dataType='svBreaks', bedDir = dir, plot=F, slop=slop) %>% 
+  bps_table <- bpRegionEnrichment(..., bp_data = bps, dataType='svBreaks', bedDir = dir, plot=F, slop=slop, minHits = 10) %>% 
     dplyr::mutate(group = 'sv')
-  snvs_table <- bpRegionEnrichment(..., bp_data = snvs, dataType='mutationProfiles', bedDir = dir, plot=F, slop=slop) %>% 
+  snvs_table <- bpRegionEnrichment(..., bp_data = snvs, dataType='mutationProfiles', bedDir = dir, plot=F, slop=slop, minHits = 1) %>% 
     dplyr::mutate(group = 'snv')
-  indels_table <- bpRegionEnrichment(..., bp_data = indels, dataType='mutationProfiles', bedDir = dir, plot=F, slop=slop) %>% 
+  indels_table <- bpRegionEnrichment(..., bp_data = indels, dataType='mutationProfiles', bedDir = dir, plot=F, slop=slop, minHits = 1) %>% 
     dplyr::mutate(group = 'indel')
   
   
   if(!plot) return(list(bps_table, snvs_table, indels_table))
   
-  bp_df <- bps_table %>% 
-    dplyr::select(feature, Log2FC) %>% dplyr::rename(sv = Log2FC)
-  
-  snv_df <- snvs_table %>% 
-    dplyr::select(feature, Log2FC) %>% dplyr::rename(snv = Log2FC)
-  
-  indel_df <- indels_table %>% 
-    dplyr::select(feature, Log2FC) %>% dplyr::rename(indel = Log2FC)
-  
-  comb <- plyr::join(bp_df, snv_df, indel_df, by='feature', type='left')
-  
-  library(pheatmap)
-  
-  g <- comb$feature
-  comb$feature <- NULL
-  
-  m <- comb %>% as.matrix()
-  
-  rownames(m) <- g
-  
-  # colours <- c("#f1f9fe", "#d4ecfb", "#9bd3f6", "#7ec6f3", "#53b3ef")
-  
-  colours <- rev(heat.colors(5, 0.5))
-  
-  pheatmap::pheatmap(m,
-                     color = colours,
-                     cluster_row = T, cluster_cols = T,
-                     treeheight_row = 0, treeheight_col = 0,
-                     angle_col = 90
-  )
   
 }
-
 
 plot_all <- function(l, escore_threshold=5, maxp=50){
   # devtools::install_github("stefanedwards/lemon", ref='v0.3.3')
