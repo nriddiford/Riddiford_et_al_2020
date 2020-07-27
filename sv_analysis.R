@@ -23,7 +23,6 @@ source('R/misc_funs.R')
 
 ### INIT END #####
 
-
 # devtools::install(paste0(rootDir, 'Desktop/script_test/svBreaks'))
 # devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/svBreaks'))
 # devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/mutationProfiles'))
