@@ -5,7 +5,7 @@ library(devtools)
 # devtools::install_github("nriddiford/mutationProfiles", force = T)
 
 devtools::load_all(path = '~/Desktop/script_test/svBreaks')
-devtools::load_all('~/Desktop/script_test/mutationProfiles')
+devtools::load_all(path = '~/Desktop/script_test/mutationProfiles')
 
 library(svBreaks)
 library(mutationProfiles)
@@ -221,45 +221,35 @@ mappable_regions = 'data/dmel6_mappable.bed'
 chrom_lengths = 'data/chrom.sizes.txt' 
 overlaps <- bpRegioneR(regionA = 'data/notch_breakpoint_regions_500_mappable.bed',
            regionB = 'data/motif_1.mappable.bed',
-           mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=F)
+           mappable_regions = mappable_regions,
+           n=100, from=2700000, to=3400000, chrom = 'X', plot=F)
 
+# Fig 2d: Enrichment of motif1 in notch breakpoint regions
 plot_bpRegioner(overlaps, bins = 10)
 
 # G4s
-bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_500_mappable.bed'),
-              regionB = paste0(rootDir, 'Desktop/misc_bed/features/nonBform/g4s.mappable.bed'),
-              mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=T)
-# SIRs
-bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_500_mappable.bed'),
-                         regionB = paste0(rootDir, 'Desktop/misc_bed/features/nonBform/SIRs.merged.mappable.bed'),
-                         mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=T)
-# Cruciform
-bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_500_mappable.bed'),
-           regionB = paste0(rootDir, 'Desktop/misc_bed/features/nonBform/cruciform.merged.mappable.bed'),
-           mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=T)
+bpRegioneR(regionA = 'data/notch_breakpoint_regions_500_mappable.bed',
+           regionB = 'data/g4s.mappable.bed', mappable_regions = mappable_regions,
+           n=100, from=2700000, to=3400000, chrom = 'X', plot=F)
 
-# Min G4s
-bpRegioneR(regionA = paste0(rootDir, 'Desktop/misc_bed/breakpoints/Notch_CFS/notch_breakpoint_regions_500_mappable.bed'),
-           regionB = paste0(rootDir, 'Desktop/misc_bed/features/nonBform/min_g4s.bed'),
-           mappable_regions = mappable_regions, n=100, from=2700000, to=3400000, chrom = 'X', plot=T)
 
-# Fig 2d,e: Two characterised events in Notch 
+# Fig 2e,f: Two characterised events in Notch 
 
-# Fig 2f: TEs at Notch breakpoints
-te_in <- paste0(rootDir, 'Documents/Curie/Documents/SV_paper/sv_characterisation/TE_involvement.txt')
-notch_tes <- read.delim(te_in)
-notch_tes <- notch_tes %>% 
-  dplyr::filter(!sample %in% excluded_samples) %>% 
-  dplyr::select(sample, bp1, bp2, type) %>% 
-  dplyr::mutate(type2 = type, 
-                bp1 = as.logical(ifelse(stringr::str_detect(bp1, ''), 1, 0)),
-                bp2 = as.logical(ifelse(stringr::str_detect(bp2, ''), 1, 0))) %>% 
-  dplyr::mutate(has_te = ifelse(bp1 | bp2, TRUE, FALSE)) %>% 
-  dplyr::group_by(type2) %>%
-  dplyr::count(type2, has_te) %>% 
-  dplyr::mutate(total = sum(n), perc = (n/total)*100) %>% 
-  dplyr::filter(has_te) %>% 
-  as.data.frame()
+# # Fig 2f: TEs at Notch breakpoints
+# te_in <- paste0(rootDir, 'Documents/Curie/Documents/SV_paper/sv_characterisation/TE_involvement.txt')
+# notch_tes <- read.delim(te_in)
+# notch_tes <- notch_tes %>% 
+#   dplyr::filter(!sample %in% excluded_samples) %>% 
+#   dplyr::select(sample, bp1, bp2, type) %>% 
+#   dplyr::mutate(type2 = type, 
+#                 bp1 = as.logical(ifelse(stringr::str_detect(bp1, ''), 1, 0)),
+#                 bp2 = as.logical(ifelse(stringr::str_detect(bp2, ''), 1, 0))) %>% 
+#   dplyr::mutate(has_te = ifelse(bp1 | bp2, TRUE, FALSE)) %>% 
+#   dplyr::group_by(type2) %>%
+#   dplyr::count(type2, has_te) %>% 
+#   dplyr::mutate(total = sum(n), perc = (n/total)*100) %>% 
+#   dplyr::filter(has_te) %>% 
+#   as.data.frame()
 
 # plot_tes_at_breakpoints <- function(x){
 #   colours = svBreaks::sv_colours()
@@ -305,8 +295,6 @@ notch_tes <- notch_tes %>%
 ########################
 
 # Fig 4a - Rainfall plot of breakpoints
-# all_hits <- svBreaks::getData(!sample %in% excluded_samples, !paste(sample, event, sep = '_') %in% excluded_events infile=infile)
-
 svBreaks::bpRainfall(bp_data = all_hits, chroms = chromosomes)
 
 n_hits <- svBreaks::geneHit(!sample %in% excluded_samples, plot = F, all_samples = all_samples)
@@ -367,6 +355,7 @@ combined_sv_types <- complete(combined_sv_types, group, type2, fill = list(n=0, 
 
 cols <- c("genome-wide" = grey, "Notch" = green)
 
+# Fig 4b: SV types
 combined_sv_types %>% 
   ggplot2::ggplot(.) +
   ggplot2::geom_bar(aes(type2, perc, fill = group), colour = 'transparent', alpha=0.7, stat='identity', position = 'dodge') + 
@@ -382,9 +371,9 @@ combined_sv_types %>%
   )
 
 
-noR1 <- non_notch %>% dplyr::filter(sample != "A373R1")
+# noR1 <- non_notch %>% dplyr::filter(sample != "A373R1")
 # noR1 <- transform_types(noR1)
-noR1_samples <- c("A373R1", excluded_samples)
+# noR1_samples <- c("A373R1", excluded_samples)
 # Get SV tpes per sample
 
 sv_data <- svTypes(!sample %in% excluded_samples, bp_data = non_notch, plot = F)
@@ -411,7 +400,7 @@ gghistogram(non_notch, x = "af", color = "type2", fill= "type2", alpha = 0.5,
 
 
 # Fig 4c - Protein coding mutations (non-Notch)
-snv_indel_df <- read.csv(paste0(rootDir, 'Desktop/final_analysis/annotated_mutations_filt.csv'))
+snv_indel_df <- read.csv('data/annotated_mutations_filt.csv')
 
 # Supp Table 3 - Protein coding mutations
 snv_indel_df %>% 
