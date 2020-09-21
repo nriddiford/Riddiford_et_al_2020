@@ -1,0 +1,40 @@
+3R	11736810	11741783	blm	FBgn0002906	holliday_junction_Sekelsky_2017, mus_genes_Sekelsky_2017, resection_and_strand_exchange_Sekelsky_2017
+X	10010481	10014279	cg2990	FBgn0030170	resection_and_strand_exchange_Sekelsky_2017
+X	5945682	5948353	cg32756	FBgn0052756	end_joining_Sekelsky_2017
+3L	9450545	9451572	cg3448	FBgn0035996	end_joining_Sekelsky_2017
+2L	20926319	20927860	cg9272	FBgn0032907	base_excision_repair_Sekelsky_2017
+2R	14852941	14853948	ercc1	FBgn0028434	holliday_junction_Sekelsky_2017
+3L	5149849	5152376	gen	FBgn0263831	holliday_junction_Sekelsky_2017, mus_genes_Sekelsky_2017
+X	7918517	7920131	hdm	FBgn0029977	holliday_junction_Sekelsky_2017
+3R	11410047	11412440	irbp	FBgn0011774	end_joining_Sekelsky_2017
+2L	15768630	15771159	ku80	FBgn0041627	end_joining_Sekelsky_2017
+X	13664584	13667811	lig4	FBgn0030506	end_joining_Sekelsky_2017
+X	16391698	16399850	mei-41	FBgn0004367	mus_genes_Sekelsky_2017
+X	4314230	4318801	mei-9	FBgn0002707	holliday_junction_Sekelsky_2017
+2R	8170274	8172401	mlh1	FBgn0011659	mismatch_repair_Sekelsky_2017
+2R	10811078	10812215	mms4	FBgn0033549	holliday_junction_Sekelsky_2017
+2L	11282090	11284335	mre11	FBgn0020270	resection_and_strand_exchange_Sekelsky_2017
+3L	15154233	15158562	msh6	FBgn0036486	mismatch_repair_Sekelsky_2017
+X	13722246	13727113	mus101	FBgn0002878	mus_genes_Sekelsky_2017
+2L	8438169	8442342	mus201	FBgn0002887	mus_genes_Sekelsky_2017
+2R	7793625	7801044	mus205	FBgn0002891	mus_genes_Sekelsky_2017
+3L	8137808	8142014	mus301	FBgn0002899	mus_genes_Sekelsky_2017
+3L	18109814	18112847	mus304	FBgn0002901	mus_genes_Sekelsky_2017
+3R	12705523	12712299	mus308	FBgn0002905	end_joining_Sekelsky_2017, mus_genes_Sekelsky_2017
+3L	7329132	7333471	mus312	FBgn0002909	holliday_junction_Sekelsky_2017, mus_genes_Sekelsky_2017
+3L	9720414	9723194	nbs	FBgn0261530	resection_and_strand_exchange_Sekelsky_2017
+X	8690327	8691811	ogg1	FBgn0027864	base_excision_repair_Sekelsky_2017
+2L	2989594	2992759	okr	FBgn0002989	resection_and_strand_exchange_Sekelsky_2017
+2R	20261754	20262883	pcna	FBgn0005655	mus_genes_Sekelsky_2017
+2R	22421013	22425482	rad50	FBgn0034728	resection_and_strand_exchange_Sekelsky_2017
+2R	9165632	9167670	rad51d	FBgn0033389	resection_and_strand_exchange_Sekelsky_2017
+2L	2969773	2972508	rrp1	FBgn0004584	base_excision_repair_Sekelsky_2017
+3R	4641963	4644636	slx1	FBgn0037263	holliday_junction_Sekelsky_2017
+3R	5555084	5557786	snm1	FBgn0037338	mus_genes_Sekelsky_2017
+2L	14362069	14366840	spel1	FBgn0015546	mismatch_repair_Sekelsky_2017
+3R	30054696	30056037	spn-a	FBgn0003479	resection_and_strand_exchange_Sekelsky_2017
+3R	14328051	14329608	spn-b	FBgn0003480	resection_and_strand_exchange_Sekelsky_2017
+3R	27165716	27167122	spn-d	FBgn0003482	resection_and_strand_exchange_Sekelsky_2017
+2L	18679631	18682075	tos	FBgn0015553	resection_and_strand_exchange_Sekelsky_2017
+2R	15311510	15318239	xpc	FBgn0004698	mus_genes_Sekelsky_2017
+X	18500127	18501258	xrcc2	FBgn0030931	resection_and_strand_exchange_Sekelsky_2017
