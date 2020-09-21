@@ -204,7 +204,7 @@ include <- c("A373R1", "A373R11", "A373R13", "A373R3", "A373R5", "A373R9",
 plot_tumour_evolution <- function(..., all_samples = 'data/all_samples_merged.txt',
                               all_samples_snvs = 'data/annotated_snvs.txt',
                               all_samples_indels = 'data/annotated_indels.txt',
-                              attach_info = '/data/samples_names_conversion.txt',
+                              attach_info = 'data/samples_names_conversion.txt',
                               annotate_with = 'data/dna_damage_repair.bed', drivers=c('N', 'kuz'),
                               purity_adj=TRUE, show_sample = TRUE, snvs=TRUE, indels=TRUE, tes=TRUE, plot=TRUE){
   
