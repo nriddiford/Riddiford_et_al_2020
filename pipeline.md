@@ -82,6 +82,7 @@ done
 ```
 * Output: `${tumour_sample}_stitched.txt`
 
+
 ### 5. Manually inspect calls, annotate uncalled events and mark false positives
 
 ```{bash}
@@ -93,6 +94,19 @@ bash runParser -d ~/Desktop/final_analysis/data/ \
 * Output: `${tumour_sample}_reannotated_SVs.txt`
 
 ### 6. Optional - annotate mechanisms called by splitvision
+
+#### Extract bedpe for splitvision
+```{bash}
+for file in *_stitched.txt
+  do
+  stem=$(basename "${file}")
+  output_base=$(echo $stem | cut -d '_' -f 1)
+  echo "Running for sample $output_base"
+
+  python ~/Desktop/script_test/svParser/script/parser2bedpe.py -i $file
+done
+```
+
 * `cd $out_dir/summary/merged`
 ```{bash}
 bash ~/Desktop/parserTest/script/run_mhannotate.sh -axm -d . -o .
@@ -189,10 +203,15 @@ rm *_hit_genes.txt
 ### 5. Annotate calls
 #### 5.1 Annotate with SnpEff
 
+##### Move all _consensus_filt.vcf into CombinedVCF/
 
+`bash script/run_snpEff.sh -c`
+`bash script/run_snpEff.sh -i`
 
+#### Move all files into mutationProfiles data/raw
 
-
+`conda activate svParser`
+`bash run_trinucs.sh -ea`
 
 # LOH Pipeline
 
