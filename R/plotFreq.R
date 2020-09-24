@@ -78,7 +78,7 @@ get_SVs <- function(..., all_samples, bed_file, drivers){
   return(as.data.frame(gene_hits))
 }
 
-addPurity <- function(df, purity_file='/Users/Nick_curie/Desktop/script_test/svSupport/data/tumour_purity.txt'){
+addPurity <- function(df, purity_file='data/tumour_purity.txt'){
   purity <- read.delim(purity_file, header = F)
   colnames(purity) <- c('sample', 'purity')
   
