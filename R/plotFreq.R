@@ -222,13 +222,12 @@ plot_tumour_evolution <- function(..., all_samples = 'data/all_samples_merged.tx
   df <- do.call("rbind", list(indel_hits, snv_hits, gene_hits))
   
   # Get max Notch accross all mut types
-  Notch_hits <- merge(Notch_svs,  Notch_snvs,   by = "sample", all = TRUE)
+  Notch_hits <- merge(Notch_svs, Notch_snvs, by = "sample", all = TRUE)
   Notch_hits <- merge(Notch_hits, Notch_indels, by = "sample", all = TRUE)
   colnames(Notch_hits) <- c('sample', 'sv', 'snv', 'indel')
   
   Notch_hits <- Notch_hits %>% 
     dplyr::mutate(highest_n=pmax(sv, snv, indel))
-  
   
   Notch_hits[is.na(Notch_hits)] <- 0
   
@@ -263,8 +262,8 @@ plot_tumour_evolution <- function(..., all_samples = 'data/all_samples_merged.tx
     print()
   
   # Custom reorder
-  df$class = factor(df$class, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
-  special_hits$class = factor(special_hits$class, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
+  df$class = factor(df$class, levels=c("SV", "SNV", "INDEL"), labels=c("SV", "SNV", "INDEL")) 
+  special_hits$class = factor(special_hits$class, levels=c("SV", "SNV", "INDEL"), labels=c("SV", "SNV", "INDEL")) 
    
   red <- "#FC4E07"
   blue <- "#00AFBB"
@@ -277,13 +276,13 @@ plot_tumour_evolution <- function(..., all_samples = 'data/all_samples_merged.tx
   p <- p + geom_violin(data=df, aes(sample, time, fill = class, colour=class), alpha = 0.3, show.legend = FALSE,  adjust=0.3, scale='width')
   p <- p + geom_jitter(data=df, aes(sample, time, fill = class, colour=class), width=0.2, height = 0.01, size=.5, alpha = 0.3, show.legend = FALSE)
   
-  p <- p + geom_point(data=special_hits, aes(sample, time), size=2, shape=4, show.legend = FALSE)
+  if(nrow(special_hits)) p <- p + geom_point(data=special_hits, aes(sample, time), size=2, shape=4, show.legend = FALSE)
   p <- p + geom_errorbar(data=Notch_hits, aes(fct_reorder(sample, time), ymin=time, ymax=time), alpha=0.6, size=0.7, color='black', show.legend = FALSE)
   p <- p + coord_flip()
   p <- p + labs(x = NULL)
   p <- p + scale_fill_manual(values=cols)
   p <- p + scale_colour_manual(values=cols)
-  p <- p +  scale_y_continuous('Pseudotime (1 - cell fraction)', labels=seq(0,1,by=.25), expand = c(0, 0.01))
+  p <- p + scale_y_continuous('Pseudotime (1 - cell fraction)', labels=seq(0,1,by=.25), expand = c(0, 0.01))
   p <- p + cleanTheme() +
     theme(
       panel.grid.major.x = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
