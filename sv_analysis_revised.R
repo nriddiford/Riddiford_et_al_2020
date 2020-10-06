@@ -65,7 +65,6 @@ read.delim(all_samples) %>%
   dplyr::filter(sample %in% wholegut_samples) %>% 
   write.table(., file = 'data/all_WG_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
-
 wholegut_svs_af <- read.delim('data/all_WG_samples_merged_filt.txt') %>%
   dplyr::mutate(type = 'SV') %>% 
   dplyr::select(sample, type, allele_frequency)
@@ -182,11 +181,10 @@ combined_muts %>%
 wholegut_dels <- read.delim('data/wholegut_dels_merged.bed')
 colnames(wholegut_dels) <- c('chrom', 'start', 'end')
 
-
-
 head(wholegut_svs_df)
 wholegut_svs_df %>% 
   dplyr::filter(type == 'DEL', abs(bp1 - wholegut_dels$start) < 1000)
+
 
 
 
