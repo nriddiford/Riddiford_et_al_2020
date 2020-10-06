@@ -7,7 +7,7 @@ import csv
 wgdels_in = 'data/wholegut_dels_merged.bed'
 wgvars_in = 'data/all_WG_samples_merged_filt.txt'
 
-def getDels(wgdels_in):
+def get_dels(wgdels_in):
     bed = []
     with open(wgdels_in, 'r') as dels:
         for l in dels:
@@ -17,7 +17,7 @@ def getDels(wgdels_in):
     return bed
 
 
-def getVars(wgvars_in):
+def get_vars(wgvars_in):
     bed = []
     with open(wgvars_in, 'r') as vars:
         for l in vars:
@@ -27,19 +27,27 @@ def getVars(wgvars_in):
     return bed
 
 
-def annotateDels(dels, vars):
-    b1 = getDels(dels)
-    b2 = getVars(vars)
+def annotate_vars(dels, vars):
+    b1 = get_dels(dels)
+    b2 = get_vars(vars)
 
-    does_overlap = False
+    annotated_vars = []
 
-    for d in b1:
-        c1, s1, e1 = d
-        for v in b2:
-            c2, s2, e2, t, l = v
+    for v in b2:
+        c2, s2, e2, t, l = v
+        for d in b1:
+            c1, s1, e1 = d
             if t == 'DEL' and c1 == c2:
                 if ( abs(int(s1) - int(s2)) < int(5e3) ) and ( abs(int(e1) - int(e2)) < int(5e3) ):
-                    does_overlap = True
+                    notes = l[26].split('; ')
+                    notes.append('wg_del:True')
+                    l[26] = '; '.join(notes)
+            else:
+                print("False negative: %s:%s%s in %s" % (c1, s1, e1, l[0]))
+        annotated_vars.append('\t'.join(l))
+
+    with open('data/all_WG_samples_merged_filt_annotated.txt', 'w') as f:
+        f.write('\n'.join(map(str, annotated_vars)))
 
 
-annotateDels(wgdels_in, wgvars_in)
+annotate_vars(wgdels_in, wgvars_in)

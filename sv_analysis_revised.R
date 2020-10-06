@@ -65,7 +65,10 @@ read.delim(all_samples) %>%
   dplyr::filter(sample %in% wholegut_samples) %>% 
   write.table(., file = 'data/all_WG_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
-wholegut_svs_af <- read.delim('data/all_WG_samples_merged_filt.txt') %>%
+# Need to annotate this ^ file with whole gut dels: 'all_WG_samples_merged_filt_annotated.txt'
+wholegut_svs_af <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>%
+  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
+  dplyr::filter(!wg_del) %>% 
   dplyr::mutate(type = 'SV') %>% 
   dplyr::select(sample, type, allele_frequency)
 
@@ -86,7 +89,10 @@ ggplot(wholegut_muts_combined, aes(1-allele_frequency)) +
   geom_histogram(aes(fill=type), alpha = 0.7, binwidth = .01) + 
   facet_wrap(~sample, ncol=1)
 
-wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt.txt')
+wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
+  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
+  dplyr::filter(!wg_del)
+
 wholegut_snvs_df <- mutationProfiles::getData(infile = 'data/annotated_snvs_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt')
 wholegut_indels_df <- mutationProfiles::getData(infile = 'data/annotated_indels_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt', type='indel')
 
@@ -172,20 +178,12 @@ combined_muts %>%
   )
 
 
-
-
 #################
 ##   WG DELS  ###
 #################
 
-wholegut_dels <- read.delim('data/wholegut_dels_merged.bed')
-colnames(wholegut_dels) <- c('chrom', 'start', 'end')
-
-head(wholegut_svs_df)
-wholegut_svs_df %>% 
-  dplyr::filter(type == 'DEL', abs(bp1 - wholegut_dels$start) < 1000)
-
-
-
+wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
+  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
+  dplyr::filter(!wg_del)
 
 
