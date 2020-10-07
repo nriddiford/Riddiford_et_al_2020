@@ -61,9 +61,9 @@ source('R/plotFreq.R')
 wholegut_samples <- c('D050R10', 'D050R12', 'D050R14', 'D050R16', 'D050R18', 'D050R20', 'D050R22', 'D050R24')
 wholegut_samples_n <- c('Fd10', 'Fd12', 'Fd14', 'Fd16', 'Fd18', 'Fd20', 'Fd22', 'Fd24')
 
-read.delim(all_samples) %>% 
-  dplyr::filter(sample %in% wholegut_samples) %>% 
-  write.table(., file = 'data/all_WG_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
+# read.delim(all_samples) %>% 
+#   dplyr::filter(sample %in% wholegut_samples) %>% 
+#   write.table(., file = 'data/all_WG_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
 # Need to annotate this ^ file with whole gut dels: 'all_WG_samples_merged_filt_annotated.txt'
 wholegut_svs_af <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>%
