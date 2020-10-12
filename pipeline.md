@@ -30,7 +30,7 @@
 * Run `bash svTyper.sh <group>` to create a PON and annotate these onto lumpy calls `${tumour_sample}.lumpy.gt_all.vcf`
 
 #### 3.3 Delly (v0.7.8)
-* Run `bash delly_call <group>` to run delly. Requires PON from above step. Outputs `${tumour_sample}.delly.vcf`
+* Run `bash delly_call.sh <group>` to run delly. Requires PON from above step. Outputs `${tumour_sample}.delly.vcf`
 
 
 ## Variant filtering & annotation

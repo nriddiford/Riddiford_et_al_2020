@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import division
 import os, re, sys
 import json
 from collections import defaultdict
@@ -77,7 +78,8 @@ def annotate_vars(dels, vars, truth):
     for s in true_positive_count:
         count = len(true_positive_count[s])
         total_count += count
-        print("Sample: %s : %s / %s true positives found [%s]%%" % (s, count, len(true_calls), count/len(true_calls)*100))
+        perc = (int(count)/len(true_calls)) * 100
+        print("Sample: %s : %s / %s true positives found [%s]%%" % (s, count, len(true_calls), perc))
 
     no_samples = len(true_positive_count)
     print("Total: %s / %s [%s]%%" % (total_count, len(true_calls)*no_samples, total_count/(len(true_calls)*no_samples)*100))
