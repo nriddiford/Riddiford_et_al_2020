@@ -55,8 +55,6 @@ runvisor() {
     mv $tumour_out/bam/sim.srt.bam $tumour_out/bam/visorR01.bam
     samtools index $tumour_out/bam/visorR01.bam
 
-    mkdir -p $normal_out/bam
-
     echo """
     Running for normal sample
 
