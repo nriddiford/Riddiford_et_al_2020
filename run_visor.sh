@@ -1,4 +1,7 @@
-#!/usr/bin/bash
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=03:00:00
+#PBS -l mem=2GB
+
 genome=/data/kdi_prod/project_result/948/01.00/Analysis/Genomes/Dmel_6/dmel_6.12.fa
 out_dir=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor
 
@@ -14,20 +17,23 @@ normal_regions=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_pape
 tumour_out=${out_dir}/tumour
 normal_out=${out_dir}/normal
 
-tumour_coverage=40
-normal_coverage=70
+tumour_coverage=10
+normal_coverage=20
 
 
 setup() {
     # mkdir -p $out_dir $tumour_out $normal_out
 
-    rm -r $tumour_out
+    #rm -r $tumour_out
     rm -r $normal_out
 
-    perl -p -i -e 's/ /\t/g' $tumour_h1
-    perl -p -i -e 's/ /\t/g' $tumour_h2
-    perl -p -i -e 's/ /\t/g' $normal_h1
-    perl -p -i -e 's/ /\t/g' $normal_h2
+    #perl -p -i -e 's/ /\t/g' $tumour_h1
+    #perl -p -i -e 's/ /\t/g' $tumour_h2
+    #perl -p -i -e 's/ /\t/g' $normal_h1
+    #perl -p -i -e 's/ /\t/g' $normal_h2
+    
+   # perl -p -i -e 's/ /\t/g' $tumour_regions
+    #perl -p -i -e 's/ /\t/g' $normal_regions
 
     cat $tumour_h1 $tumour_h2 > $out_dir/data/tumour_svs.bed
     cat $normal_h1 $normal_h2 > $out_dir/data/normal_svs.bed
@@ -48,12 +54,12 @@ runvisor() {
     VISOR SHORtS --length 100 --error 0.00001 --coverage $tumour_coverage -s $tumour_out -bed $tumour_regions -g $genome  -o $tumour_out/bam
     """
 
-    VISOR HACk -bed $tumour_h1 $tumour_h2 -g $genome -o $tumour_out
+    #VISOR HACk -bed $tumour_h1 $tumour_h2 -g $genome -o $tumour_out
 
-    VISOR SHORtS --length 100 --error 0.00001 --coverage $tumour_coverage -s $tumour_out -bed $tumour_regions -g $genome -o $tumour_out/bam
+    #VISOR SHORtS --length 100 --error 0.00001 --coverage $tumour_coverage -s $tumour_out -bed $tumour_regions -g $genome -o $tumour_out/bam
 
-    mv $tumour_out/bam/sim.srt.bam $tumour_out/bam/visorR01.bam
-    samtools index $tumour_out/bam/visorR01.bam
+   # mv $tumour_out/bam/sim.srt.bam $tumour_out/bam/visorR01.bam
+   # samtools index $tumour_out/bam/visorR01.bam
 
     echo """
     Running for normal sample
@@ -103,6 +109,6 @@ cleanup(){
     samtools index $bwa_out/visorR02.tagged.filt.SC.RG.bam
 }
 
-setup
-runvisor
+#setup
+#runvisor
 cleanup
