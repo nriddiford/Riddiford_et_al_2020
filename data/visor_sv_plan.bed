@@ -1,0 +1,70 @@
+2L	5000000	5050000	deletion	None	0
+2L	6050000	6150000	deletion	None	0
+2L	7150000	7170000	tandem duplication	1	0
+2L	8170000	8175000	inversion	None	0
+2L	9175000	9185000	deletion	None	0
+2L	10185000	10235000	deletion	None	0
+2L	11235000	11335000	tandem duplication	1	0
+2L	12335000	12355000	deletion	None	0
+2L	13355000	13360000	deletion	None	0
+2L	14360000	14361000	inversion	None	0
+2R	5000000	5050000	deletion	None	0
+2R	6050000	6150000	deletion	None	0
+2R	7150000	7170000	tandem duplication	1	0
+2R	8170000	8175000	inversion	None	0
+2R	9175000	9185000	deletion	None	0
+2R	10185000	10235000	deletion	None	0
+2R	11235000	11335000	tandem duplication	1	0
+2R	12335000	12355000	deletion	None	0
+2R	13355000	13360000	deletion	None	0
+2R	14360000	14361000	inversion	None	0
+3L	5000000	5050000	deletion	None	0
+3L	6050000	6150000	deletion	None	0
+3L	7150000	7170000	tandem duplication	1	0
+3L	8170000	8175000	inversion	None	0
+3L	9175000	9185000	deletion	None	0
+3L	10185000	10235000	deletion	None	0
+3L	11235000	11335000	tandem duplication	1	0
+3L	12335000	12355000	deletion	None	0
+3L	13355000	13360000	deletion	None	0
+3L	14360000	14361000	inversion	None	0
+3R	5000000	5050000	deletion	None	0
+3R	6050000	6150000	deletion	None	0
+3R	7150000	7170000	tandem duplication	1	0
+3R	8170000	8175000	inversion	None	0
+3R	9175000	9185000	deletion	None	0
+3R	10185000	10235000	deletion	None	0
+3R	11235000	11335000	tandem duplication	1	0
+3R	12335000	12355000	deletion	None	0
+3R	13355000	13360000	deletion	None	0
+3R	14360000	14361000	inversion	None	0
+4	400000	450000	deletion	None	0
+4	470000	570000	deletion	None	0
+4	590000	610000	tandem duplication	1	0
+4	630000	635000	inversion	None	0
+4	655000	665000	deletion	None	0
+4	685000	735000	deletion	None	0
+4	755000	855000	tandem duplication	1	0
+4	875000	895000	deletion	None	0
+4	915000	920000	deletion	None	0
+4	940000	941000	inversion	None	0
+X	5000000	5050000	deletion	None	0
+X	6050000	6150000	deletion	None	0
+X	7150000	7170000	tandem duplication	1	0
+X	8170000	8175000	inversion	None	0
+X	9175000	9185000	deletion	None	0
+X	10185000	10235000	deletion	None	0
+X	11235000	11335000	tandem duplication	1	0
+X	12335000	12355000	deletion	None	0
+X	13355000	13360000	deletion	None	0
+X	14360000	14361000	inversion	None	0
+Y	1000000	1050000	deletion	None	0
+Y	1150000	1250000	deletion	None	0
+Y	1350000	1370000	tandem duplication	1	0
+Y	1470000	1475000	inversion	None	0
+Y	1575000	1585000	deletion	None	0
+Y	1685000	1735000	deletion	None	0
+Y	1835000	1935000	tandem duplication	1	0
+Y	2035000	2055000	deletion	None	0
+Y	2155000	2160000	deletion	None	0
+Y	2260000	2261000	inversion	None	0
