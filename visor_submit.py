@@ -13,8 +13,11 @@ def submit_jobs():
         tumour_sample = "visorR%s" % tid
         normal_sample = "visorR%s" % nid
 
-        print("qsub -v VAR1=%s,VAR2=%s,VAR3=%s -o log/%s.runlog -j oe -N %s.visor" % (tumour_sample, normal_sample, p, tumour_sample, tumour_sample))
+        cmd = "qsub -v VAR1=%s,VAR2=%s,VAR3=%s -o log/%s.runlog -j oe -N %s.visor" % (tumour_sample, normal_sample, p, tumour_sample, tumour_sample)
 
+        print(cmd)
+        os.system(cmd)
+        
         tumour_id += 2
 
 
