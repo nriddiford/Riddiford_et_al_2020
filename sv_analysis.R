@@ -672,6 +672,16 @@ all_muts$group = factor(all_muts$class, levels=c("Notch","SV","SNV", "INDEL"), l
 
 all_muts$medN <- 1-(median(notch_hits$highest_n))
 
+
+#### test ####
+
+ggplot(all_muts, aes(1-allele_frequency)) +
+  geom_density() +
+  facet_wrap(~group)
+
+#############
+
+
 ggplot(all_muts, aes(time, colour = group)) + 
   geom_line(stat='ecdf', size=1.5, alpha=.7) + 
   scale_y_continuous('Cumulative mutations') +

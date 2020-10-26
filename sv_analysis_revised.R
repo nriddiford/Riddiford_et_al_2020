@@ -84,6 +84,10 @@ wholegut_muts_combined <- dplyr::bind_rows(wholegut_svs_af, wholegut_snvs_af, wh
   dplyr::filter(allele_frequency > 0)
 
 
+ggplot(wholegut_muts_combined, aes(1-allele_frequency)) +
+  geom_density() +
+  facet_wrap(~type)
+
 # Allele freqs dist per sample
 ggplot(wholegut_muts_combined, aes(1-allele_frequency)) + 
   geom_histogram(aes(fill=type), alpha = 0.7, binwidth = .01) + 
@@ -111,6 +115,10 @@ indels <- 'data/annotated_indels_wholegut.txt'
 
 wholegut_snvs <- mutationProfiles::getData(infile = snvs, expression_data = 'data/Buchon_summary_ISCs.txt', type='snv', sex=='male', chrom %in% chromosomes, attach_info = attach_info)
 wholegut_indels_df <- mutationProfiles::getData(infile = indels, expression_data = 'data/Buchon_summary_ISCs.txt', type='indel')
+
+wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
+  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
+  dplyr::filter(!wg_del)
 
 old_samples <- c('D050R18', 'D050R20', 'D050R22', 'D050R24')
 
