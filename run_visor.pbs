@@ -36,8 +36,8 @@ echo "Normal regions: $normal_regions"
 
 setup() {
     # mkdir -p $out_dir $tumour_out $normal_out
-    #rm -r $tumour_out
-    #rm -r $normal_out
+    rm -r $tumour_out
+    rm -r $normal_out
     #perl -p -i -e 's/ /\t/g' $tumour_h1
     #perl -p -i -e 's/ /\t/g' $tumour_h2
     #perl -p -i -e 's/ /\t/g' $normal_h1
