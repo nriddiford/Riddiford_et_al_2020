@@ -20,8 +20,8 @@ def submit_jobs():
 
         print(t_cmd)
         print(n_cmd)
-        # os.system(t_cmd)
-        # os.system(n_cmd)
+        os.system(t_cmd)
+        os.system(n_cmd)
 
         tumour_id += 2
 
