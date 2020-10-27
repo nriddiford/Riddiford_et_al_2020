@@ -84,9 +84,59 @@ wholegut_muts_combined <- dplyr::bind_rows(wholegut_svs_af, wholegut_snvs_af, wh
   dplyr::filter(allele_frequency > 0)
 
 
+##### Compare real data allele frequency dist to whole gut
+
+# read.delim(all_samples) %>% 
+#   dplyr::filter(!paste(sample, event, sep = '_') %in% excluded_events) %>% 
+#   write.table(., file = 'data/all_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
+
+
+tumour_evolution <- plot_tumour_evolution(all_samples = 'data/all_samples_merged_filt.txt', 
+                                          tes = FALSE, annotate_with = 'data/dna_damage_merged.bed', plot=F)
+
+all_muts <- tumour_evolution[[2]]
+
+all_muts <- all_muts %>%
+  dplyr::mutate(class = ifelse(class=='SV' & gene_hit != 'Other', 'Notch', as.character(class)),
+                time = 1 - cell_fraction) %>% 
+  dplyr::filter(class != 'Notch')
+
+all_muts$group = factor(all_muts$class, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
+  
+
+wholegut_muts_combined$group = factor(wholegut_muts_combined$type, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
+
 ggplot(wholegut_muts_combined, aes(1-allele_frequency)) +
   geom_density() +
-  facet_wrap(~type)
+  facet_wrap(~group)
+
+all_muts$assay <- 'tumour'
+all_muts_af <- all_muts %>% 
+  dplyr::select(sample, group, allele_frequency, assay)
+
+wholegut_muts_combined$assay <- 'wholegut'
+
+wholegut_muts_combined <- wholegut_muts_combined %>%
+  dplyr::select(sample, group, allele_frequency, assay)
+
+combined_groups_af <- bind_rows(all_muts_af, wholegut_muts_combined)
+
+med_af <- combined_groups_af %>%
+  group_by(assay, group) %>%
+  summarise(median=median(allele_frequency))
+
+#### test ####
+ggplot(combined_groups_af, aes(1-allele_frequency)) +
+  geom_density(aes(fill=assay), alpha=0.5) +
+  facet_wrap(~group, nrow=3)
+
+#############
+
+
+
+
+
+
 
 # Allele freqs dist per sample
 ggplot(wholegut_muts_combined, aes(1-allele_frequency)) + 
@@ -193,5 +243,24 @@ combined_muts %>%
 wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
   dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
   dplyr::filter(!wg_del)
+
+
+
+################
+##  SIM data ###
+################
+
+attach_info <- 'data/samples_names_conversion.txt'
+
+all_sample_names <- read.delim(attach_info, header = F)
+colnames(all_sample_names) <- c("sample", "sample_short", "sample_paper", "sex", "assay")
+
+all_sim_names <- all_sample_names %>% dplyr::filter(grepl("visor", sample))
+
+infile <- '~/Desktop/SV_paper_20/svParser/summary/merged/all_bps_merged.txt'
+all_sim_samples <- '~/Desktop/SV_paper_20/svParser/summary/merged/all_samples_merged.txt'
+
+all_hits <- svBreaks::getData(infile=infile, attach_info = attach_info)
+
 
 
