@@ -83,3 +83,13 @@ D265R07	D87	D87	male	ofut1-neoplasia
 D265R09	D91	D91	male	ofut1-neoplasia
 D265R11	D95	D95	male	ofut1-neoplasia
 D265R13	D99	D99	female	ofut1-neoplasia
+visorR1	sim1	sim1	male	simulated
+visorR3	sim3	sim3	male	simulated
+visorR5	sim5	sim5	male	simulated
+visorR7	sim7	sim7	male	simulated
+visorR9	sim9	sim9	male	simulated
+visorR11	sim11	sim11	male	simulated
+visorR13	sim13	sim13	male	simulated
+visorR15	sim15	sim15	male	simulated
+visorR17	sim17	sim17	male	simulated
+visorR19	sim19	sim19	male	simulated
