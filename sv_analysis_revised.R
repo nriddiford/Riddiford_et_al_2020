@@ -262,5 +262,33 @@ all_sim_samples <- '~/Desktop/SV_paper_20/svParser/summary/merged/all_samples_me
 
 all_hits <- svBreaks::getData(infile=infile, attach_info = attach_info)
 
+error_rates <- 'data/error_rates.txt'
+error_rates_df <- read.delim(error_rates, header = T)
 
+error_rates_df$sample = factor(error_rates_df$sample, levels=c("truth", "visorR1", "visorR3", "visorR5", "visorR7", "visorR9", "visorR11", "visorR13", "visorR15", "visorR17", "visorR19"), labels=c("Tr", "s1", "s2", "s3", "s4", "s5", "d1", "d2", "d3", "d4", "d5"))
+
+total_true_positives <- 8
+
+error_rates_df %>%
+  dplyr::filter(sample != 'Tr') %>% 
+  dplyr::group_by(sample, type, error_group) %>%
+  dplyr::tally() %>% 
+  # tidyr::complete(sample, type, error_group) %>% 
+  dplyr::mutate(n = ifelse(is.na(n), 0, n)) %>% 
+  dplyr::mutate(seq_depth = ifelse(grepl('s', sample), 'shallow', 'deep')) %>%
+  ggplot(., aes(sample, n, fill=error_group)) +
+  # geom_bar(position = position_dodge(width = .8), width=.8, stat='identity') +
+  geom_bar(stat='identity') +
+  # geom_hline(yintercept = total_true_positives, linetype="dashed", color = "red") +
+  facet_wrap(seq_depth~type, scales = 'free')
+           
+
+
+####
+## Plot CNVs along genome
+###
+
+devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/cnvPlotteR'))
+
+allPlot(path = '/Volumes/perso/Analysis/Analysis/CNV-Seq/visor/results/w_50000/')
 
