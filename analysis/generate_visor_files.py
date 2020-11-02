@@ -52,8 +52,8 @@ def set_regions(options):
     }
 
     normal_svs = {
-        3: '2L',
-        6: '3R',
+        # 3: '2L',
+        # 6: '3R',
     }
 
     chroms = ['2L', '2R', '3L', '3R', '4', 'X', 'Y']
