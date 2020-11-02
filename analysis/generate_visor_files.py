@@ -39,16 +39,21 @@ def set_regions(options):
     write_regions(genome_regions, purities, coverage_flux, options)
 
     tumour_svs = {
-        1: [200, 'deletion', 'None', 0],
+        1: [50, 'deletion', 'None', 0],
         2: [100, 'deletion', 'None', 0],
-        3: [20, 'tandem duplication', 1, 0],
+        3: [5, 'tandem duplication', 2, 0],
         4: [5, 'inversion', 'None', 0],
-        5: [300, 'deletion', 'None', 0],
+        5: [150, 'deletion', 'None', 0],
         6: [2, 'deletion', 'None', 0],
-        7: [100, 'tandem duplication', 1, 0],
+        7: [75, 'tandem duplication', 2, 0],
         8: [50, 'deletion', 'None', 0],
-        9: [25, 'deletion', 'None', 0],
-        10: [1, 'inversion', 'None', 0]
+        9: [1, 'inversion', 'None', 0],
+        10: [25, 'deletion', 'None', 0],
+        11: [7, 'inversion', 'None', 0],
+        12: [15, 'tandem duplication', 2, 0],
+        13: [2, 'inversion', 'None', 0],
+        14: [2, 'tandem duplication', 2, 0],
+        15: [20, 'deletion', 'None', 0]
     }
 
     normal_svs = {
@@ -123,7 +128,7 @@ def get_args():
     parser.add_option("-n", "--svs-per-chrom", dest="svs_per_chrom", action="store", help="Number of SVs per chromosomes. [10]")
     parser.add_option("-o", "--out-dir", dest="out_dir", action="store", help="Directory to write bed files to [.]")
 
-    parser.set_defaults(bedfile='svs.bed', depth=30, svs_per_chrom=10, out_dir='.')
+    parser.set_defaults(bedfile='svs.bed', depth=30, svs_per_chrom=15, out_dir='.')
 
     options, args = parser.parse_args()
 
