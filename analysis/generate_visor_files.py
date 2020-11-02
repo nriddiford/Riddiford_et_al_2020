@@ -14,13 +14,13 @@ import pandas as pd
 def set_regions(options):
 
     sv_regions = {
-        '2L': {'start': 5e6, 'stop': 15e6, 'buffer': 1e6},
-        '2R': {'start': 5e6, 'stop': 15e6, 'buffer': 1e6},
-        '3L': {'start': 5e6, 'stop': 15e6, 'buffer': 1e6},
-        '3R': {'start': 5e6, 'stop': 15e6, 'buffer': 1e6},
+        '2L': {'start': 5e6, 'stop': 15e6, 'buffer': 5e5},
+        '2R': {'start': 5e6, 'stop': 15e6, 'buffer': 5e5},
+        '3L': {'start': 5e6, 'stop': 15e6, 'buffer': 5e5},
+        '3R': {'start': 5e6, 'stop': 15e6, 'buffer': 5e5},
         '4': {'start': 2e5, 'stop': 10e5, 'buffer': 2e4},
-        'X': {'start': 5e6, 'stop': 15e6, 'buffer': 1e6},
-        'Y': {'start': 7e5, 'stop': 2.5e6, 'buffer': 1e5}
+        'X': {'start': 5e6, 'stop': 15e6, 'buffer': 5e5},
+        'Y': {'start': 7e5, 'stop': 2.5e6, 'buffer': 5e4}
     }
 
     genome_regions = {
