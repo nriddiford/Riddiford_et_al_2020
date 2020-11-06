@@ -7,6 +7,7 @@ from collections import defaultdict
 wgdels_in = 'data/wholegut_dels_merged.bed'
 truth_set_in = 'data/wholegut_dels_truth_set.bed'
 wgvars_in = 'data/all_WG_samples_merged_filt.txt'
+wgvars_in = 'data/all_WG_samples_merged_snvs_filt.txt'
 
 def get_dels(dels_file):
     bed = []

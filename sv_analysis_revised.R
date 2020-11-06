@@ -19,6 +19,14 @@ library(bedr)
 dfsObj <- paste0(dirname(rstudioapi::getSourceEditorContext()$path), "/muts.RData")
 load(dfsObj)
 
+
+red <- "#FC4E07"
+blue <- "#259FBF"
+yellow <- "#E7B800"
+grey <- "#333333"
+# green <- "#7DBF75"
+green <- '#61C456F3'
+
 ######
 ## Filter snvs for those in DGPR
 ######
@@ -66,22 +74,87 @@ wholegut_samples_n <- c('Fd10', 'Fd12', 'Fd14', 'Fd16', 'Fd18', 'Fd20', 'Fd22', 
 #   write.table(., file = 'data/all_WG_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
 
 # Need to annotate this ^ file with whole gut dels: 'all_WG_samples_merged_filt_annotated.txt'
-wholegut_svs_af <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>%
-  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
-  dplyr::filter(!wg_del) %>% 
+wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>%
+  dplyr::mutate(wg_del = grepl("wg_del", notes),
+                cell_fraction = ifelse(chromosome1 %in% c('X', 'Y'), allele_frequency,
+                                       ifelse(allele_frequency*2>1, 1, allele_frequency*2))) %>%
+  dplyr::filter(!wg_del) 
+
+
+## Look at wholgut DUPS
+
+wg_sv_types <- wholegut_svs_df %>% 
+  dplyr::mutate(allele_frequency = as.double(as.character(allele_frequency))) %>% 
+  dplyr::mutate(cell_fraction = ifelse(chromosome1 %in% c('X', 'Y'), allele_frequency,
+                                       ifelse(allele_frequency*2>1, 1, allele_frequency*2)),
+                assay='wholegut',
+                length = length.Kb.) %>% 
+  dplyr::group_by(type) %>% 
+  dplyr::tally() %>% 
+  dplyr::mutate(perc = plyr::round_any( (100*n/sum(n)), 1),
+                group = 'wholegut') %>% 
+  dplyr::select(type, group, n, perc) 
+  
+
+gw_sv_types <- non_notch %>%
+  dplyr::filter(!sample %in% c('A373R1', excluded_samples)) %>% 
+  dplyr::mutate(type2 = factor(type2)) %>% 
+  dplyr::group_by(type2) %>%
+  dplyr::distinct(chrom, event, .keep_all=TRUE) %>%
+  dplyr::tally() %>% 
+  dplyr::mutate(perc = plyr::round_any( (100*n/sum(n)), 1),
+                group = 'genome-wide',
+                type = type2) %>% 
+  dplyr::select(-type2, type, group, n, perc) %>% 
+  as.data.frame() %>% 
+  droplevels()
+
+
+combined_sv_types <- plyr::join(wg_sv_types, gw_sv_types, type='full') %>% 
+  dplyr::group_by(group) %>% 
+  tidyr::complete(type, fill = list(n=0, perc=0))
+  
+combined_sv_types$type <- factor(combined_sv_types$type, levels = c("TRA", "BND", "DUP", "COMPLEX", "DEL", "TANDUP"), labels=c("Translocation","Inversion", "Duplication", "Complex", "Deletion", "Tandem Duplication"))
+
+cols <- c("genome-wide" = grey, "wholegut" = red)
+
+# Fig 4b: SV types
+combined_sv_types %>% 
+  ggplot2::ggplot(.) +
+  ggplot2::geom_bar(aes(type, perc, fill = group), colour = 'transparent', alpha=0.7, stat='identity', position = 'dodge') + 
+  ggplot2::scale_y_continuous("Percentage", limits=c(0,100)) + 
+  ggplot2::scale_fill_manual("Group\n", values = cols) +
+  cleanTheme() +
+  theme(
+    panel.grid.major.y = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size=15),
+    axis.text.y = element_text(size=12),
+    axis.title.x = element_blank(),
+    axis.title.y =element_text(size=15)
+  )
+
+
+
+## Allele freqs ##
+
+wholegut_svs_af <- wholegut_svs_df %>% 
   dplyr::mutate(type = 'SV') %>% 
-  dplyr::select(sample, type, allele_frequency)
+  dplyr::select(sample, type, cell_fraction)
 
 wholegut_snvs_af <- read.delim('data/annotated_snvs_wholegut.txt') %>% 
-  dplyr::mutate(type = 'SNV') %>% 
-  dplyr::select(sample, type, allele_frequency)
+  dplyr::mutate(type = 'SNV',
+                cell_fraction = ifelse(chromosome %in% c('X', 'Y'), allele_frequency,
+                                       ifelse(allele_frequency*2>1, 1, allele_frequency*2))) %>% 
+  dplyr::select(sample, type, cell_fraction)
 
 wholegut_indels_af <- read.delim('data/annotated_indels_wholegut.txt') %>% 
-  dplyr::mutate(type = 'INDEL') %>% 
-  dplyr::select(sample, type, allele_frequency)
+  dplyr::mutate(type = 'INDEL',
+                cell_fraction = ifelse(chromosome %in% c('X', 'Y'), allele_frequency,
+                                       ifelse(allele_frequency*2>1, 1, allele_frequency*2))) %>% 
+  dplyr::select(sample, type, cell_fraction)
 
 wholegut_muts_combined <- dplyr::bind_rows(wholegut_svs_af, wholegut_snvs_af, wholegut_indels_af) %>% 
-  dplyr::filter(allele_frequency > 0)
+  dplyr::filter(cell_fraction > 0)
 
 
 ##### Compare real data allele frequency dist to whole gut
@@ -97,68 +170,76 @@ tumour_evolution <- plot_tumour_evolution(all_samples = 'data/all_samples_merged
 all_muts <- tumour_evolution[[2]]
 
 all_muts <- all_muts %>%
-  dplyr::mutate(class = ifelse(class=='SV' & gene_hit != 'Other', 'Notch', as.character(class)),
-                time = 1 - cell_fraction) %>% 
-  dplyr::filter(class != 'Notch')
+  dplyr::filter(!sample_old %in% c('A373R1', excluded_samples)) %>% 
+  dplyr::mutate(time = 1 - cell_fraction) 
+
+# dplyr::mutate(class = ifelse(class=='SV' & gene_hit != 'Other', 'Notch', as.character(class)),
+#               time = 1 - cell_fraction) %>% 
+# dplyr::filter(class != 'Notch')
 
 all_muts$group = factor(all_muts$class, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
-  
-
 wholegut_muts_combined$group = factor(wholegut_muts_combined$type, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
 
-ggplot(wholegut_muts_combined, aes(1-allele_frequency)) +
-  geom_density() +
-  facet_wrap(~group)
+# ggplot(wholegut_muts_combined, aes(1-allele_frequency)) +
+#   geom_density() +
+#   facet_wrap(~group)
 
 all_muts$assay <- 'tumour'
 all_muts_af <- all_muts %>% 
-  dplyr::select(sample, group, allele_frequency, assay)
+  dplyr::select(sample, group, cell_fraction, assay)
 
 wholegut_muts_combined$assay <- 'wholegut'
 
 wholegut_muts_combined <- wholegut_muts_combined %>%
-  dplyr::select(sample, group, allele_frequency, assay)
+  dplyr::select(sample, group, cell_fraction, assay)
 
-combined_groups_af <- bind_rows(all_muts_af, wholegut_muts_combined)
+combined_groups_af <- bind_rows(all_muts_af, wholegut_muts_combined) %>% 
+  dplyr::mutate(cell_fraction = ifelse(cell_fraction == 1, 0.99, cell_fraction)) %>% 
+  dplyr::mutate(time = 1 - cell_fraction) %>% 
+  dplyr::filter(cell_fraction > 0)
+
 
 med_af <- combined_groups_af %>%
-  group_by(assay, group) %>%
-  summarise(median=median(allele_frequency))
+  dplyr::group_by(assay, group) %>%
+  dplyr::summarise(median = median(time))
+
 
 #### test ####
-ggplot(combined_groups_af, aes(1-allele_frequency)) +
-  geom_density(aes(fill=assay), alpha=0.5) +
-  facet_wrap(~group, nrow=3)
+ggplot(combined_groups_af, aes(time)) +
+  geom_density(aes(fill=assay, colour=assay), alpha=0.5) +
+  geom_vline(data=med_af, aes(xintercept=median, colour=assay),
+             linetype="dashed", size=0.5) +
+  facet_wrap(~group, nrow=3, scales = 'free_y')
 
 #############
 
 
-
-
-
-
-
-# Allele freqs dist per sample
-ggplot(wholegut_muts_combined, aes(1-allele_frequency)) + 
-  geom_histogram(aes(fill=type), alpha = 0.7, binwidth = .01) + 
-  facet_wrap(~sample, ncol=1)
-
-wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
-  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
-  dplyr::filter(!wg_del)
-
-wholegut_snvs_df <- mutationProfiles::getData(infile = 'data/annotated_snvs_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt')
-wholegut_indels_df <- mutationProfiles::getData(infile = 'data/annotated_indels_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt', type='indel')
-
-# See overlap with 
-wholegut_snvs_df %>% 
-  dplyr::filter(paste(chrom, pos, sep = '_') %in% dgrp_snps$key) %>% 
-  nrow()
-
-plot_tumour_evolution(all_samples = 'data/all_WG_samples_merged_filt.txt', sample %in% wholegut_samples_n, 
-                      tes = FALSE, annotate_with = 'data/dna_damage_merged.bed',
-                      all_samples_snvs = 'data/annotated_snvs_wholegut.txt',
-                      all_samples_indels = 'data/annotated_indels_wholegut.txt')
+# 
+# 
+# 
+# 
+# 
+# # Allele freqs dist per sample
+# ggplot(wholegut_muts_combined, aes(1-allele_frequency)) + 
+#   geom_histogram(aes(fill=type), alpha = 0.7, binwidth = .01) + 
+#   facet_wrap(~sample, ncol=1)
+# 
+# wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
+#   dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
+#   dplyr::filter(!wg_del)
+# 
+# wholegut_snvs_df <- mutationProfiles::getData(infile = 'data/annotated_snvs_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt')
+# wholegut_indels_df <- mutationProfiles::getData(infile = 'data/annotated_indels_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt', type='indel')
+# 
+# # See overlap with 
+# wholegut_snvs_df %>% 
+#   dplyr::filter(paste(chrom, pos, sep = '_') %in% dgrp_snps$key) %>% 
+#   nrow()
+# 
+# plot_tumour_evolution(all_samples = 'data/all_WG_samples_merged_filt.txt', sample %in% wholegut_samples_n, 
+#                       tes = FALSE, annotate_with = 'data/dna_damage_merged.bed',
+#                       all_samples_snvs = 'data/annotated_snvs_wholegut.txt',
+#                       all_samples_indels = 'data/annotated_indels_wholegut.txt')
 
 snvs <- 'data/annotated_snvs_wholegut.txt'
 indels <- 'data/annotated_indels_wholegut.txt'
@@ -219,7 +300,7 @@ combined_muts <-  bind_rows(snv_counts, indel_counts, sv_counts)
 combined_muts$group = factor(combined_muts$group, levels=c("sv", "snv", "indel"), labels=c("SV", "SNV", "INDEL")) 
 
 combined_muts %>% 
-  dplyr::filter(n < 300) %>% 
+  dplyr::filter(!sample %in% c('A373R1')) %>% 
   ggplot2::ggplot(., aes(type, n)) + 
   ggplot2::geom_boxplot(aes(fill = type), alpha=0.7) +
   scale_y_continuous("Mutation count") + 
@@ -240,11 +321,11 @@ combined_muts %>%
 ##   WG DELS  ###
 #################
 
-wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
-  dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
-  dplyr::filter(!wg_del)
-
-
+# wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
+#   dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
+#   dplyr::filter(!wg_del)
+# 
+# 
 
 ################
 ##  SIM data ###
@@ -257,8 +338,8 @@ colnames(all_sample_names) <- c("sample", "sample_short", "sample_paper", "sex",
 
 all_sim_names <- all_sample_names %>% dplyr::filter(grepl("visor", sample))
 
-infile <- '~/Desktop/SV_paper_20/svParser/summary/merged/all_bps_merged.txt'
-all_sim_samples <- '~/Desktop/SV_paper_20/svParser/summary/merged/all_samples_merged.txt'
+infile <- '~/Desktop/SV_paper_20/svParser/visor/summary/merged/all_bps_merged.txt'
+all_sim_samples <- '~/Desktop/SV_paper_20/svParser/visor/summary/merged/all_samples_merged.txt'
 
 all_hits <- svBreaks::getData(infile=infile, attach_info = attach_info)
 
