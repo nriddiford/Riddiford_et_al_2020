@@ -6,20 +6,19 @@ from collections import defaultdict
 
 test = False
 
-truth_set_in = 'data/visor_svs.bed'
+# truth_set_in = 'data/visor_svs.bed'
+truth_set_in = 'data/tumour_svs.bed'
 vars_in = 'data/all_sim_samples_merged_filt.txt'
 if test:
     vars_in = 'data/R11_merged_filt_annotated.txt'
 
 out_dir = 'data/'
 
-
 #####################################
 # Things that don't work:          ##
-#   - No tandem dups are created   ##
-#   - del on 3R clearly missed     ##
 #   - no vars on Y...              ##
 #####################################
+
 fix_errors = True
 
 
@@ -31,11 +30,12 @@ def get_vars(simvars_in):
         for l in vars:
             parts = l.rstrip().split('\t')
             orig_sv_type = parts[3]
+            sv_type = parts[3]
             if parts[0] != 'sample':
                 orig_sv_type = parts[-2].split(';')[0].split('=')[1]
             sample, c, s, e, t = parts[0], parts[4], parts[5], parts[7], convert_types(orig_sv_type)
 
-            # if test and c != '3R': continue
+            # if sample != 'visorR11': continue
 
             svs.append([c, s, e, t, parts])
             bed.setdefault(sample, []).append([c, s, e, t])
@@ -50,7 +50,7 @@ def convert_types(sv):
         'BND': 'inversion',
         'INV': 'inversion',
         'DEL': 'deletion',
-        'DUP': 'duplication',
+        'DUP': 'tandem duplication',
         'TANDUP': 'tandem duplication'
     }
 
@@ -73,15 +73,11 @@ def get_truth(truth_file):
         for l in truth:
             parts = l.rstrip().split('\t')
             c, s, t = parts[0], parts[1], parts[3]
-
-            # if test and c != '3R': continue
-
             k = '_'.join([c, s])
             if fix_errors:
                 if c == 'Y': continue
-                if t == 'tandem duplication': continue
+                # if t == 'tandem duplication': continue
                 if k in unmappable: continue
-
 
             d[c][s] = parts
             count += 1
@@ -120,7 +116,7 @@ def annotate_vars(vars, truth):
             k = '_'.join([c, pos])
             true_positive, true_positive_count = is_true(true_calls, true_positive_count, c, pos, sample, t)
             if true_positive and not seen_events[sample][event]: break
-        keys['truth']
+        # keys['truth']
 
         if true_positive and not seen_events[sample][event]:
             keys[sample][k] = [event, 'tp', t]
@@ -154,13 +150,13 @@ def annotate_vars(vars, truth):
 def add_false_negatives(keys, true_calls):
     for s in keys:
         for c in true_calls:
+            print(c)
             for pos in true_calls[c]:
                 k = '_'.join([c, pos])
-                keys['truth'][k] = ['-', 'tp', true_calls[c][pos][3]]
+                # keys['truth'][k] = ['-', 'tp', true_calls[c][pos][3]]
                 if k not in keys[s]:
                     print("false negative: [%s] %s:%s-%s" % (true_calls[c][pos][3], true_calls[c][pos][0], true_calls[c][pos][1], true_calls[c][pos][2]))
                     keys[s][k] = ['-', 'fn', true_calls[c][pos][3]]
-
 
     return keys
 
