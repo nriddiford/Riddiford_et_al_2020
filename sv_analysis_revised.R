@@ -81,9 +81,11 @@ wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %
   dplyr::filter(!wg_del) 
 
 
+wholegut_young_samples <- c('D050R10', 'D050R12', 'D050R14', 'D050R16')
 ## Look at wholgut DUPS
 
 wg_sv_types <- wholegut_svs_df %>% 
+  dplyr::filter(!sample %in% c(wholegut_young_samples, 'D050R24')) %>% 
   dplyr::mutate(allele_frequency = as.double(as.character(allele_frequency))) %>% 
   dplyr::mutate(cell_fraction = ifelse(chromosome1 %in% c('X', 'Y'), allele_frequency,
                                        ifelse(allele_frequency*2>1, 1, allele_frequency*2)),
@@ -134,6 +136,29 @@ combined_sv_types %>%
   )
 
 
+## See dup lengths
+wg_dups <- wholegut_svs_df %>% 
+  dplyr::filter(!sample %in% c(wholegut_young_samples, 'D050R24')) %>% 
+  dplyr::mutate(allele_frequency = as.double(as.character(allele_frequency))) %>% 
+  dplyr::mutate(assay='wholegut',
+                length = length.Kb.) %>% 
+  dplyr::filter(type == 'DUP')
+
+  ggplot2::ggplot(.) +
+  ggplot2::geom_density(aes(length))
+
+tumour_dups <- all_hits %>% 
+  dplyr::filter(!sample %in% c('A373R1', excluded_samples)) %>% 
+  dplyr::mutate(allele_frequency = as.double(as.character(af))) %>% 
+  dplyr::mutate(assay='tumour') %>% 
+  dplyr::filter(type == 'DUP')
+  
+
+bind_rows(wg_dups, tumour_dups) %>% 
+  ggplot2::ggplot(.) +
+  ggplot2::geom_histogram(aes(length, fill=assay, colour=assay), binwidth = 1, alpha = 0.5, position='identity') +
+  ggplot2::geom_vline(xintercept = 5, linetype="dashed", color = "black")
+
 
 ## Allele freqs ##
 
@@ -159,11 +184,6 @@ wholegut_muts_combined <- dplyr::bind_rows(wholegut_svs_af, wholegut_snvs_af, wh
 
 ##### Compare real data allele frequency dist to whole gut
 
-# read.delim(all_samples) %>% 
-#   dplyr::filter(!paste(sample, event, sep = '_') %in% excluded_events) %>% 
-#   write.table(., file = 'data/all_samples_merged_filt.txt', quote=FALSE, sep='\t', row.names = FALSE)
-
-
 tumour_evolution <- plot_tumour_evolution(all_samples = 'data/all_samples_merged_filt.txt', 
                                           tes = FALSE, annotate_with = 'data/dna_damage_merged.bed', plot=F)
 
@@ -173,16 +193,8 @@ all_muts <- all_muts %>%
   dplyr::filter(!sample_old %in% c('A373R1', excluded_samples)) %>% 
   dplyr::mutate(time = 1 - cell_fraction) 
 
-# dplyr::mutate(class = ifelse(class=='SV' & gene_hit != 'Other', 'Notch', as.character(class)),
-#               time = 1 - cell_fraction) %>% 
-# dplyr::filter(class != 'Notch')
-
 all_muts$group = factor(all_muts$class, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
 wholegut_muts_combined$group = factor(wholegut_muts_combined$type, levels=c("SV","SNV", "INDEL"), labels=c("SV","SNV", "INDEL")) 
-
-# ggplot(wholegut_muts_combined, aes(1-allele_frequency)) +
-#   geom_density() +
-#   facet_wrap(~group)
 
 all_muts$assay <- 'tumour'
 all_muts_af <- all_muts %>% 
@@ -200,51 +212,24 @@ combined_groups_af <- bind_rows(all_muts_af, wholegut_muts_combined) %>%
 
 
 med_af <- combined_groups_af %>%
+  dplyr::filter(group == 'INDEL') %>% 
   dplyr::group_by(assay, group) %>%
   dplyr::summarise(median = median(time))
 
 
 #### test ####
-ggplot(combined_groups_af, aes(time)) +
-  geom_density(aes(fill=assay, colour=assay), alpha=0.5) +
-  geom_vline(data=med_af, aes(xintercept=median, colour=assay),
-             linetype="dashed", size=0.5) +
-  facet_wrap(~group, nrow=3, scales = 'free_y')
+combined_groups_af %>% 
+  dplyr::filter(group == 'INDEL') %>% 
+  ggplot2::ggplot(., aes(time)) +
+  ggplot2::geom_histogram(aes(fill=assay, colour=assay), binwidth = 0.01, alpha = 0.3, position='identity') +
+  ggplot2::geom_vline(data=med_af, aes(xintercept=median, colour=assay),
+             linetype="dashed", size=0.5)
 
-#############
-
-
-# 
-# 
-# 
-# 
-# 
-# # Allele freqs dist per sample
-# ggplot(wholegut_muts_combined, aes(1-allele_frequency)) + 
-#   geom_histogram(aes(fill=type), alpha = 0.7, binwidth = .01) + 
-#   facet_wrap(~sample, ncol=1)
-# 
-# wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
-#   dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
-#   dplyr::filter(!wg_del)
-# 
-# wholegut_snvs_df <- mutationProfiles::getData(infile = 'data/annotated_snvs_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt')
-# wholegut_indels_df <- mutationProfiles::getData(infile = 'data/annotated_indels_wholegut.txt', expression_data = 'data/Buchon_summary_ISCs.txt', type='indel')
-# 
-# # See overlap with 
-# wholegut_snvs_df %>% 
-#   dplyr::filter(paste(chrom, pos, sep = '_') %in% dgrp_snps$key) %>% 
-#   nrow()
-# 
-# plot_tumour_evolution(all_samples = 'data/all_WG_samples_merged_filt.txt', sample %in% wholegut_samples_n, 
-#                       tes = FALSE, annotate_with = 'data/dna_damage_merged.bed',
-#                       all_samples_snvs = 'data/annotated_snvs_wholegut.txt',
-#                       all_samples_indels = 'data/annotated_indels_wholegut.txt')
 
 snvs <- 'data/annotated_snvs_wholegut.txt'
 indels <- 'data/annotated_indels_wholegut.txt'
 
-wholegut_snvs <- mutationProfiles::getData(infile = snvs, expression_data = 'data/Buchon_summary_ISCs.txt', type='snv', sex=='male', chrom %in% chromosomes, attach_info = attach_info)
+wholegut_snvs_df <- mutationProfiles::getData(infile = snvs, expression_data = 'data/Buchon_summary_ISCs.txt', type='snv', sex=='male', chrom %in% chromosomes, attach_info = attach_info)
 wholegut_indels_df <- mutationProfiles::getData(infile = indels, expression_data = 'data/Buchon_summary_ISCs.txt', type='indel')
 
 wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
@@ -300,7 +285,8 @@ combined_muts <-  bind_rows(snv_counts, indel_counts, sv_counts)
 combined_muts$group = factor(combined_muts$group, levels=c("sv", "snv", "indel"), labels=c("SV", "SNV", "INDEL")) 
 
 combined_muts %>% 
-  dplyr::filter(!sample %in% c('A373R1')) %>% 
+  dplyr::filter(!sample %in% c('A373R1', 'D050R24')) %>% 
+  dplyr::filter(type != 'wholegut_old') %>% 
   ggplot2::ggplot(., aes(type, n)) + 
   ggplot2::geom_boxplot(aes(fill = type), alpha=0.7) +
   scale_y_continuous("Mutation count") + 
@@ -331,6 +317,24 @@ combined_muts %>%
 ##  SIM data ###
 ################
 
+####
+## Plot CNVs along genome
+###
+
+devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/cnvPlotteR'))
+
+files <- dir("~/Desktop/visorCNV/", pattern = "cnv")
+
+for (f in files){
+  n <- strsplit(f, "/")[[1]]
+  s <- strsplit(n, "\\.")[[1]][1]
+  print(regionPlot(cnv_file=paste0("~/Desktop/visorCNV/",f), from=4950000, to=5099998, bp1=5000000,bp2=5049998,chrom="X", tick=50000, ylim = c(-3,3), title=paste0(s, ": 50.0Kb DEL on X")))
+}
+
+#####
+## Plot error rates
+####
+
 attach_info <- 'data/samples_names_conversion.txt'
 
 all_sample_names <- read.delim(attach_info, header = F)
@@ -341,17 +345,16 @@ all_sim_names <- all_sample_names %>% dplyr::filter(grepl("visor", sample))
 infile <- '~/Desktop/SV_paper_20/svParser/visor/summary/merged/all_bps_merged.txt'
 all_sim_samples <- '~/Desktop/SV_paper_20/svParser/visor/summary/merged/all_samples_merged.txt'
 
-all_hits <- svBreaks::getData(infile=infile, attach_info = attach_info)
+# all_hits <- svBreaks::getData(infile=infile, attach_info = attach_info)
 
 error_rates <- 'data/error_rates.txt'
 error_rates_df <- read.delim(error_rates, header = T)
 
-error_rates_df$sample = factor(error_rates_df$sample, levels=c("truth", "visorR1", "visorR3", "visorR5", "visorR7", "visorR9", "visorR11", "visorR13", "visorR15", "visorR17", "visorR19"), labels=c("Tr", "s1", "s2", "s3", "s4", "s5", "d1", "d2", "d3", "d4", "d5"))
+error_rates_df$sample = factor(error_rates_df$sample, levels=c("visorR1", "visorR3", "visorR5", "visorR7", "visorR9", "visorR11", "visorR13", "visorR15", "visorR17", "visorR19"), labels=c("s1", "s2", "s3", "s4", "s5", "d1", "d2", "d3", "d4", "d5"))
 
 total_true_positives <- 8
 
 error_rates_df %>%
-  dplyr::filter(sample != 'Tr') %>% 
   dplyr::group_by(sample, type, error_group) %>%
   dplyr::tally() %>% 
   # tidyr::complete(sample, type, error_group) %>% 
@@ -365,11 +368,22 @@ error_rates_df %>%
            
 
 
-####
-## Plot CNVs along genome
-###
+# Quantification of error rates
 
-devtools::load_all(path = paste0(rootDir, 'Desktop/script_test/cnvPlotteR'))
+error_rates_df %>% 
+  dplyr::group_by(sample, type, error_group) %>% 
+  dplyr::tally() %>% 
+  dplyr::ungroup() %>% 
+  dplyr::filter( error_group != 'fp') %>%
+  dplyr::group_by(sample, type) %>%
+  dplyr::mutate(total = sum(n)) %>% 
+  dplyr::mutate(perc = (n/total)*100) %>% 
+  dplyr::filter(error_group != 'fn') %>% 
+  dplyr::group_by(sample) %>% 
+  dplyr::mutate(av = mean(perc))
 
-allPlot(path = '/Volumes/perso/Analysis/Analysis/CNV-Seq/visor/results/w_50000/')
+
+
+
+
 
