@@ -410,11 +410,13 @@ error_rates_df %>%
   dplyr::ungroup() %>% 
   dplyr::filter( error_group != 'fp') %>%
   dplyr::group_by(sample, type) %>%
-  dplyr::mutate(total = sum(n)) %>% 
-  dplyr::mutate(perc = (n/total)*100) %>% 
-  dplyr::filter(error_group != 'fn') %>% 
-  dplyr::group_by(sample) %>% 
-  dplyr::mutate(av = mean(perc))
+  dplyr::mutate(total = sum(n)) %>%
+  dplyr::mutate(perc = (n/total)*100) %>%
+  dplyr::filter(error_group != 'fn') %>%
+  dplyr::group_by(sample) %>%
+  dplyr::mutate(av = mean(perc)) %>% View()
+  # write.table(., file = 'tables/Sim_sv_error_rates.txt', quote=FALSE, sep='\t', row.names = FALSE)
+
 
 
 
