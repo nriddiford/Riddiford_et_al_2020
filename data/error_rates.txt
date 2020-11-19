@@ -1,0 +1,2740 @@
+sample	event	chrom	start	type	error_group	rep	depth	purity
+visorR1	98	X	6654982	inversion	fp	1	shallow	100
+visorR1	-	2R	9938000	deletion	fn	1	shallow	100
+visorR1	-	3L	8887000	deletion	fn	1	shallow	100
+visorR1	20	2L	12489000	deletion	tp	1	shallow	100
+visorR1	-	2L	6655000	inversion	fn	1	shallow	100
+visorR1	58	3R	5000000	deletion	tp	1	shallow	100
+visorR1	13	2L	9437000	inversion	tp	1	shallow	100
+visorR1	-	2R	5550000	deletion	fn	1	shallow	100
+visorR1	-	4	969000	deletion	fn	1	shallow	100
+visorR1	-	2R	12489000	deletion	fn	1	shallow	100
+visorR1	-	X	6655000	inversion	fn	1	shallow	100
+visorR1	-	2R	6150000	tandem duplication	fn	1	shallow	100
+visorR1	55	3L	11485000	inversion	tp	1	shallow	100
+visorR1	84	4	610000	deletion	tp	1	shallow	100
+visorR1	-	4	415000	inversion	fn	1	shallow	100
+visorR1	-	X	10970000	tandem duplication	fn	1	shallow	100
+visorR1	-	2L	10970000	tandem duplication	fn	1	shallow	100
+visorR1	38	2R	11485000	inversion	tp	1	shallow	100
+visorR1	82	4	440000	deletion	tp	1	shallow	100
+visorR1	-	2R	10463000	inversion	fn	1	shallow	100
+visorR1	69	3R	9437000	inversion	tp	1	shallow	100
+visorR1	-	3L	6150000	tandem duplication	fn	1	shallow	100
+visorR1	-	3R	7160000	deletion	fn	1	shallow	100
+visorR1	-	3L	9938000	deletion	fn	1	shallow	100
+visorR1	-	X	12489000	deletion	fn	1	shallow	100
+visorR1	89	4	817989	deletion	fp	1	shallow	100
+visorR1	32	2R	9437000	inversion	tp	1	shallow	100
+visorR1	-	4	818000	deletion	fn	1	shallow	100
+visorR1	-	3R	12489000	deletion	fn	1	shallow	100
+visorR1	6	2L	7160000	deletion	tp	1	shallow	100
+visorR1	-	X	8312000	tandem duplication	fn	1	shallow	100
+visorR1	61	3R	6150000	tandem duplication	tp	1	shallow	100
+visorR1	16	2L	10463000	inversion	tp	1	shallow	100
+visorR1	-	2R	7160000	deletion	fn	1	shallow	100
+visorR1	-	X	5550000	deletion	fn	1	shallow	100
+visorR1	-	3L	8312000	tandem duplication	fn	1	shallow	100
+visorR1	91	4	890000	tandem duplication	tp	1	shallow	100
+visorR1	56	3L	11987000	tandem duplication	tp	1	shallow	100
+visorR1	-	2L	8887000	deletion	fn	1	shallow	100
+visorR1	103	X	9437000	inversion	tp	1	shallow	100
+visorR1	39	2R	11987000	tandem duplication	tp	1	shallow	100
+visorR1	-	3R	5550000	deletion	fn	1	shallow	100
+visorR1	79	4	270000	deletion	tp	1	shallow	100
+visorR1	85	4	632000	tandem duplication	tp	1	shallow	100
+visorR1	50	3L	9437000	inversion	tp	1	shallow	100
+visorR1	1	2L	5000000	deletion	tp	1	shallow	100
+visorR1	-	2R	7810000	deletion	fn	1	shallow	100
+visorR1	36	2R	10970000	tandem duplication	tp	1	shallow	100
+visorR1	100	X	7810000	deletion	tp	1	shallow	100
+visorR1	105	X	10463000	inversion	tp	1	shallow	100
+visorR1	-	3R	9938000	deletion	fn	1	shallow	100
+visorR1	-	3R	8312000	tandem duplication	fn	1	shallow	100
+visorR1	-	2L	7810000	deletion	fn	1	shallow	100
+visorR1	-	2L	11987000	tandem duplication	fn	1	shallow	100
+visorR1	21	2R	5028599	deletion	fp	1	shallow	100
+visorR1	-	3L	5550000	deletion	fn	1	shallow	100
+visorR1	45	3L	7810000	deletion	tp	1	shallow	100
+visorR1	-	X	6150000	tandem duplication	fn	1	shallow	100
+visorR1	-	X	9938000	deletion	fn	1	shallow	100
+visorR1	-	3L	7160000	deletion	fn	1	shallow	100
+visorR1	-	2R	5000000	deletion	fn	1	shallow	100
+visorR1	19	2L	11485000	inversion	tp	1	shallow	100
+visorR1	107	X	11485000	inversion	tp	1	shallow	100
+visorR1	-	2L	5550000	deletion	fn	1	shallow	100
+visorR1	81	4	390000	tandem duplication	tp	1	shallow	100
+visorR1	-	2R	8312000	tandem duplication	fn	1	shallow	100
+visorR1	95	X	5000000	deletion	tp	1	shallow	100
+visorR1	-	X	7160000	deletion	fn	1	shallow	100
+visorR1	5	2L	6654991	inversion	fp	1	shallow	100
+visorR1	-	X	8887000	deletion	fn	1	shallow	100
+visorR1	88	4	727000	deletion	tp	1	shallow	100
+visorR1	-	3R	8887000	deletion	fn	1	shallow	100
+visorR1	-	2L	6150000	tandem duplication	fn	1	shallow	100
+visorR1	93	4	947000	tandem duplication	tp	1	shallow	100
+visorR1	9	2L	8312000	tandem duplication	tp	1	shallow	100
+visorR1	52	3L	10463000	inversion	tp	1	shallow	100
+visorR1	-	3R	11987000	tandem duplication	fn	1	shallow	100
+visorR1	77	4	200000	deletion	tp	1	shallow	100
+visorR1	-	3L	10970000	tandem duplication	fn	1	shallow	100
+visorR1	72	3R	10463000	inversion	tp	1	shallow	100
+visorR1	90	4	863000	inversion	tp	1	shallow	100
+visorR1	-	3R	10970000	tandem duplication	fn	1	shallow	100
+visorR1	75	3R	11485000	inversion	tp	1	shallow	100
+visorR1	14	2L	9938000	deletion	tp	1	shallow	100
+visorR1	92	4	925000	inversion	tp	1	shallow	100
+visorR1	-	2R	8887000	deletion	fn	1	shallow	100
+visorR1	-	3L	6655000	inversion	fn	1	shallow	100
+visorR1	40	3L	5000000	deletion	tp	1	shallow	100
+visorR1	35	2R	10462969	inversion	fp	1	shallow	100
+visorR1	62	3R	6655000	inversion	tp	1	shallow	100
+visorR1	-	3L	12489000	deletion	fn	1	shallow	100
+visorR1	-	3R	7810000	deletion	fn	1	shallow	100
+visorR1	108	X	11987000	tandem duplication	tp	1	shallow	100
+visorR1	-	4	797000	inversion	fn	1	shallow	100
+visorR1	25	2R	6655000	inversion	tp	1	shallow	100
+visorR3	-	2R	9938000	deletion	fn	1	shallow	80
+visorR3	-	3L	8887000	deletion	fn	1	shallow	80
+visorR3	20	2L	12489000	deletion	tp	1	shallow	80
+visorR3	57	3R	5000000	deletion	tp	1	shallow	80
+visorR3	40	3L	6654946	inversion	fp	1	shallow	80
+visorR3	12	2L	9437000	inversion	tp	1	shallow	80
+visorR3	-	2R	5550000	deletion	fn	1	shallow	80
+visorR3	-	4	969000	deletion	fn	1	shallow	80
+visorR3	-	2R	12489000	deletion	fn	1	shallow	80
+visorR3	93	X	6655000	inversion	tp	1	shallow	80
+visorR3	23	2R	6150000	tandem duplication	tp	1	shallow	80
+visorR3	53	3L	11485000	inversion	tp	1	shallow	80
+visorR3	79	4	610000	deletion	tp	1	shallow	80
+visorR3	-	4	415000	inversion	fn	1	shallow	80
+visorR3	-	X	10970000	tandem duplication	fn	1	shallow	80
+visorR3	-	2L	10970000	tandem duplication	fn	1	shallow	80
+visorR3	36	2R	11485000	inversion	tp	1	shallow	80
+visorR3	77	4	440000	deletion	tp	1	shallow	80
+visorR3	33	2R	10463000	inversion	tp	1	shallow	80
+visorR3	-	3R	9437000	inversion	fn	1	shallow	80
+visorR3	-	3L	6150000	tandem duplication	fn	1	shallow	80
+visorR3	-	2R	7160000	deletion	fn	1	shallow	80
+visorR3	-	3R	7160000	deletion	fn	1	shallow	80
+visorR3	-	3L	9938000	deletion	fn	1	shallow	80
+visorR3	-	X	12489000	deletion	fn	1	shallow	80
+visorR3	30	2R	9437000	inversion	tp	1	shallow	80
+visorR3	83	4	818000	deletion	tp	1	shallow	80
+visorR3	-	3R	12489000	deletion	fn	1	shallow	80
+visorR3	-	2L	7160000	deletion	fn	1	shallow	80
+visorR3	-	X	8312000	tandem duplication	fn	1	shallow	80
+visorR3	-	3R	6150000	tandem duplication	fn	1	shallow	80
+visorR3	14	2L	10463000	inversion	tp	1	shallow	80
+visorR3	5	2L	6655000	inversion	tp	1	shallow	80
+visorR3	104	X	11484917	inversion	fp	1	shallow	80
+visorR3	-	X	5550000	deletion	fn	1	shallow	80
+visorR3	-	3L	8312000	tandem duplication	fn	1	shallow	80
+visorR3	86	4	890000	tandem duplication	tp	1	shallow	80
+visorR3	54	3L	11987000	tandem duplication	tp	1	shallow	80
+visorR3	-	2L	8887000	deletion	fn	1	shallow	80
+visorR3	100	X	9437000	inversion	tp	1	shallow	80
+visorR3	-	2R	11987000	tandem duplication	fn	1	shallow	80
+visorR3	-	3R	5550000	deletion	fn	1	shallow	80
+visorR3	-	4	270000	deletion	fn	1	shallow	80
+visorR3	80	4	632000	tandem duplication	tp	1	shallow	80
+visorR3	48	3L	9437000	inversion	tp	1	shallow	80
+visorR3	1	2L	5000000	deletion	tp	1	shallow	80
+visorR3	-	2R	7810000	deletion	fn	1	shallow	80
+visorR3	34	2R	10970000	tandem duplication	tp	1	shallow	80
+visorR3	-	X	7810000	deletion	fn	1	shallow	80
+visorR3	102	X	10463000	inversion	tp	1	shallow	80
+visorR3	67	3R	9938000	deletion	tp	1	shallow	80
+visorR3	-	3R	8312000	tandem duplication	fn	1	shallow	80
+visorR3	7	2L	7810000	deletion	tp	1	shallow	80
+visorR3	18	2L	11987000	tandem duplication	tp	1	shallow	80
+visorR3	38	3L	5550000	deletion	tp	1	shallow	80
+visorR3	43	3L	7810000	deletion	tp	1	shallow	80
+visorR3	-	X	6150000	tandem duplication	fn	1	shallow	80
+visorR3	101	X	9938000	deletion	tp	1	shallow	80
+visorR3	-	3L	7160000	deletion	fn	1	shallow	80
+visorR3	-	2R	5000000	deletion	fn	1	shallow	80
+visorR3	17	2L	11485000	inversion	tp	1	shallow	80
+visorR3	71	3R	11485000	inversion	tp	1	shallow	80
+visorR3	3	2L	5550000	deletion	tp	1	shallow	80
+visorR3	76	4	390000	tandem duplication	tp	1	shallow	80
+visorR3	-	2R	8312000	tandem duplication	fn	1	shallow	80
+visorR3	90	X	5000000	deletion	tp	1	shallow	80
+visorR3	-	X	7160000	deletion	fn	1	shallow	80
+visorR3	99	X	8887000	deletion	tp	1	shallow	80
+visorR3	81	4	727000	deletion	tp	1	shallow	80
+visorR3	-	3R	8887000	deletion	fn	1	shallow	80
+visorR3	-	2L	6150000	tandem duplication	fn	1	shallow	80
+visorR3	89	4	947000	tandem duplication	tp	1	shallow	80
+visorR3	-	2L	8312000	tandem duplication	fn	1	shallow	80
+visorR3	-	3L	10463000	inversion	fn	1	shallow	80
+visorR3	72	3R	11987000	tandem duplication	tp	1	shallow	80
+visorR3	73	4	200000	deletion	tp	1	shallow	80
+visorR3	-	3L	10970000	tandem duplication	fn	1	shallow	80
+visorR3	69	3R	10463000	inversion	tp	1	shallow	80
+visorR3	85	4	863000	inversion	tp	1	shallow	80
+visorR3	-	3R	10970000	tandem duplication	fn	1	shallow	80
+visorR3	-	X	11485000	inversion	fn	1	shallow	80
+visorR3	-	2L	9938000	deletion	fn	1	shallow	80
+visorR3	88	4	925000	inversion	tp	1	shallow	80
+visorR3	-	2R	8887000	deletion	fn	1	shallow	80
+visorR3	-	3L	6655000	inversion	fn	1	shallow	80
+visorR3	37	3L	5000000	deletion	tp	1	shallow	80
+visorR3	66	3R	9436987	inversion	fp	1	shallow	80
+visorR3	59	3R	6655000	inversion	tp	1	shallow	80
+visorR3	55	3L	12489000	deletion	tp	1	shallow	80
+visorR3	62	3R	7810000	deletion	tp	1	shallow	80
+visorR3	-	X	11987000	tandem duplication	fn	1	shallow	80
+visorR3	-	4	797000	inversion	fn	1	shallow	80
+visorR3	24	2R	6655000	inversion	tp	1	shallow	80
+visorR5	-	2R	9938000	deletion	fn	1	shallow	60
+visorR5	-	3L	8887000	deletion	fn	1	shallow	60
+visorR5	-	2L	12489000	deletion	fn	1	shallow	60
+visorR5	-	2R	7160000	deletion	fn	1	shallow	60
+visorR5	-	2L	9437000	inversion	fn	1	shallow	60
+visorR5	-	2R	5550000	deletion	fn	1	shallow	60
+visorR5	53	3R	5023144	deletion	fp	1	shallow	60
+visorR5	-	3L	5550000	deletion	fn	1	shallow	60
+visorR5	-	2R	12489000	deletion	fn	1	shallow	60
+visorR5	85	X	6655000	inversion	tp	1	shallow	60
+visorR5	-	2R	6150000	tandem duplication	fn	1	shallow	60
+visorR5	-	3R	5000000	deletion	fn	1	shallow	60
+visorR5	51	3L	11485000	inversion	tp	1	shallow	60
+visorR5	75	4	610000	deletion	tp	1	shallow	60
+visorR5	-	4	415000	inversion	fn	1	shallow	60
+visorR5	-	X	10970000	tandem duplication	fn	1	shallow	60
+visorR5	-	2L	10970000	tandem duplication	fn	1	shallow	60
+visorR5	36	2R	11485000	inversion	tp	1	shallow	60
+visorR5	-	4	440000	deletion	fn	1	shallow	60
+visorR5	-	2R	10463000	inversion	fn	1	shallow	60
+visorR5	63	3R	9437000	inversion	tp	1	shallow	60
+visorR5	-	3L	6150000	tandem duplication	fn	1	shallow	60
+visorR5	-	3R	7160000	deletion	fn	1	shallow	60
+visorR5	-	3L	9938000	deletion	fn	1	shallow	60
+visorR5	-	X	12489000	deletion	fn	1	shallow	60
+visorR5	-	2R	9437000	inversion	fn	1	shallow	60
+visorR5	-	4	818000	deletion	fn	1	shallow	60
+visorR5	-	3R	12489000	deletion	fn	1	shallow	60
+visorR5	8	2L	7160000	deletion	tp	1	shallow	60
+visorR5	-	X	8312000	tandem duplication	fn	1	shallow	60
+visorR5	56	3R	6150000	tandem duplication	tp	1	shallow	60
+visorR5	16	2L	10463000	inversion	tp	1	shallow	60
+visorR5	7	2L	6655000	inversion	tp	1	shallow	60
+visorR5	-	X	5550000	deletion	fn	1	shallow	60
+visorR5	-	3L	8312000	tandem duplication	fn	1	shallow	60
+visorR5	80	4	890000	tandem duplication	tp	1	shallow	60
+visorR5	-	3L	11987000	tandem duplication	fn	1	shallow	60
+visorR5	-	2L	8887000	deletion	fn	1	shallow	60
+visorR5	93	X	9437000	inversion	tp	1	shallow	60
+visorR5	-	2R	11987000	tandem duplication	fn	1	shallow	60
+visorR5	-	3R	5550000	deletion	fn	1	shallow	60
+visorR5	71	4	270000	deletion	tp	1	shallow	60
+visorR5	76	4	632000	tandem duplication	tp	1	shallow	60
+visorR5	47	3L	9437000	inversion	tp	1	shallow	60
+visorR5	2	2L	5000000	deletion	tp	1	shallow	60
+visorR5	-	2R	7810000	deletion	fn	1	shallow	60
+visorR5	-	2R	10970000	tandem duplication	fn	1	shallow	60
+visorR5	-	X	7810000	deletion	fn	1	shallow	60
+visorR5	-	4	947000	tandem duplication	fn	1	shallow	60
+visorR5	-	3R	9938000	deletion	fn	1	shallow	60
+visorR5	-	3R	8312000	tandem duplication	fn	1	shallow	60
+visorR5	-	2L	7810000	deletion	fn	1	shallow	60
+visorR5	21	2L	11987000	tandem duplication	tp	1	shallow	60
+visorR5	-	4	969000	deletion	fn	1	shallow	60
+visorR5	-	3L	7810000	deletion	fn	1	shallow	60
+visorR5	-	X	6150000	tandem duplication	fn	1	shallow	60
+visorR5	-	X	9938000	deletion	fn	1	shallow	60
+visorR5	-	3L	7160000	deletion	fn	1	shallow	60
+visorR5	-	2R	5000000	deletion	fn	1	shallow	60
+visorR5	20	2L	11485000	inversion	tp	1	shallow	60
+visorR5	96	X	11485000	inversion	tp	1	shallow	60
+visorR5	-	2L	5550000	deletion	fn	1	shallow	60
+visorR5	73	4	390000	tandem duplication	tp	1	shallow	60
+visorR5	-	2R	8312000	tandem duplication	fn	1	shallow	60
+visorR5	-	X	5000000	deletion	fn	1	shallow	60
+visorR5	-	X	7160000	deletion	fn	1	shallow	60
+visorR5	92	X	8887000	deletion	tp	1	shallow	60
+visorR5	-	4	727000	deletion	fn	1	shallow	60
+visorR5	-	3R	8887000	deletion	fn	1	shallow	60
+visorR5	6	2L	6150000	tandem duplication	tp	1	shallow	60
+visorR5	95	X	10463000	inversion	tp	1	shallow	60
+visorR5	-	2L	8312000	tandem duplication	fn	1	shallow	60
+visorR5	-	3L	10463000	inversion	fn	1	shallow	60
+visorR5	-	3R	11987000	tandem duplication	fn	1	shallow	60
+visorR5	70	4	200000	deletion	tp	1	shallow	60
+visorR5	-	3L	10970000	tandem duplication	fn	1	shallow	60
+visorR5	66	3R	10463000	inversion	tp	1	shallow	60
+visorR5	79	4	863000	inversion	tp	1	shallow	60
+visorR5	67	3R	10970000	tandem duplication	tp	1	shallow	60
+visorR5	69	3R	11485000	inversion	tp	1	shallow	60
+visorR5	14	2L	9938000	deletion	tp	1	shallow	60
+visorR5	81	4	925000	inversion	tp	1	shallow	60
+visorR5	-	2R	8887000	deletion	fn	1	shallow	60
+visorR5	40	3L	6655000	inversion	tp	1	shallow	60
+visorR5	38	3L	5000000	deletion	tp	1	shallow	60
+visorR5	57	3R	6655000	inversion	tp	1	shallow	60
+visorR5	-	3L	12489000	deletion	fn	1	shallow	60
+visorR5	-	3R	7810000	deletion	fn	1	shallow	60
+visorR5	-	X	11987000	tandem duplication	fn	1	shallow	60
+visorR5	-	4	797000	inversion	fn	1	shallow	60
+visorR5	25	2R	6655000	inversion	tp	1	shallow	60
+visorR7	-	2R	9938000	deletion	fn	1	shallow	40
+visorR7	-	3L	8887000	deletion	fn	1	shallow	40
+visorR7	-	2L	12489000	deletion	fn	1	shallow	40
+visorR7	-	2R	7160000	deletion	fn	1	shallow	40
+visorR7	9	2L	9437000	inversion	tp	1	shallow	40
+visorR7	-	2R	5550000	deletion	fn	1	shallow	40
+visorR7	-	3L	5550000	deletion	fn	1	shallow	40
+visorR7	-	2R	12489000	deletion	fn	1	shallow	40
+visorR7	-	X	6655000	inversion	fn	1	shallow	40
+visorR7	17	2R	6150000	tandem duplication	tp	1	shallow	40
+visorR7	-	3R	5000000	deletion	fn	1	shallow	40
+visorR7	38	3L	11485000	inversion	tp	1	shallow	40
+visorR7	-	4	610000	deletion	fn	1	shallow	40
+visorR7	-	4	415000	inversion	fn	1	shallow	40
+visorR7	-	X	10970000	tandem duplication	fn	1	shallow	40
+visorR7	-	2L	10970000	tandem duplication	fn	1	shallow	40
+visorR7	25	2R	11485000	inversion	tp	1	shallow	40
+visorR7	-	4	440000	deletion	fn	1	shallow	40
+visorR7	-	2R	10463000	inversion	fn	1	shallow	40
+visorR7	46	3R	9437000	inversion	tp	1	shallow	40
+visorR7	-	3L	6150000	tandem duplication	fn	1	shallow	40
+visorR7	-	2R	8887000	deletion	fn	1	shallow	40
+visorR7	-	3L	9938000	deletion	fn	1	shallow	40
+visorR7	-	X	12489000	deletion	fn	1	shallow	40
+visorR7	-	2R	9437000	inversion	fn	1	shallow	40
+visorR7	53	4	818000	deletion	tp	1	shallow	40
+visorR7	-	3R	12489000	deletion	fn	1	shallow	40
+visorR7	-	2L	7160000	deletion	fn	1	shallow	40
+visorR7	-	X	8312000	tandem duplication	fn	1	shallow	40
+visorR7	-	3R	6150000	tandem duplication	fn	1	shallow	40
+visorR7	-	2L	10463000	inversion	fn	1	shallow	40
+visorR7	4	2L	6655000	inversion	tp	1	shallow	40
+visorR7	-	X	5550000	deletion	fn	1	shallow	40
+visorR7	-	3L	8312000	tandem duplication	fn	1	shallow	40
+visorR7	-	4	890000	tandem duplication	fn	1	shallow	40
+visorR7	-	3L	11987000	tandem duplication	fn	1	shallow	40
+visorR7	-	2L	8887000	deletion	fn	1	shallow	40
+visorR7	-	X	9437000	inversion	fn	1	shallow	40
+visorR7	26	2R	11987000	tandem duplication	tp	1	shallow	40
+visorR7	-	3R	5550000	deletion	fn	1	shallow	40
+visorR7	-	4	270000	deletion	fn	1	shallow	40
+visorR7	52	4	632000	tandem duplication	tp	1	shallow	40
+visorR7	-	3L	9437000	inversion	fn	1	shallow	40
+visorR7	-	2L	5000000	deletion	fn	1	shallow	40
+visorR7	20	2R	7810000	deletion	tp	1	shallow	40
+visorR7	-	2R	10970000	tandem duplication	fn	1	shallow	40
+visorR7	-	X	7810000	deletion	fn	1	shallow	40
+visorR7	-	X	10463000	inversion	fn	1	shallow	40
+visorR7	-	3R	9938000	deletion	fn	1	shallow	40
+visorR7	-	3R	8312000	tandem duplication	fn	1	shallow	40
+visorR7	-	2L	7810000	deletion	fn	1	shallow	40
+visorR7	-	2L	11987000	tandem duplication	fn	1	shallow	40
+visorR7	-	4	969000	deletion	fn	1	shallow	40
+visorR7	31	3L	7810000	deletion	tp	1	shallow	40
+visorR7	-	X	6150000	tandem duplication	fn	1	shallow	40
+visorR7	-	X	9938000	deletion	fn	1	shallow	40
+visorR7	-	3L	7160000	deletion	fn	1	shallow	40
+visorR7	-	2R	5000000	deletion	fn	1	shallow	40
+visorR7	14	2L	11485000	inversion	tp	1	shallow	40
+visorR7	-	3R	11485000	inversion	fn	1	shallow	40
+visorR7	-	2L	5550000	deletion	fn	1	shallow	40
+visorR7	-	4	390000	tandem duplication	fn	1	shallow	40
+visorR7	-	2R	8312000	tandem duplication	fn	1	shallow	40
+visorR7	-	X	5000000	deletion	fn	1	shallow	40
+visorR7	-	X	7160000	deletion	fn	1	shallow	40
+visorR7	-	X	8887000	deletion	fn	1	shallow	40
+visorR7	-	4	727000	deletion	fn	1	shallow	40
+visorR7	-	3R	8887000	deletion	fn	1	shallow	40
+visorR7	-	2L	6150000	tandem duplication	fn	1	shallow	40
+visorR7	-	4	947000	tandem duplication	fn	1	shallow	40
+visorR7	-	2L	8312000	tandem duplication	fn	1	shallow	40
+visorR7	-	3L	10463000	inversion	fn	1	shallow	40
+visorR7	-	3R	11987000	tandem duplication	fn	1	shallow	40
+visorR7	50	4	200000	deletion	tp	1	shallow	40
+visorR7	36	3L	10970000	tandem duplication	tp	1	shallow	40
+visorR7	47	3R	10463000	inversion	tp	1	shallow	40
+visorR7	-	4	863000	inversion	fn	1	shallow	40
+visorR7	-	3R	10970000	tandem duplication	fn	1	shallow	40
+visorR7	56	X	11485000	inversion	tp	1	shallow	40
+visorR7	-	2L	9938000	deletion	fn	1	shallow	40
+visorR7	54	4	925000	inversion	tp	1	shallow	40
+visorR7	-	3R	7160000	deletion	fn	1	shallow	40
+visorR7	-	3L	6655000	inversion	fn	1	shallow	40
+visorR7	-	3L	5000000	deletion	fn	1	shallow	40
+visorR7	42	3R	6655000	inversion	tp	1	shallow	40
+visorR7	-	3L	12489000	deletion	fn	1	shallow	40
+visorR7	-	3R	7810000	deletion	fn	1	shallow	40
+visorR7	-	X	11987000	tandem duplication	fn	1	shallow	40
+visorR7	-	4	797000	inversion	fn	1	shallow	40
+visorR7	-	2R	6655000	inversion	fn	1	shallow	40
+visorR9	-	2R	9938000	deletion	fn	1	shallow	20
+visorR9	-	3L	8887000	deletion	fn	1	shallow	20
+visorR9	-	2L	12489000	deletion	fn	1	shallow	20
+visorR9	-	2L	6655000	inversion	fn	1	shallow	20
+visorR9	-	2R	7160000	deletion	fn	1	shallow	20
+visorR9	-	2L	9437000	inversion	fn	1	shallow	20
+visorR9	-	2R	5550000	deletion	fn	1	shallow	20
+visorR9	-	3L	5550000	deletion	fn	1	shallow	20
+visorR9	-	2R	12489000	deletion	fn	1	shallow	20
+visorR9	-	X	6655000	inversion	fn	1	shallow	20
+visorR9	-	2R	6150000	tandem duplication	fn	1	shallow	20
+visorR9	-	3L	11485000	inversion	fn	1	shallow	20
+visorR9	-	4	610000	deletion	fn	1	shallow	20
+visorR9	-	4	415000	inversion	fn	1	shallow	20
+visorR9	-	X	10970000	tandem duplication	fn	1	shallow	20
+visorR9	-	2L	10970000	tandem duplication	fn	1	shallow	20
+visorR9	-	2R	11485000	inversion	fn	1	shallow	20
+visorR9	-	4	440000	deletion	fn	1	shallow	20
+visorR9	-	2R	10463000	inversion	fn	1	shallow	20
+visorR9	-	3R	9437000	inversion	fn	1	shallow	20
+visorR9	-	3L	6150000	tandem duplication	fn	1	shallow	20
+visorR9	-	3R	7160000	deletion	fn	1	shallow	20
+visorR9	-	3L	9938000	deletion	fn	1	shallow	20
+visorR9	-	X	12489000	deletion	fn	1	shallow	20
+visorR9	-	2R	9437000	inversion	fn	1	shallow	20
+visorR9	-	4	818000	deletion	fn	1	shallow	20
+visorR9	-	4	969000	deletion	fn	1	shallow	20
+visorR9	-	3R	12489000	deletion	fn	1	shallow	20
+visorR9	-	2L	7160000	deletion	fn	1	shallow	20
+visorR9	-	X	8312000	tandem duplication	fn	1	shallow	20
+visorR9	-	3R	6150000	tandem duplication	fn	1	shallow	20
+visorR9	-	2L	10463000	inversion	fn	1	shallow	20
+visorR9	-	3R	5000000	deletion	fn	1	shallow	20
+visorR9	-	X	5550000	deletion	fn	1	shallow	20
+visorR9	-	3L	8312000	tandem duplication	fn	1	shallow	20
+visorR9	-	4	890000	tandem duplication	fn	1	shallow	20
+visorR9	-	3L	11987000	tandem duplication	fn	1	shallow	20
+visorR9	-	2L	8887000	deletion	fn	1	shallow	20
+visorR9	-	X	9437000	inversion	fn	1	shallow	20
+visorR9	-	2R	11987000	tandem duplication	fn	1	shallow	20
+visorR9	-	4	270000	deletion	fn	1	shallow	20
+visorR9	-	4	632000	tandem duplication	fn	1	shallow	20
+visorR9	-	3L	9437000	inversion	fn	1	shallow	20
+visorR9	-	2L	5000000	deletion	fn	1	shallow	20
+visorR9	-	2R	7810000	deletion	fn	1	shallow	20
+visorR9	-	2R	10970000	tandem duplication	fn	1	shallow	20
+visorR9	-	X	7810000	deletion	fn	1	shallow	20
+visorR9	-	X	10463000	inversion	fn	1	shallow	20
+visorR9	-	3R	9938000	deletion	fn	1	shallow	20
+visorR9	-	3R	8312000	tandem duplication	fn	1	shallow	20
+visorR9	-	2L	7810000	deletion	fn	1	shallow	20
+visorR9	-	2L	11987000	tandem duplication	fn	1	shallow	20
+visorR9	-	3R	5550000	deletion	fn	1	shallow	20
+visorR9	-	3L	7810000	deletion	fn	1	shallow	20
+visorR9	-	X	6150000	tandem duplication	fn	1	shallow	20
+visorR9	-	X	9938000	deletion	fn	1	shallow	20
+visorR9	-	3L	7160000	deletion	fn	1	shallow	20
+visorR9	-	2R	5000000	deletion	fn	1	shallow	20
+visorR9	-	2L	11485000	inversion	fn	1	shallow	20
+visorR9	-	3R	11485000	inversion	fn	1	shallow	20
+visorR9	-	2L	5550000	deletion	fn	1	shallow	20
+visorR9	-	4	390000	tandem duplication	fn	1	shallow	20
+visorR9	-	2R	8312000	tandem duplication	fn	1	shallow	20
+visorR9	-	X	5000000	deletion	fn	1	shallow	20
+visorR9	-	X	7160000	deletion	fn	1	shallow	20
+visorR9	-	X	8887000	deletion	fn	1	shallow	20
+visorR9	11	4	727000	deletion	tp	1	shallow	20
+visorR9	-	3R	8887000	deletion	fn	1	shallow	20
+visorR9	-	2L	6150000	tandem duplication	fn	1	shallow	20
+visorR9	-	4	947000	tandem duplication	fn	1	shallow	20
+visorR9	-	2L	8312000	tandem duplication	fn	1	shallow	20
+visorR9	-	3L	10463000	inversion	fn	1	shallow	20
+visorR9	-	3R	11987000	tandem duplication	fn	1	shallow	20
+visorR9	-	4	200000	deletion	fn	1	shallow	20
+visorR9	-	3L	10970000	tandem duplication	fn	1	shallow	20
+visorR9	-	3R	10463000	inversion	fn	1	shallow	20
+visorR9	-	4	863000	inversion	fn	1	shallow	20
+visorR9	-	3R	10970000	tandem duplication	fn	1	shallow	20
+visorR9	-	X	11485000	inversion	fn	1	shallow	20
+visorR9	-	2L	9938000	deletion	fn	1	shallow	20
+visorR9	-	4	925000	inversion	fn	1	shallow	20
+visorR9	-	2R	8887000	deletion	fn	1	shallow	20
+visorR9	5	3L	6655000	inversion	tp	1	shallow	20
+visorR9	-	3L	5000000	deletion	fn	1	shallow	20
+visorR9	-	3R	6655000	inversion	fn	1	shallow	20
+visorR9	-	3L	12489000	deletion	fn	1	shallow	20
+visorR9	-	3R	7810000	deletion	fn	1	shallow	20
+visorR9	-	X	11987000	tandem duplication	fn	1	shallow	20
+visorR9	-	4	797000	inversion	fn	1	shallow	20
+visorR9	-	2R	6655000	inversion	fn	1	shallow	20
+visorR11	36	2R	9938000	deletion	tp	1	deep	100
+visorR11	53	3L	8887000	deletion	tp	1	deep	100
+visorR11	20	2L	12489000	deletion	tp	1	deep	100
+visorR11	4	2L	6655000	inversion	tp	1	deep	100
+visorR11	29	2R	7160000	deletion	tp	1	deep	100
+visorR11	12	2L	9437000	inversion	tp	1	deep	100
+visorR11	23	2R	5550000	deletion	tp	1	deep	100
+visorR11	45	3L	5550000	deletion	tp	1	deep	100
+visorR11	-	2R	12489000	deletion	fn	1	deep	100
+visorR11	105	X	6655000	inversion	tp	1	deep	100
+visorR11	25	2R	6150000	tandem duplication	tp	1	deep	100
+visorR11	59	3L	11485000	inversion	tp	1	deep	100
+visorR11	89	4	610000	deletion	tp	1	deep	100
+visorR11	-	4	415000	inversion	fn	1	deep	100
+visorR11	116	X	10970000	tandem duplication	tp	1	deep	100
+visorR11	17	2L	10970000	tandem duplication	tp	1	deep	100
+visorR11	41	2R	11485000	inversion	tp	1	deep	100
+visorR11	87	4	440000	deletion	tp	1	deep	100
+visorR11	38	2R	10463000	inversion	tp	1	deep	100
+visorR11	74	3R	9437000	inversion	tp	1	deep	100
+visorR11	-	3L	6150000	tandem duplication	fn	1	deep	100
+visorR11	69	3R	7160000	deletion	tp	1	deep	100
+visorR11	-	3L	9938000	deletion	fn	1	deep	100
+visorR11	119	X	12489000	deletion	tp	1	deep	100
+visorR11	35	2R	9437000	inversion	tp	1	deep	100
+visorR11	94	4	818000	deletion	tp	1	deep	100
+visorR11	101	4	969000	deletion	tp	1	deep	100
+visorR11	-	3R	12489000	deletion	fn	1	deep	100
+visorR11	6	2L	7160000	deletion	tp	1	deep	100
+visorR11	108	X	8312000	tandem duplication	tp	1	deep	100
+visorR11	65	3R	6150000	tandem duplication	tp	1	deep	100
+visorR11	15	2L	10463000	inversion	tp	1	deep	100
+visorR11	63	3R	5000000	deletion	tp	1	deep	100
+visorR11	103	X	5550000	deletion	tp	1	deep	100
+visorR11	51	3L	8312000	tandem duplication	tp	1	deep	100
+visorR11	97	4	890000	tandem duplication	tp	1	deep	100
+visorR11	60	3L	11987000	tandem duplication	tp	1	deep	100
+visorR11	11	2L	8887000	deletion	tp	1	deep	100
+visorR11	111	X	9437000	inversion	tp	1	deep	100
+visorR11	42	2R	11987000	tandem duplication	tp	1	deep	100
+visorR11	84	4	270000	deletion	tp	1	deep	100
+visorR11	90	4	632000	tandem duplication	tp	1	deep	100
+visorR11	54	3L	9437000	inversion	tp	1	deep	100
+visorR11	1	2L	5000000	deletion	tp	1	deep	100
+visorR11	30	2R	7810000	deletion	tp	1	deep	100
+visorR11	40	2R	10970000	tandem duplication	tp	1	deep	100
+visorR11	107	X	7810000	deletion	tp	1	deep	100
+visorR11	100	4	947000	tandem duplication	tp	1	deep	100
+visorR11	76	3R	9938000	deletion	tp	1	deep	100
+visorR11	72	3R	8312000	tandem duplication	tp	1	deep	100
+visorR11	7	2L	7810000	deletion	tp	1	deep	100
+visorR11	19	2L	11987000	tandem duplication	tp	1	deep	100
+visorR11	64	3R	5550000	deletion	tp	1	deep	100
+visorR11	49	3L	7810000	deletion	tp	1	deep	100
+visorR11	104	X	6150000	tandem duplication	tp	1	deep	100
+visorR11	112	X	9938000	deletion	tp	1	deep	100
+visorR11	48	3L	7160000	deletion	tp	1	deep	100
+visorR11	22	2R	5000000	deletion	tp	1	deep	100
+visorR11	18	2L	11485000	inversion	tp	1	deep	100
+visorR11	117	X	11485000	inversion	tp	1	deep	100
+visorR11	2	2L	5550000	deletion	tp	1	deep	100
+visorR11	86	4	390000	tandem duplication	tp	1	deep	100
+visorR11	32	2R	8312000	tandem duplication	tp	1	deep	100
+visorR11	102	X	5000000	deletion	tp	1	deep	100
+visorR11	-	X	7160000	deletion	fn	1	deep	100
+visorR11	110	X	8887000	deletion	tp	1	deep	100
+visorR11	92	4	727000	deletion	tp	1	deep	100
+visorR11	73	3R	8887000	deletion	tp	1	deep	100
+visorR11	3	2L	6150000	tandem duplication	tp	1	deep	100
+visorR11	114	X	10463000	inversion	tp	1	deep	100
+visorR11	9	2L	8312000	tandem duplication	tp	1	deep	100
+visorR11	-	3L	10463000	inversion	fn	1	deep	100
+visorR11	81	3R	11987000	tandem duplication	tp	1	deep	100
+visorR11	56	3L	10462987	inversion	fp	1	deep	100
+visorR11	82	4	200000	deletion	tp	1	deep	100
+visorR11	58	3L	10970000	tandem duplication	tp	1	deep	100
+visorR11	77	3R	10463000	inversion	tp	1	deep	100
+visorR11	96	4	863000	inversion	tp	1	deep	100
+visorR11	79	3R	10970000	tandem duplication	tp	1	deep	100
+visorR11	80	3R	11485000	inversion	tp	1	deep	100
+visorR11	13	2L	9938000	deletion	tp	1	deep	100
+visorR11	99	4	925000	inversion	tp	1	deep	100
+visorR11	34	2R	8887000	deletion	tp	1	deep	100
+visorR11	46	3L	6655000	inversion	tp	1	deep	100
+visorR11	44	3L	5000000	deletion	tp	1	deep	100
+visorR11	67	3R	6655000	inversion	tp	1	deep	100
+visorR11	61	3L	12489000	deletion	tp	1	deep	100
+visorR11	70	3R	7810000	deletion	tp	1	deep	100
+visorR11	118	X	11987000	tandem duplication	tp	1	deep	100
+visorR11	-	4	797000	inversion	fn	1	deep	100
+visorR11	27	2R	6655000	inversion	tp	1	deep	100
+visorR13	38	2R	9938000	deletion	tp	1	deep	80
+visorR13	54	3L	8887000	deletion	tp	1	deep	80
+visorR13	21	2L	12489000	deletion	tp	1	deep	80
+visorR13	5	2L	6655000	inversion	tp	1	deep	80
+visorR13	30	2R	7160000	deletion	tp	1	deep	80
+visorR13	13	2L	9437000	inversion	tp	1	deep	80
+visorR13	24	2R	5550000	deletion	tp	1	deep	80
+visorR13	102	4	969000	deletion	tp	1	deep	80
+visorR13	-	2R	12489000	deletion	fn	1	deep	80
+visorR13	106	X	6655000	inversion	tp	1	deep	80
+visorR13	26	2R	6150000	tandem duplication	tp	1	deep	80
+visorR13	60	3L	11485000	inversion	tp	1	deep	80
+visorR13	90	4	610000	deletion	tp	1	deep	80
+visorR13	-	4	415000	inversion	fn	1	deep	80
+visorR13	-	X	10970000	tandem duplication	fn	1	deep	80
+visorR13	18	2L	10970000	tandem duplication	tp	1	deep	80
+visorR13	42	2R	11485000	inversion	tp	1	deep	80
+visorR13	88	4	440000	deletion	tp	1	deep	80
+visorR13	39	2R	10463000	inversion	tp	1	deep	80
+visorR13	74	3R	9437000	inversion	tp	1	deep	80
+visorR13	-	3L	6150000	tandem duplication	fn	1	deep	80
+visorR13	35	2R	8887000	deletion	tp	1	deep	80
+visorR13	-	3L	9938000	deletion	fn	1	deep	80
+visorR13	120	X	12489000	deletion	tp	1	deep	80
+visorR13	36	2R	9437000	inversion	tp	1	deep	80
+visorR13	95	4	818000	deletion	tp	1	deep	80
+visorR13	-	3R	12489000	deletion	fn	1	deep	80
+visorR13	-	2L	7160000	deletion	fn	1	deep	80
+visorR13	111	X	8312000	tandem duplication	tp	1	deep	80
+visorR13	66	3R	6150000	tandem duplication	tp	1	deep	80
+visorR13	16	2L	10463000	inversion	tp	1	deep	80
+visorR13	64	3R	5000000	deletion	tp	1	deep	80
+visorR13	104	X	5550000	deletion	tp	1	deep	80
+visorR13	52	3L	8312000	tandem duplication	tp	1	deep	80
+visorR13	98	4	890000	tandem duplication	tp	1	deep	80
+visorR13	61	3L	11987000	tandem duplication	tp	1	deep	80
+visorR13	-	2L	8887000	deletion	fn	1	deep	80
+visorR13	113	X	9437000	inversion	tp	1	deep	80
+visorR13	43	2R	11987000	tandem duplication	tp	1	deep	80
+visorR13	-	3R	5550000	deletion	fn	1	deep	80
+visorR13	84	4	270000	deletion	tp	1	deep	80
+visorR13	91	4	632000	tandem duplication	tp	1	deep	80
+visorR13	55	3L	9437000	inversion	tp	1	deep	80
+visorR13	1	2L	5000000	deletion	tp	1	deep	80
+visorR13	31	2R	7810000	deletion	tp	1	deep	80
+visorR13	41	2R	10970000	tandem duplication	tp	1	deep	80
+visorR13	109	X	7810000	deletion	tp	1	deep	80
+visorR13	101	4	947000	tandem duplication	tp	1	deep	80
+visorR13	76	3R	9938000	deletion	tp	1	deep	80
+visorR13	72	3R	8312000	tandem duplication	tp	1	deep	80
+visorR13	8	2L	7810000	deletion	tp	1	deep	80
+visorR13	20	2L	11987000	tandem duplication	tp	1	deep	80
+visorR13	46	3L	5550000	deletion	tp	1	deep	80
+visorR13	50	3L	7810000	deletion	tp	1	deep	80
+visorR13	105	X	6150000	tandem duplication	tp	1	deep	80
+visorR13	115	X	9938000	deletion	tp	1	deep	80
+visorR13	49	3L	7160000	deletion	tp	1	deep	80
+visorR13	23	2R	5000000	deletion	tp	1	deep	80
+visorR13	19	2L	11485000	inversion	tp	1	deep	80
+visorR13	118	X	11485000	inversion	tp	1	deep	80
+visorR13	3	2L	5550000	deletion	tp	1	deep	80
+visorR13	86	4	390000	tandem duplication	tp	1	deep	80
+visorR13	33	2R	8312000	tandem duplication	tp	1	deep	80
+visorR13	103	X	5000000	deletion	tp	1	deep	80
+visorR13	108	X	7160000	deletion	tp	1	deep	80
+visorR13	112	X	8887000	deletion	tp	1	deep	80
+visorR13	93	4	727000	deletion	tp	1	deep	80
+visorR13	73	3R	8887000	deletion	tp	1	deep	80
+visorR13	4	2L	6150000	tandem duplication	tp	1	deep	80
+visorR13	116	X	10463000	inversion	tp	1	deep	80
+visorR13	10	2L	8312000	tandem duplication	tp	1	deep	80
+visorR13	57	3L	10463000	inversion	tp	1	deep	80
+visorR13	81	3R	11987000	tandem duplication	tp	1	deep	80
+visorR13	82	4	200000	deletion	tp	1	deep	80
+visorR13	59	3L	10970000	tandem duplication	tp	1	deep	80
+visorR13	77	3R	10463000	inversion	tp	1	deep	80
+visorR13	97	4	863000	inversion	tp	1	deep	80
+visorR13	79	3R	10970000	tandem duplication	tp	1	deep	80
+visorR13	80	3R	11485000	inversion	tp	1	deep	80
+visorR13	15	2L	9938000	deletion	tp	1	deep	80
+visorR13	100	4	925000	inversion	tp	1	deep	80
+visorR13	69	3R	7160000	deletion	tp	1	deep	80
+visorR13	47	3L	6655000	inversion	tp	1	deep	80
+visorR13	45	3L	5000000	deletion	tp	1	deep	80
+visorR13	67	3R	6655000	inversion	tp	1	deep	80
+visorR13	63	3L	12489000	deletion	tp	1	deep	80
+visorR13	70	3R	7810000	deletion	tp	1	deep	80
+visorR13	119	X	11987000	tandem duplication	tp	1	deep	80
+visorR13	-	4	797000	inversion	fn	1	deep	80
+visorR13	28	2R	6655000	inversion	tp	1	deep	80
+visorR15	-	2R	9938000	deletion	fn	1	deep	60
+visorR15	58	3L	8887000	deletion	tp	1	deep	60
+visorR15	22	2L	12489000	deletion	tp	1	deep	60
+visorR15	30	2R	7160000	deletion	tp	1	deep	60
+visorR15	14	2L	9437000	inversion	tp	1	deep	60
+visorR15	-	2R	5550000	deletion	fn	1	deep	60
+visorR15	107	4	969000	deletion	tp	1	deep	60
+visorR15	-	2R	12489000	deletion	fn	1	deep	60
+visorR15	111	X	6655000	inversion	tp	1	deep	60
+visorR15	27	2R	6150000	tandem duplication	tp	1	deep	60
+visorR15	69	3R	5000000	deletion	tp	1	deep	60
+visorR15	64	3L	11485000	inversion	tp	1	deep	60
+visorR15	95	4	610000	deletion	tp	1	deep	60
+visorR15	-	4	415000	inversion	fn	1	deep	60
+visorR15	122	X	10970000	tandem duplication	tp	1	deep	60
+visorR15	-	2L	10970000	tandem duplication	fn	1	deep	60
+visorR15	108	X	4999991	deletion	fp	1	deep	60
+visorR15	43	2R	11485000	inversion	tp	1	deep	60
+visorR15	93	4	440000	deletion	tp	1	deep	60
+visorR15	40	2R	10463000	inversion	tp	1	deep	60
+visorR15	80	3R	9437000	inversion	tp	1	deep	60
+visorR15	-	3L	6150000	tandem duplication	fn	1	deep	60
+visorR15	36	2R	8887000	deletion	tp	1	deep	60
+visorR15	-	3L	9938000	deletion	fn	1	deep	60
+visorR15	125	X	12489000	deletion	tp	1	deep	60
+visorR15	37	2R	9437000	inversion	tp	1	deep	60
+visorR15	100	4	818000	deletion	tp	1	deep	60
+visorR15	-	3R	12489000	deletion	fn	1	deep	60
+visorR15	8	2L	7160000	deletion	tp	1	deep	60
+visorR15	115	X	8312000	tandem duplication	tp	1	deep	60
+visorR15	72	3R	6150000	tandem duplication	tp	1	deep	60
+visorR15	17	2L	10463000	inversion	tp	1	deep	60
+visorR15	6	2L	6655000	inversion	tp	1	deep	60
+visorR15	-	X	5550000	deletion	fn	1	deep	60
+visorR15	-	3L	8312000	tandem duplication	fn	1	deep	60
+visorR15	103	4	890000	tandem duplication	tp	1	deep	60
+visorR15	65	3L	11987000	tandem duplication	tp	1	deep	60
+visorR15	13	2L	8887000	deletion	tp	1	deep	60
+visorR15	118	X	9437000	inversion	tp	1	deep	60
+visorR15	45	2R	11987000	tandem duplication	tp	1	deep	60
+visorR15	-	3R	5550000	deletion	fn	1	deep	60
+visorR15	90	4	270000	deletion	tp	1	deep	60
+visorR15	96	4	632000	tandem duplication	tp	1	deep	60
+visorR15	59	3L	9437000	inversion	tp	1	deep	60
+visorR15	1	2L	5000000	deletion	tp	1	deep	60
+visorR15	32	2R	7810000	deletion	tp	1	deep	60
+visorR15	42	2R	10970000	tandem duplication	tp	1	deep	60
+visorR15	-	X	7810000	deletion	fn	1	deep	60
+visorR15	106	4	947000	tandem duplication	tp	1	deep	60
+visorR15	82	3R	9938000	deletion	tp	1	deep	60
+visorR15	78	3R	8312000	tandem duplication	tp	1	deep	60
+visorR15	9	2L	7810000	deletion	tp	1	deep	60
+visorR15	21	2L	11987000	tandem duplication	tp	1	deep	60
+visorR15	49	3L	5550000	deletion	tp	1	deep	60
+visorR15	54	3L	7810000	deletion	tp	1	deep	60
+visorR15	110	X	6150000	tandem duplication	tp	1	deep	60
+visorR15	119	X	9938000	deletion	tp	1	deep	60
+visorR15	53	3L	7160000	deletion	tp	1	deep	60
+visorR15	24	2R	5000000	deletion	tp	1	deep	60
+visorR15	20	2L	11485000	inversion	tp	1	deep	60
+visorR15	123	X	11485000	inversion	tp	1	deep	60
+visorR15	3	2L	5550000	tandem duplication	tp	1	deep	60
+visorR15	92	4	390000	tandem duplication	tp	1	deep	60
+visorR15	34	2R	8312000	tandem duplication	tp	1	deep	60
+visorR15	-	X	5000000	deletion	fn	1	deep	60
+visorR15	112	X	7160000	deletion	tp	1	deep	60
+visorR15	117	X	8887000	deletion	tp	1	deep	60
+visorR15	98	4	727000	deletion	tp	1	deep	60
+visorR15	-	3R	8887000	deletion	fn	1	deep	60
+visorR15	5	2L	6150000	tandem duplication	tp	1	deep	60
+visorR15	121	X	10463000	inversion	tp	1	deep	60
+visorR15	11	2L	8312000	tandem duplication	tp	1	deep	60
+visorR15	61	3L	10463000	inversion	tp	1	deep	60
+visorR15	87	3R	11987000	tandem duplication	tp	1	deep	60
+visorR15	88	4	200000	deletion	tp	1	deep	60
+visorR15	63	3L	10970000	tandem duplication	tp	1	deep	60
+visorR15	83	3R	10463000	inversion	tp	1	deep	60
+visorR15	102	4	863000	inversion	tp	1	deep	60
+visorR15	-	3R	10970000	tandem duplication	fn	1	deep	60
+visorR15	86	3R	11485000	inversion	tp	1	deep	60
+visorR15	16	2L	9938000	deletion	tp	1	deep	60
+visorR15	105	4	925000	inversion	tp	1	deep	60
+visorR15	75	3R	7160000	deletion	tp	1	deep	60
+visorR15	51	3L	6655000	inversion	tp	1	deep	60
+visorR15	48	3L	5000000	deletion	tp	1	deep	60
+visorR15	73	3R	6655000	inversion	tp	1	deep	60
+visorR15	66	3L	12489000	deletion	tp	1	deep	60
+visorR15	76	3R	7810000	deletion	tp	1	deep	60
+visorR15	124	X	11987000	tandem duplication	tp	1	deep	60
+visorR15	-	4	797000	inversion	fn	1	deep	60
+visorR15	29	2R	6655000	inversion	tp	1	deep	60
+visorR17	36	2R	9938000	deletion	tp	1	deep	40
+visorR17	53	3L	8887000	deletion	tp	1	deep	40
+visorR17	-	2L	12489000	deletion	fn	1	deep	40
+visorR17	5	2L	6655000	inversion	tp	1	deep	40
+visorR17	27	2R	7160000	deletion	tp	1	deep	40
+visorR17	13	2L	9437000	inversion	tp	1	deep	40
+visorR17	24	2R	5550000	deletion	tp	1	deep	40
+visorR17	45	3L	5550000	deletion	tp	1	deep	40
+visorR17	-	2R	12489000	deletion	fn	1	deep	40
+visorR17	102	X	6655000	inversion	tp	1	deep	40
+visorR17	-	2R	6150000	tandem duplication	fn	1	deep	40
+visorR17	59	3L	11485000	inversion	tp	1	deep	40
+visorR17	88	4	610000	deletion	tp	1	deep	40
+visorR17	-	4	415000	inversion	fn	1	deep	40
+visorR17	110	X	10970000	tandem duplication	tp	1	deep	40
+visorR17	-	2L	10970000	tandem duplication	fn	1	deep	40
+visorR17	40	2R	11485000	inversion	tp	1	deep	40
+visorR17	86	4	440000	deletion	tp	1	deep	40
+visorR17	37	2R	10463000	inversion	tp	1	deep	40
+visorR17	73	3R	9437000	inversion	tp	1	deep	40
+visorR17	-	3L	6150000	tandem duplication	fn	1	deep	40
+visorR17	-	3R	7160000	deletion	fn	1	deep	40
+visorR17	-	3L	9938000	deletion	fn	1	deep	40
+visorR17	-	X	12489000	deletion	fn	1	deep	40
+visorR17	34	2R	9437000	inversion	tp	1	deep	40
+visorR17	92	4	818000	deletion	tp	1	deep	40
+visorR17	99	4	969000	deletion	tp	1	deep	40
+visorR17	-	3R	12489000	deletion	fn	1	deep	40
+visorR17	-	2L	7160000	deletion	fn	1	deep	40
+visorR17	104	X	8312000	tandem duplication	tp	1	deep	40
+visorR17	65	3R	6150000	tandem duplication	tp	1	deep	40
+visorR17	16	2L	10463000	inversion	tp	1	deep	40
+visorR17	-	3R	5000000	deletion	fn	1	deep	40
+visorR17	101	X	5550000	deletion	tp	1	deep	40
+visorR17	51	3L	8312000	tandem duplication	tp	1	deep	40
+visorR17	95	4	890000	tandem duplication	tp	1	deep	40
+visorR17	-	3L	11987000	tandem duplication	fn	1	deep	40
+visorR17	-	2L	8887000	deletion	fn	1	deep	40
+visorR17	107	X	9437000	inversion	tp	1	deep	40
+visorR17	41	2R	11987000	tandem duplication	tp	1	deep	40
+visorR17	82	4	270000	deletion	tp	1	deep	40
+visorR17	89	4	632000	tandem duplication	tp	1	deep	40
+visorR17	54	3L	9437000	inversion	tp	1	deep	40
+visorR17	1	2L	5000000	deletion	tp	1	deep	40
+visorR17	29	2R	7810000	deletion	tp	1	deep	40
+visorR17	-	2R	10970000	tandem duplication	fn	1	deep	40
+visorR17	-	X	7810000	deletion	fn	1	deep	40
+visorR17	109	X	10463000	inversion	tp	1	deep	40
+visorR17	-	3R	9938000	deletion	fn	1	deep	40
+visorR17	70	3R	8312000	tandem duplication	tp	1	deep	40
+visorR17	-	2L	7810000	deletion	fn	1	deep	40
+visorR17	20	2L	11987000	tandem duplication	tp	1	deep	40
+visorR17	64	3R	5550000	deletion	tp	1	deep	40
+visorR17	49	3L	7810000	deletion	tp	1	deep	40
+visorR17	-	X	6150000	tandem duplication	fn	1	deep	40
+visorR17	-	X	9938000	deletion	fn	1	deep	40
+visorR17	-	3L	7160000	deletion	fn	1	deep	40
+visorR17	-	2R	5000000	deletion	fn	1	deep	40
+visorR17	-	2L	11485000	inversion	fn	1	deep	40
+visorR17	111	X	11485000	inversion	tp	1	deep	40
+visorR17	-	2L	5550000	deletion	fn	1	deep	40
+visorR17	84	4	390000	tandem duplication	tp	1	deep	40
+visorR17	-	2R	8312000	tandem duplication	fn	1	deep	40
+visorR17	100	X	5000000	deletion	tp	1	deep	40
+visorR17	-	X	7160000	deletion	fn	1	deep	40
+visorR17	106	X	8887000	deletion	tp	1	deep	40
+visorR17	91	4	727000	deletion	tp	1	deep	40
+visorR17	-	3R	8887000	deletion	fn	1	deep	40
+visorR17	4	2L	6150000	tandem duplication	tp	1	deep	40
+visorR17	98	4	947000	tandem duplication	tp	1	deep	40
+visorR17	10	2L	8312000	tandem duplication	tp	1	deep	40
+visorR17	56	3L	10463000	inversion	tp	1	deep	40
+visorR17	-	3R	11987000	tandem duplication	fn	1	deep	40
+visorR17	19	2L	11484878	inversion	fp	1	deep	40
+visorR17	80	4	200000	deletion	tp	1	deep	40
+visorR17	-	3L	10970000	tandem duplication	fn	1	deep	40
+visorR17	76	3R	10463000	inversion	tp	1	deep	40
+visorR17	94	4	863000	inversion	tp	1	deep	40
+visorR17	-	3R	10970000	tandem duplication	fn	1	deep	40
+visorR17	79	3R	11485000	inversion	tp	1	deep	40
+visorR17	15	2L	9938000	deletion	tp	1	deep	40
+visorR17	97	4	925000	inversion	tp	1	deep	40
+visorR17	-	2R	8887000	deletion	fn	1	deep	40
+visorR17	-	3L	6655000	inversion	fn	1	deep	40
+visorR17	-	3L	5000000	deletion	fn	1	deep	40
+visorR17	66	3R	6655000	inversion	tp	1	deep	40
+visorR17	-	3L	12489000	deletion	fn	1	deep	40
+visorR17	69	3R	7810000	deletion	tp	1	deep	40
+visorR17	112	X	11987000	tandem duplication	tp	1	deep	40
+visorR17	-	4	797000	inversion	fn	1	deep	40
+visorR17	26	2R	6655000	inversion	tp	1	deep	40
+visorR19	-	2R	9938000	deletion	fn	1	deep	20
+visorR19	-	3L	8887000	deletion	fn	1	deep	20
+visorR19	-	2L	12489000	deletion	fn	1	deep	20
+visorR19	-	2R	7160000	deletion	fn	1	deep	20
+visorR19	-	2L	9437000	inversion	fn	1	deep	20
+visorR19	-	2R	5550000	deletion	fn	1	deep	20
+visorR19	-	4	969000	deletion	fn	1	deep	20
+visorR19	-	2R	12489000	deletion	fn	1	deep	20
+visorR19	37	X	6655000	inversion	tp	1	deep	20
+visorR19	-	2R	6150000	tandem duplication	fn	1	deep	20
+visorR19	-	3R	5000000	deletion	fn	1	deep	20
+visorR19	20	3L	11485000	inversion	tp	1	deep	20
+visorR19	-	4	610000	deletion	fn	1	deep	20
+visorR19	-	4	415000	inversion	fn	1	deep	20
+visorR19	-	X	10970000	tandem duplication	fn	1	deep	20
+visorR19	-	2L	10970000	tandem duplication	fn	1	deep	20
+visorR19	-	2R	11485000	inversion	fn	1	deep	20
+visorR19	-	4	440000	deletion	fn	1	deep	20
+visorR19	13	2R	10463000	inversion	tp	1	deep	20
+visorR19	25	3R	9437000	inversion	tp	1	deep	20
+visorR19	-	3L	6150000	tandem duplication	fn	1	deep	20
+visorR19	-	3R	7160000	deletion	fn	1	deep	20
+visorR19	-	3L	9938000	deletion	fn	1	deep	20
+visorR19	-	X	12489000	deletion	fn	1	deep	20
+visorR19	-	2R	9437000	inversion	fn	1	deep	20
+visorR19	-	4	818000	deletion	fn	1	deep	20
+visorR19	-	3R	12489000	deletion	fn	1	deep	20
+visorR19	-	2L	7160000	deletion	fn	1	deep	20
+visorR19	-	X	8312000	tandem duplication	fn	1	deep	20
+visorR19	-	3R	6150000	tandem duplication	fn	1	deep	20
+visorR19	5	2L	10463000	inversion	tp	1	deep	20
+visorR19	1	2L	6655000	inversion	tp	1	deep	20
+visorR19	-	X	5550000	deletion	fn	1	deep	20
+visorR19	-	3L	8312000	tandem duplication	fn	1	deep	20
+visorR19	-	4	890000	tandem duplication	fn	1	deep	20
+visorR19	-	3L	11987000	tandem duplication	fn	1	deep	20
+visorR19	3	2L	8887000	deletion	tp	1	deep	20
+visorR19	-	X	9437000	inversion	fn	1	deep	20
+visorR19	-	2R	11987000	tandem duplication	fn	1	deep	20
+visorR19	-	3R	5550000	deletion	fn	1	deep	20
+visorR19	-	4	270000	deletion	fn	1	deep	20
+visorR19	-	4	632000	tandem duplication	fn	1	deep	20
+visorR19	19	3L	9437000	inversion	tp	1	deep	20
+visorR19	-	2L	5000000	deletion	fn	1	deep	20
+visorR19	-	2R	7810000	deletion	fn	1	deep	20
+visorR19	-	2R	10970000	tandem duplication	fn	1	deep	20
+visorR19	-	X	7810000	deletion	fn	1	deep	20
+visorR19	40	X	10463000	inversion	tp	1	deep	20
+visorR19	-	3R	9938000	deletion	fn	1	deep	20
+visorR19	-	3R	8312000	tandem duplication	fn	1	deep	20
+visorR19	-	2L	7810000	deletion	fn	1	deep	20
+visorR19	-	2L	11987000	tandem duplication	fn	1	deep	20
+visorR19	-	3L	5550000	deletion	fn	1	deep	20
+visorR19	-	3L	7810000	deletion	fn	1	deep	20
+visorR19	-	X	6150000	tandem duplication	fn	1	deep	20
+visorR19	-	X	9938000	deletion	fn	1	deep	20
+visorR19	-	3L	7160000	deletion	fn	1	deep	20
+visorR19	-	2R	5000000	deletion	fn	1	deep	20
+visorR19	6	2L	11485000	inversion	tp	1	deep	20
+visorR19	42	X	11485000	inversion	tp	1	deep	20
+visorR19	-	2L	5550000	deletion	fn	1	deep	20
+visorR19	-	4	390000	tandem duplication	fn	1	deep	20
+visorR19	-	2R	8312000	tandem duplication	fn	1	deep	20
+visorR19	-	X	5000000	deletion	fn	1	deep	20
+visorR19	-	X	7160000	deletion	fn	1	deep	20
+visorR19	39	X	8887000	deletion	tp	1	deep	20
+visorR19	32	4	727000	deletion	tp	1	deep	20
+visorR19	-	3R	8887000	deletion	fn	1	deep	20
+visorR19	-	2L	6150000	tandem duplication	fn	1	deep	20
+visorR19	35	4	947000	tandem duplication	tp	1	deep	20
+visorR19	-	2L	8312000	tandem duplication	fn	1	deep	20
+visorR19	-	3L	10463000	inversion	fn	1	deep	20
+visorR19	-	3R	11987000	tandem duplication	fn	1	deep	20
+visorR19	-	4	200000	deletion	fn	1	deep	20
+visorR19	-	3L	10970000	tandem duplication	fn	1	deep	20
+visorR19	-	3R	10463000	inversion	fn	1	deep	20
+visorR19	33	4	863000	inversion	tp	1	deep	20
+visorR19	-	3R	10970000	tandem duplication	fn	1	deep	20
+visorR19	27	3R	11485000	inversion	tp	1	deep	20
+visorR19	-	2L	9938000	deletion	fn	1	deep	20
+visorR19	34	4	925000	inversion	tp	1	deep	20
+visorR19	-	2R	8887000	deletion	fn	1	deep	20
+visorR19	18	3L	6655000	inversion	tp	1	deep	20
+visorR19	-	3L	5000000	deletion	fn	1	deep	20
+visorR19	22	3R	6655000	inversion	tp	1	deep	20
+visorR19	21	3L	12489000	deletion	tp	1	deep	20
+visorR19	-	3R	7810000	deletion	fn	1	deep	20
+visorR19	-	X	11987000	tandem duplication	fn	1	deep	20
+visorR19	-	4	797000	inversion	fn	1	deep	20
+visorR19	9	2R	6655000	inversion	tp	1	deep	20
+visorR21	35	2R	9938000	deletion	tp	2	shallow	100
+visorR21	51	3L	8887000	deletion	tp	2	shallow	100
+visorR21	20	2L	12489000	deletion	tp	2	shallow	100
+visorR21	6	2L	6655000	inversion	tp	2	shallow	100
+visorR21	26	2R	7160000	deletion	tp	2	shallow	100
+visorR21	-	2L	9437000	inversion	fn	2	shallow	100
+visorR21	22	2R	5550000	deletion	tp	2	shallow	100
+visorR21	61	3R	5023144	deletion	fp	2	shallow	100
+visorR21	-	4	969000	deletion	fn	2	shallow	100
+visorR21	-	2R	12489000	deletion	fn	2	shallow	100
+visorR21	99	X	6655000	inversion	tp	2	shallow	100
+visorR21	24	2R	6150000	tandem duplication	tp	2	shallow	100
+visorR21	-	3L	11485000	inversion	fn	2	shallow	100
+visorR21	84	4	610000	deletion	tp	2	shallow	100
+visorR21	-	4	415000	inversion	fn	2	shallow	100
+visorR21	110	X	10970000	tandem duplication	tp	2	shallow	100
+visorR21	17	2L	10970000	tandem duplication	tp	2	shallow	100
+visorR21	39	2R	11485000	inversion	tp	2	shallow	100
+visorR21	82	4	440000	deletion	tp	2	shallow	100
+visorR21	-	2R	10463000	inversion	fn	2	shallow	100
+visorR21	70	3R	9437000	inversion	tp	2	shallow	100
+visorR21	-	3L	6150000	tandem duplication	fn	2	shallow	100
+visorR21	66	3R	7160000	deletion	tp	2	shallow	100
+visorR21	53	3L	9938000	deletion	tp	2	shallow	100
+visorR21	-	X	12489000	deletion	fn	2	shallow	100
+visorR21	33	2R	9437000	inversion	tp	2	shallow	100
+visorR21	89	4	818000	deletion	tp	2	shallow	100
+visorR21	-	3R	12489000	deletion	fn	2	shallow	100
+visorR21	7	2L	7160000	deletion	tp	2	shallow	100
+visorR21	103	X	8312000	tandem duplication	tp	2	shallow	100
+visorR21	64	3R	6150000	tandem duplication	tp	2	shallow	100
+visorR21	16	2L	10463000	inversion	tp	2	shallow	100
+visorR21	-	3R	5000000	deletion	fn	2	shallow	100
+visorR21	96	X	5550000	deletion	tp	2	shallow	100
+visorR21	49	3L	8312000	tandem duplication	tp	2	shallow	100
+visorR21	91	4	890000	tandem duplication	tp	2	shallow	100
+visorR21	58	3L	11987000	tandem duplication	tp	2	shallow	100
+visorR21	11	2L	8887000	deletion	tp	2	shallow	100
+visorR21	106	X	9437000	inversion	tp	2	shallow	100
+visorR21	40	2R	11987000	tandem duplication	tp	2	shallow	100
+visorR21	80	4	270000	deletion	tp	2	shallow	100
+visorR21	85	4	632000	tandem duplication	tp	2	shallow	100
+visorR21	52	3L	9437000	inversion	tp	2	shallow	100
+visorR21	1	2L	5000000	deletion	tp	2	shallow	100
+visorR21	28	2R	7810000	deletion	tp	2	shallow	100
+visorR21	38	2R	10970000	tandem duplication	tp	2	shallow	100
+visorR21	102	X	7810000	deletion	tp	2	shallow	100
+visorR21	-	X	10463000	inversion	fn	2	shallow	100
+visorR21	72	3R	9938000	deletion	tp	2	shallow	100
+visorR21	68	3R	8312000	tandem duplication	tp	2	shallow	100
+visorR21	-	2L	7810000	deletion	fn	2	shallow	100
+visorR21	-	2L	11987000	tandem duplication	fn	2	shallow	100
+visorR21	62	3R	5550000	deletion	tp	2	shallow	100
+visorR21	-	3L	7810000	deletion	fn	2	shallow	100
+visorR21	98	X	6150000	tandem duplication	tp	2	shallow	100
+visorR21	108	X	9938000	deletion	tp	2	shallow	100
+visorR21	23	2R	5612284	deletion	fp	2	shallow	100
+visorR21	46	3L	7160000	deletion	tp	2	shallow	100
+visorR21	43	3L	5550000	deletion	tp	2	shallow	100
+visorR21	-	2R	5000000	deletion	fn	2	shallow	100
+visorR21	19	2L	11485000	inversion	tp	2	shallow	100
+visorR21	111	X	11485000	inversion	tp	2	shallow	100
+visorR21	3	2L	5550000	deletion	tp	2	shallow	100
+visorR21	-	4	390000	tandem duplication	fn	2	shallow	100
+visorR21	29	2R	8312000	tandem duplication	tp	2	shallow	100
+visorR21	95	X	5000000	deletion	tp	2	shallow	100
+visorR21	101	X	7160000	deletion	tp	2	shallow	100
+visorR21	105	X	8887000	deletion	tp	2	shallow	100
+visorR21	88	4	727000	deletion	tp	2	shallow	100
+visorR21	69	3R	8887000	deletion	tp	2	shallow	100
+visorR21	5	2L	6150000	tandem duplication	tp	2	shallow	100
+visorR21	93	4	947000	tandem duplication	tp	2	shallow	100
+visorR21	9	2L	8312000	tandem duplication	tp	2	shallow	100
+visorR21	54	3L	10463000	inversion	tp	2	shallow	100
+visorR21	77	3R	11987000	tandem duplication	tp	2	shallow	100
+visorR21	78	4	200000	deletion	tp	2	shallow	100
+visorR21	56	3L	10970000	tandem duplication	tp	2	shallow	100
+visorR21	73	3R	10463000	inversion	tp	2	shallow	100
+visorR21	90	4	863000	inversion	tp	2	shallow	100
+visorR21	75	3R	10970000	tandem duplication	tp	2	shallow	100
+visorR21	76	3R	11485000	inversion	tp	2	shallow	100
+visorR21	14	2L	9938000	deletion	tp	2	shallow	100
+visorR21	92	4	925000	inversion	tp	2	shallow	100
+visorR21	31	2R	8887000	deletion	tp	2	shallow	100
+visorR21	-	3L	6655000	inversion	fn	2	shallow	100
+visorR21	41	3L	5000000	deletion	tp	2	shallow	100
+visorR21	65	3R	6655000	inversion	tp	2	shallow	100
+visorR21	59	3L	12489000	deletion	tp	2	shallow	100
+visorR21	-	3R	7810000	deletion	fn	2	shallow	100
+visorR21	112	X	11987000	tandem duplication	tp	2	shallow	100
+visorR21	-	4	797000	inversion	fn	2	shallow	100
+visorR21	25	2R	6655000	inversion	tp	2	shallow	100
+visorR23	32	2R	9938000	deletion	tp	2	shallow	80
+visorR23	45	3L	8887000	deletion	tp	2	shallow	80
+visorR23	18	2L	12489000	deletion	tp	2	shallow	80
+visorR23	5	2L	6655000	inversion	tp	2	shallow	80
+visorR23	23	2R	7160000	deletion	tp	2	shallow	80
+visorR23	11	2L	9437000	inversion	tp	2	shallow	80
+visorR23	-	2R	5550000	deletion	fn	2	shallow	80
+visorR23	38	3L	5550000	deletion	tp	2	shallow	80
+visorR23	-	2R	12489000	deletion	fn	2	shallow	80
+visorR23	91	X	6655000	inversion	tp	2	shallow	80
+visorR23	21	2R	6150000	tandem duplication	tp	2	shallow	80
+visorR23	51	3L	11485000	inversion	tp	2	shallow	80
+visorR23	77	4	610000	deletion	tp	2	shallow	80
+visorR23	-	4	415000	inversion	fn	2	shallow	80
+visorR23	-	X	10970000	tandem duplication	fn	2	shallow	80
+visorR23	14	2L	10970000	tandem duplication	tp	2	shallow	80
+visorR23	36	2R	11485000	inversion	tp	2	shallow	80
+visorR23	76	4	440000	deletion	tp	2	shallow	80
+visorR23	33	2R	10463000	inversion	tp	2	shallow	80
+visorR23	63	3R	9437000	inversion	tp	2	shallow	80
+visorR23	-	3L	6150000	tandem duplication	fn	2	shallow	80
+visorR23	59	3R	7160000	deletion	tp	2	shallow	80
+visorR23	47	3L	9938000	deletion	tp	2	shallow	80
+visorR23	102	X	12489000	deletion	tp	2	shallow	80
+visorR23	30	2R	9437000	inversion	tp	2	shallow	80
+visorR23	-	4	818000	deletion	fn	2	shallow	80
+visorR23	-	4	969000	deletion	fn	2	shallow	80
+visorR23	78	4	631869	tandem duplication	fp	2	shallow	80
+visorR23	-	3R	12489000	deletion	fn	2	shallow	80
+visorR23	6	2L	7160000	deletion	tp	2	shallow	80
+visorR23	-	X	8312000	tandem duplication	fn	2	shallow	80
+visorR23	57	3R	6150000	tandem duplication	tp	2	shallow	80
+visorR23	13	2L	10463000	inversion	tp	2	shallow	80
+visorR23	54	3R	5000000	deletion	tp	2	shallow	80
+visorR23	89	X	5550000	deletion	tp	2	shallow	80
+visorR23	44	3L	8312000	tandem duplication	tp	2	shallow	80
+visorR23	83	4	890000	tandem duplication	tp	2	shallow	80
+visorR23	52	3L	11987000	tandem duplication	tp	2	shallow	80
+visorR23	9	2L	8887000	deletion	tp	2	shallow	80
+visorR23	96	X	9437000	inversion	tp	2	shallow	80
+visorR23	-	2R	11987000	tandem duplication	fn	2	shallow	80
+visorR23	73	4	270000	deletion	tp	2	shallow	80
+visorR23	-	4	632000	tandem duplication	fn	2	shallow	80
+visorR23	46	3L	9437000	inversion	tp	2	shallow	80
+visorR23	1	2L	5000000	deletion	tp	2	shallow	80
+visorR23	25	2R	7810000	deletion	tp	2	shallow	80
+visorR23	34	2R	10970000	tandem duplication	tp	2	shallow	80
+visorR23	-	X	7810000	deletion	fn	2	shallow	80
+visorR23	85	4	947000	tandem duplication	tp	2	shallow	80
+visorR23	65	3R	9938000	deletion	tp	2	shallow	80
+visorR23	61	3R	8312000	tandem duplication	tp	2	shallow	80
+visorR23	7	2L	7810000	deletion	tp	2	shallow	80
+visorR23	17	2L	11987000	tandem duplication	tp	2	shallow	80
+visorR23	55	3R	5550000	deletion	tp	2	shallow	80
+visorR23	43	3L	7810000	deletion	tp	2	shallow	80
+visorR23	90	X	6150000	tandem duplication	tp	2	shallow	80
+visorR23	97	X	9938000	deletion	tp	2	shallow	80
+visorR23	20	2R	5612284	deletion	fp	2	shallow	80
+visorR23	42	3L	7160000	deletion	tp	2	shallow	80
+visorR23	-	2R	5000000	deletion	fn	2	shallow	80
+visorR23	-	2L	11485000	inversion	fn	2	shallow	80
+visorR23	69	3R	11485000	inversion	tp	2	shallow	80
+visorR23	3	2L	5550000	deletion	tp	2	shallow	80
+visorR23	-	4	390000	tandem duplication	fn	2	shallow	80
+visorR23	26	2R	8312000	tandem duplication	tp	2	shallow	80
+visorR23	87	X	5000000	deletion	tp	2	shallow	80
+visorR23	93	X	7160000	deletion	tp	2	shallow	80
+visorR23	95	X	8887000	deletion	tp	2	shallow	80
+visorR23	81	4	727000	deletion	tp	2	shallow	80
+visorR23	62	3R	8887000	deletion	tp	2	shallow	80
+visorR23	4	2L	6150000	tandem duplication	tp	2	shallow	80
+visorR23	98	X	10463000	inversion	tp	2	shallow	80
+visorR23	8	2L	8312000	tandem duplication	tp	2	shallow	80
+visorR23	48	3L	10463000	inversion	tp	2	shallow	80
+visorR23	70	3R	11987000	tandem duplication	tp	2	shallow	80
+visorR23	71	4	200000	deletion	tp	2	shallow	80
+visorR23	50	3L	10970000	tandem duplication	tp	2	shallow	80
+visorR23	66	3R	10463000	inversion	tp	2	shallow	80
+visorR23	82	4	863000	inversion	tp	2	shallow	80
+visorR23	68	3R	10970000	tandem duplication	tp	2	shallow	80
+visorR23	-	X	11485000	inversion	fn	2	shallow	80
+visorR23	12	2L	9938000	deletion	tp	2	shallow	80
+visorR23	84	4	925000	inversion	tp	2	shallow	80
+visorR23	28	2R	8887000	deletion	tp	2	shallow	80
+visorR23	40	3L	6655000	inversion	tp	2	shallow	80
+visorR23	75	4	390023	tandem duplication	fp	2	shallow	80
+visorR23	37	3L	5000000	deletion	tp	2	shallow	80
+visorR23	58	3R	6655000	inversion	tp	2	shallow	80
+visorR23	53	3L	12489000	deletion	tp	2	shallow	80
+visorR23	-	3R	7810000	deletion	fn	2	shallow	80
+visorR23	101	X	11987000	tandem duplication	tp	2	shallow	80
+visorR23	-	4	797000	inversion	fn	2	shallow	80
+visorR23	22	2R	6655000	inversion	tp	2	shallow	80
+visorR25	29	2R	9938000	deletion	tp	2	shallow	60
+visorR25	44	3L	8887000	deletion	tp	2	shallow	60
+visorR25	18	2L	12489000	deletion	tp	2	shallow	60
+visorR25	3	2L	6655000	inversion	tp	2	shallow	60
+visorR25	21	2R	7160000	deletion	tp	2	shallow	60
+visorR25	11	2L	9437000	inversion	tp	2	shallow	60
+visorR25	-	2R	5550000	deletion	fn	2	shallow	60
+visorR25	50	3R	5023144	deletion	fp	2	shallow	60
+visorR25	-	4	969000	deletion	fn	2	shallow	60
+visorR25	-	2R	12489000	deletion	fn	2	shallow	60
+visorR25	79	X	6655000	inversion	tp	2	shallow	60
+visorR25	-	2R	6150000	tandem duplication	fn	2	shallow	60
+visorR25	-	3L	11485000	inversion	fn	2	shallow	60
+visorR25	-	4	610000	deletion	fn	2	shallow	60
+visorR25	-	4	415000	inversion	fn	2	shallow	60
+visorR25	-	X	10970000	tandem duplication	fn	2	shallow	60
+visorR25	-	2L	10970000	tandem duplication	fn	2	shallow	60
+visorR25	34	2R	11485000	inversion	tp	2	shallow	60
+visorR25	67	4	440000	deletion	tp	2	shallow	60
+visorR25	31	2R	10463000	inversion	tp	2	shallow	60
+visorR25	58	3R	9437000	inversion	tp	2	shallow	60
+visorR25	-	3L	6150000	tandem duplication	fn	2	shallow	60
+visorR25	56	3R	7160000	deletion	tp	2	shallow	60
+visorR25	46	3L	9938000	deletion	tp	2	shallow	60
+visorR25	87	X	12489000	deletion	tp	2	shallow	60
+visorR25	28	2R	9437000	inversion	tp	2	shallow	60
+visorR25	72	4	818000	deletion	tp	2	shallow	60
+visorR25	-	3R	12489000	deletion	fn	2	shallow	60
+visorR25	4	2L	7160000	deletion	tp	2	shallow	60
+visorR25	81	X	8312000	tandem duplication	tp	2	shallow	60
+visorR25	53	3R	6150000	tandem duplication	tp	2	shallow	60
+visorR25	14	2L	10463000	inversion	tp	2	shallow	60
+visorR25	-	3R	5000000	deletion	fn	2	shallow	60
+visorR25	78	X	5550000	deletion	tp	2	shallow	60
+visorR25	41	3L	8312000	tandem duplication	tp	2	shallow	60
+visorR25	-	4	890000	tandem duplication	fn	2	shallow	60
+visorR25	-	3L	11987000	tandem duplication	fn	2	shallow	60
+visorR25	9	2L	8887000	deletion	tp	2	shallow	60
+visorR25	83	X	9437000	inversion	tp	2	shallow	60
+visorR25	-	2R	11987000	tandem duplication	fn	2	shallow	60
+visorR25	64	4	270000	deletion	tp	2	shallow	60
+visorR25	69	4	632000	tandem duplication	tp	2	shallow	60
+visorR25	45	3L	9437000	inversion	tp	2	shallow	60
+visorR25	1	2L	5000000	deletion	tp	2	shallow	60
+visorR25	23	2R	7810000	deletion	tp	2	shallow	60
+visorR25	32	2R	10970000	tandem duplication	tp	2	shallow	60
+visorR25	80	X	7810000	deletion	tp	2	shallow	60
+visorR25	75	4	947000	tandem duplication	tp	2	shallow	60
+visorR25	60	3R	9938000	deletion	tp	2	shallow	60
+visorR25	57	3R	8312000	tandem duplication	tp	2	shallow	60
+visorR25	6	2L	7810000	deletion	tp	2	shallow	60
+visorR25	17	2L	11987000	tandem duplication	tp	2	shallow	60
+visorR25	51	3R	5550000	deletion	tp	2	shallow	60
+visorR25	40	3L	7810000	deletion	tp	2	shallow	60
+visorR25	-	X	6150000	tandem duplication	fn	2	shallow	60
+visorR25	-	X	9938000	deletion	fn	2	shallow	60
+visorR25	19	2R	5612284	deletion	fp	2	shallow	60
+visorR25	39	3L	7160000	deletion	tp	2	shallow	60
+visorR25	37	3L	5550000	deletion	tp	2	shallow	60
+visorR25	-	2R	5000000	deletion	fn	2	shallow	60
+visorR25	16	2L	11485000	inversion	tp	2	shallow	60
+visorR25	85	X	11485000	inversion	tp	2	shallow	60
+visorR25	2	2L	5550000	deletion	tp	2	shallow	60
+visorR25	66	4	390000	tandem duplication	tp	2	shallow	60
+visorR25	25	2R	8312000	tandem duplication	tp	2	shallow	60
+visorR25	76	X	5000000	deletion	tp	2	shallow	60
+visorR25	-	X	7160000	deletion	fn	2	shallow	60
+visorR25	-	X	8887000	deletion	fn	2	shallow	60
+visorR25	71	4	727000	deletion	tp	2	shallow	60
+visorR25	-	3R	8887000	deletion	fn	2	shallow	60
+visorR25	-	2L	6150000	tandem duplication	fn	2	shallow	60
+visorR25	84	X	10463000	inversion	tp	2	shallow	60
+visorR25	7	2L	8312000	tandem duplication	tp	2	shallow	60
+visorR25	47	3L	10463000	inversion	tp	2	shallow	60
+visorR25	-	3R	11987000	tandem duplication	fn	2	shallow	60
+visorR25	63	4	200000	deletion	tp	2	shallow	60
+visorR25	48	3L	10970000	tandem duplication	tp	2	shallow	60
+visorR25	-	3R	10463000	inversion	fn	2	shallow	60
+visorR25	73	4	863000	inversion	tp	2	shallow	60
+visorR25	61	3R	10970000	tandem duplication	tp	2	shallow	60
+visorR25	62	3R	11485000	inversion	tp	2	shallow	60
+visorR25	12	2L	9938000	deletion	tp	2	shallow	60
+visorR25	74	4	925000	inversion	tp	2	shallow	60
+visorR25	26	2R	8887000	deletion	tp	2	shallow	60
+visorR25	38	3L	6655000	inversion	tp	2	shallow	60
+visorR25	35	3L	5000000	deletion	tp	2	shallow	60
+visorR25	54	3R	6655000	inversion	tp	2	shallow	60
+visorR25	-	3L	12489000	deletion	fn	2	shallow	60
+visorR25	-	3R	7810000	deletion	fn	2	shallow	60
+visorR25	86	X	11987000	tandem duplication	tp	2	shallow	60
+visorR25	-	4	797000	inversion	fn	2	shallow	60
+visorR25	20	2R	6655000	inversion	tp	2	shallow	60
+visorR27	-	2R	9938000	deletion	fn	2	shallow	40
+visorR27	27	3L	8887000	deletion	tp	2	shallow	40
+visorR27	13	2L	12489000	deletion	tp	2	shallow	40
+visorR27	-	2R	7160000	deletion	fn	2	shallow	40
+visorR27	-	2L	9437000	inversion	fn	2	shallow	40
+visorR27	-	2R	5550000	deletion	fn	2	shallow	40
+visorR27	30	3R	5023144	deletion	fp	2	shallow	40
+visorR27	24	3L	6654995	inversion	fp	2	shallow	40
+visorR27	-	4	969000	deletion	fn	2	shallow	40
+visorR27	-	2R	12489000	deletion	fn	2	shallow	40
+visorR27	49	X	6655000	inversion	tp	2	shallow	40
+visorR27	-	2R	6150000	tandem duplication	fn	2	shallow	40
+visorR27	-	3R	5000000	deletion	fn	2	shallow	40
+visorR27	29	3L	11485000	inversion	tp	2	shallow	40
+visorR27	-	4	610000	deletion	fn	2	shallow	40
+visorR27	-	4	415000	inversion	fn	2	shallow	40
+visorR27	-	X	10970000	tandem duplication	fn	2	shallow	40
+visorR27	45	4	862960	inversion	fp	2	shallow	40
+visorR27	9	2L	10970000	tandem duplication	tp	2	shallow	40
+visorR27	-	2R	11485000	inversion	fn	2	shallow	40
+visorR27	41	4	440000	deletion	tp	2	shallow	40
+visorR27	-	2R	10463000	inversion	fn	2	shallow	40
+visorR27	-	3R	9437000	inversion	fn	2	shallow	40
+visorR27	-	3L	6150000	tandem duplication	fn	2	shallow	40
+visorR27	17	2R	8887000	deletion	tp	2	shallow	40
+visorR27	-	3L	9938000	deletion	fn	2	shallow	40
+visorR27	-	X	12489000	deletion	fn	2	shallow	40
+visorR27	-	2R	9437000	inversion	fn	2	shallow	40
+visorR27	44	4	818000	deletion	tp	2	shallow	40
+visorR27	-	3R	12489000	deletion	fn	2	shallow	40
+visorR27	-	2L	7160000	deletion	fn	2	shallow	40
+visorR27	51	X	8312000	tandem duplication	tp	2	shallow	40
+visorR27	-	3R	6150000	tandem duplication	fn	2	shallow	40
+visorR27	-	2L	10463000	inversion	fn	2	shallow	40
+visorR27	3	2L	6655000	inversion	tp	2	shallow	40
+visorR27	-	X	5550000	deletion	fn	2	shallow	40
+visorR27	-	3L	8312000	tandem duplication	fn	2	shallow	40
+visorR27	46	4	890000	tandem duplication	tp	2	shallow	40
+visorR27	-	3L	11987000	tandem duplication	fn	2	shallow	40
+visorR27	-	2L	8887000	deletion	fn	2	shallow	40
+visorR27	-	X	9437000	inversion	fn	2	shallow	40
+visorR27	20	2R	11987000	tandem duplication	tp	2	shallow	40
+visorR27	-	3R	5550000	deletion	fn	2	shallow	40
+visorR27	40	4	270000	deletion	tp	2	shallow	40
+visorR27	-	4	632000	tandem duplication	fn	2	shallow	40
+visorR27	-	3L	9437000	inversion	fn	2	shallow	40
+visorR27	1	2L	5000000	deletion	tp	2	shallow	40
+visorR27	-	2R	7810000	deletion	fn	2	shallow	40
+visorR27	-	2R	10970000	tandem duplication	fn	2	shallow	40
+visorR27	-	X	7810000	deletion	fn	2	shallow	40
+visorR27	52	X	10463000	inversion	tp	2	shallow	40
+visorR27	-	3R	9938000	deletion	fn	2	shallow	40
+visorR27	-	3R	8312000	tandem duplication	fn	2	shallow	40
+visorR27	5	2L	7810000	deletion	tp	2	shallow	40
+visorR27	-	2L	11987000	tandem duplication	fn	2	shallow	40
+visorR27	22	3L	5550000	deletion	tp	2	shallow	40
+visorR27	-	3L	7810000	deletion	fn	2	shallow	40
+visorR27	-	X	6150000	tandem duplication	fn	2	shallow	40
+visorR27	-	X	9938000	deletion	fn	2	shallow	40
+visorR27	-	3L	7160000	deletion	fn	2	shallow	40
+visorR27	-	2R	5000000	deletion	fn	2	shallow	40
+visorR27	-	2L	11485000	inversion	fn	2	shallow	40
+visorR27	38	3R	11485000	inversion	tp	2	shallow	40
+visorR27	-	2L	5550000	deletion	fn	2	shallow	40
+visorR27	-	4	390000	tandem duplication	fn	2	shallow	40
+visorR27	-	2R	8312000	tandem duplication	fn	2	shallow	40
+visorR27	-	X	5000000	deletion	fn	2	shallow	40
+visorR27	-	X	7160000	deletion	fn	2	shallow	40
+visorR27	-	X	8887000	deletion	fn	2	shallow	40
+visorR27	-	4	727000	deletion	fn	2	shallow	40
+visorR27	35	3R	8887000	deletion	tp	2	shallow	40
+visorR27	-	2L	6150000	tandem duplication	fn	2	shallow	40
+visorR27	48	4	947000	tandem duplication	tp	2	shallow	40
+visorR27	-	2L	8312000	tandem duplication	fn	2	shallow	40
+visorR27	-	3L	10463000	inversion	fn	2	shallow	40
+visorR27	-	3R	11987000	tandem duplication	fn	2	shallow	40
+visorR27	-	4	200000	deletion	fn	2	shallow	40
+visorR27	-	3L	10970000	tandem duplication	fn	2	shallow	40
+visorR27	-	3R	10463000	inversion	fn	2	shallow	40
+visorR27	-	4	863000	inversion	fn	2	shallow	40
+visorR27	-	3R	10970000	tandem duplication	fn	2	shallow	40
+visorR27	-	X	11485000	inversion	fn	2	shallow	40
+visorR27	8	2L	9938000	deletion	tp	2	shallow	40
+visorR27	47	4	925000	inversion	tp	2	shallow	40
+visorR27	-	3R	7160000	deletion	fn	2	shallow	40
+visorR27	-	3L	6655000	inversion	fn	2	shallow	40
+visorR27	-	3L	5000000	deletion	fn	2	shallow	40
+visorR27	32	3R	6655000	inversion	tp	2	shallow	40
+visorR27	-	3L	12489000	deletion	fn	2	shallow	40
+visorR27	-	3R	7810000	deletion	fn	2	shallow	40
+visorR27	-	X	11987000	tandem duplication	fn	2	shallow	40
+visorR27	-	4	797000	inversion	fn	2	shallow	40
+visorR27	-	2R	6655000	inversion	fn	2	shallow	40
+visorR29	-	2R	9938000	deletion	fn	2	shallow	20
+visorR29	-	3L	8887000	deletion	fn	2	shallow	20
+visorR29	-	2L	12489000	deletion	fn	2	shallow	20
+visorR29	-	2L	6655000	inversion	fn	2	shallow	20
+visorR29	-	2R	7160000	deletion	fn	2	shallow	20
+visorR29	-	2L	9437000	inversion	fn	2	shallow	20
+visorR29	-	2R	5550000	deletion	fn	2	shallow	20
+visorR29	-	3L	5550000	deletion	fn	2	shallow	20
+visorR29	-	2R	12489000	deletion	fn	2	shallow	20
+visorR29	-	X	6655000	inversion	fn	2	shallow	20
+visorR29	-	2R	6150000	tandem duplication	fn	2	shallow	20
+visorR29	-	3L	11485000	inversion	fn	2	shallow	20
+visorR29	-	4	610000	deletion	fn	2	shallow	20
+visorR29	-	4	415000	inversion	fn	2	shallow	20
+visorR29	-	X	10970000	tandem duplication	fn	2	shallow	20
+visorR29	-	2L	10970000	tandem duplication	fn	2	shallow	20
+visorR29	-	2R	11485000	inversion	fn	2	shallow	20
+visorR29	-	4	440000	deletion	fn	2	shallow	20
+visorR29	-	2R	10463000	inversion	fn	2	shallow	20
+visorR29	-	3R	9437000	inversion	fn	2	shallow	20
+visorR29	-	3L	6150000	tandem duplication	fn	2	shallow	20
+visorR29	-	3R	7160000	deletion	fn	2	shallow	20
+visorR29	-	3L	9938000	deletion	fn	2	shallow	20
+visorR29	-	X	12489000	deletion	fn	2	shallow	20
+visorR29	-	2R	9437000	inversion	fn	2	shallow	20
+visorR29	-	4	818000	deletion	fn	2	shallow	20
+visorR29	-	4	969000	deletion	fn	2	shallow	20
+visorR29	-	3R	12489000	deletion	fn	2	shallow	20
+visorR29	2	2L	7160000	deletion	tp	2	shallow	20
+visorR29	-	X	8312000	tandem duplication	fn	2	shallow	20
+visorR29	-	3R	6150000	tandem duplication	fn	2	shallow	20
+visorR29	-	2L	10463000	inversion	fn	2	shallow	20
+visorR29	-	3R	5000000	deletion	fn	2	shallow	20
+visorR29	-	X	5550000	deletion	fn	2	shallow	20
+visorR29	-	3L	8312000	tandem duplication	fn	2	shallow	20
+visorR29	-	4	890000	tandem duplication	fn	2	shallow	20
+visorR29	-	3L	11987000	tandem duplication	fn	2	shallow	20
+visorR29	-	2L	8887000	deletion	fn	2	shallow	20
+visorR29	-	X	9437000	inversion	fn	2	shallow	20
+visorR29	-	2R	11987000	tandem duplication	fn	2	shallow	20
+visorR29	-	4	270000	deletion	fn	2	shallow	20
+visorR29	-	4	632000	tandem duplication	fn	2	shallow	20
+visorR29	-	3L	9437000	inversion	fn	2	shallow	20
+visorR29	1	2L	5000000	deletion	tp	2	shallow	20
+visorR29	-	2R	7810000	deletion	fn	2	shallow	20
+visorR29	-	2R	10970000	tandem duplication	fn	2	shallow	20
+visorR29	-	X	7810000	deletion	fn	2	shallow	20
+visorR29	-	4	947000	tandem duplication	fn	2	shallow	20
+visorR29	-	3R	9938000	deletion	fn	2	shallow	20
+visorR29	-	3R	8312000	tandem duplication	fn	2	shallow	20
+visorR29	-	2L	7810000	deletion	fn	2	shallow	20
+visorR29	-	2L	11987000	tandem duplication	fn	2	shallow	20
+visorR29	-	3R	5550000	deletion	fn	2	shallow	20
+visorR29	-	3L	7810000	deletion	fn	2	shallow	20
+visorR29	-	X	6150000	tandem duplication	fn	2	shallow	20
+visorR29	-	X	9938000	deletion	fn	2	shallow	20
+visorR29	-	3L	7160000	deletion	fn	2	shallow	20
+visorR29	-	2R	5000000	deletion	fn	2	shallow	20
+visorR29	-	2L	11485000	inversion	fn	2	shallow	20
+visorR29	-	3R	11485000	inversion	fn	2	shallow	20
+visorR29	-	2L	5550000	deletion	fn	2	shallow	20
+visorR29	-	4	390000	tandem duplication	fn	2	shallow	20
+visorR29	-	2R	8312000	tandem duplication	fn	2	shallow	20
+visorR29	-	X	5000000	deletion	fn	2	shallow	20
+visorR29	-	X	7160000	deletion	fn	2	shallow	20
+visorR29	-	X	8887000	deletion	fn	2	shallow	20
+visorR29	-	4	727000	deletion	fn	2	shallow	20
+visorR29	-	3R	8887000	deletion	fn	2	shallow	20
+visorR29	-	2L	6150000	tandem duplication	fn	2	shallow	20
+visorR29	8	X	10463000	inversion	tp	2	shallow	20
+visorR29	-	2L	8312000	tandem duplication	fn	2	shallow	20
+visorR29	3	3L	10463000	inversion	tp	2	shallow	20
+visorR29	-	3R	11987000	tandem duplication	fn	2	shallow	20
+visorR29	-	4	200000	deletion	fn	2	shallow	20
+visorR29	-	3L	10970000	tandem duplication	fn	2	shallow	20
+visorR29	-	3R	10463000	inversion	fn	2	shallow	20
+visorR29	-	4	863000	inversion	fn	2	shallow	20
+visorR29	-	3R	10970000	tandem duplication	fn	2	shallow	20
+visorR29	-	X	11485000	inversion	fn	2	shallow	20
+visorR29	-	2L	9938000	deletion	fn	2	shallow	20
+visorR29	7	4	925000	inversion	tp	2	shallow	20
+visorR29	-	2R	8887000	deletion	fn	2	shallow	20
+visorR29	-	3L	6655000	inversion	fn	2	shallow	20
+visorR29	-	3L	5000000	deletion	fn	2	shallow	20
+visorR29	-	3R	6655000	inversion	fn	2	shallow	20
+visorR29	-	3L	12489000	deletion	fn	2	shallow	20
+visorR29	-	3R	7810000	deletion	fn	2	shallow	20
+visorR29	-	X	11987000	tandem duplication	fn	2	shallow	20
+visorR29	-	4	797000	inversion	fn	2	shallow	20
+visorR29	-	2R	6655000	inversion	fn	2	shallow	20
+visorR31	38	2R	9938000	deletion	tp	2	deep	100
+visorR31	54	3L	8887000	deletion	tp	2	deep	100
+visorR31	21	2L	12489000	deletion	tp	2	deep	100
+visorR31	5	2L	6655000	inversion	tp	2	deep	100
+visorR31	29	2R	7160000	deletion	tp	2	deep	100
+visorR31	13	2L	9437000	inversion	tp	2	deep	100
+visorR31	24	2R	5550000	deletion	tp	2	deep	100
+visorR31	103	4	969000	deletion	tp	2	deep	100
+visorR31	44	2R	12489000	deletion	tp	2	deep	100
+visorR31	107	X	6655000	inversion	tp	2	deep	100
+visorR31	26	2R	6150000	tandem duplication	tp	2	deep	100
+visorR31	60	3L	11485000	inversion	tp	2	deep	100
+visorR31	91	4	610000	deletion	tp	2	deep	100
+visorR31	-	4	415000	inversion	fn	2	deep	100
+visorR31	118	X	10970000	tandem duplication	tp	2	deep	100
+visorR31	17	2L	10970000	tandem duplication	tp	2	deep	100
+visorR31	42	2R	11485000	inversion	tp	2	deep	100
+visorR31	89	4	440000	deletion	tp	2	deep	100
+visorR31	39	2R	10463000	inversion	tp	2	deep	100
+visorR31	75	3R	9437000	inversion	tp	2	deep	100
+visorR31	-	3L	6150000	tandem duplication	fn	2	deep	100
+visorR31	70	3R	7160000	deletion	tp	2	deep	100
+visorR31	56	3L	9938000	deletion	tp	2	deep	100
+visorR31	122	X	12489000	deletion	tp	2	deep	100
+visorR31	36	2R	9437000	inversion	tp	2	deep	100
+visorR31	96	4	818000	deletion	tp	2	deep	100
+visorR31	-	3R	12489000	deletion	fn	2	deep	100
+visorR31	6	2L	7160000	deletion	tp	2	deep	100
+visorR31	111	X	8312000	tandem duplication	tp	2	deep	100
+visorR31	66	3R	6150000	tandem duplication	tp	2	deep	100
+visorR31	16	2L	10463000	inversion	tp	2	deep	100
+visorR31	64	3R	5000000	deletion	tp	2	deep	100
+visorR31	105	X	5550000	deletion	tp	2	deep	100
+visorR31	51	3L	8312000	tandem duplication	tp	2	deep	100
+visorR31	99	4	890000	tandem duplication	tp	2	deep	100
+visorR31	61	3L	11987000	tandem duplication	tp	2	deep	100
+visorR31	11	2L	8887000	deletion	tp	2	deep	100
+visorR31	114	X	9437000	inversion	tp	2	deep	100
+visorR31	43	2R	11987000	tandem duplication	tp	2	deep	100
+visorR31	85	4	270000	deletion	tp	2	deep	100
+visorR31	92	4	632000	tandem duplication	tp	2	deep	100
+visorR31	55	3L	9437000	inversion	tp	2	deep	100
+visorR31	1	2L	5000000	deletion	tp	2	deep	100
+visorR31	31	2R	7810000	deletion	tp	2	deep	100
+visorR31	41	2R	10970000	tandem duplication	tp	2	deep	100
+visorR31	110	X	7810000	deletion	tp	2	deep	100
+visorR31	102	4	947000	tandem duplication	tp	2	deep	100
+visorR31	76	3R	9938000	deletion	tp	2	deep	100
+visorR31	73	3R	8312000	tandem duplication	tp	2	deep	100
+visorR31	8	2L	7810000	deletion	tp	2	deep	100
+visorR31	20	2L	11987000	tandem duplication	tp	2	deep	100
+visorR31	65	3R	5550000	deletion	tp	2	deep	100
+visorR31	50	3L	7810000	deletion	tp	2	deep	100
+visorR31	106	X	6150000	tandem duplication	tp	2	deep	100
+visorR31	115	X	9938000	deletion	tp	2	deep	100
+visorR31	49	3L	7160000	deletion	tp	2	deep	100
+visorR31	46	3L	5550000	deletion	tp	2	deep	100
+visorR31	23	2R	5000000	deletion	tp	2	deep	100
+visorR31	19	2L	11485000	inversion	tp	2	deep	100
+visorR31	119	X	11485000	inversion	tp	2	deep	100
+visorR31	2	2L	5550000	deletion	tp	2	deep	100
+visorR31	87	4	390000	tandem duplication	tp	2	deep	100
+visorR31	32	2R	8312000	tandem duplication	tp	2	deep	100
+visorR31	104	X	5000000	deletion	tp	2	deep	100
+visorR31	109	X	7160000	deletion	tp	2	deep	100
+visorR31	113	X	8887000	deletion	tp	2	deep	100
+visorR31	94	4	727000	deletion	tp	2	deep	100
+visorR31	74	3R	8887000	deletion	tp	2	deep	100
+visorR31	4	2L	6150000	tandem duplication	tp	2	deep	100
+visorR31	116	X	10463000	inversion	tp	2	deep	100
+visorR31	9	2L	8312000	tandem duplication	tp	2	deep	100
+visorR31	57	3L	10463000	inversion	tp	2	deep	100
+visorR31	82	3R	11987000	tandem duplication	tp	2	deep	100
+visorR31	83	4	200000	deletion	tp	2	deep	100
+visorR31	58	3L	10970000	tandem duplication	tp	2	deep	100
+visorR31	25	2R	5611257	deletion	fp	2	deep	100
+visorR31	78	3R	10463000	inversion	tp	2	deep	100
+visorR31	98	4	863000	inversion	tp	2	deep	100
+visorR31	-	4	797000	inversion	fn	2	deep	100
+visorR31	81	3R	11485000	inversion	tp	2	deep	100
+visorR31	14	2L	9938000	deletion	tp	2	deep	100
+visorR31	101	4	925000	inversion	tp	2	deep	100
+visorR31	34	2R	8887000	deletion	tp	2	deep	100
+visorR31	47	3L	6655000	inversion	tp	2	deep	100
+visorR31	45	3L	5000000	deletion	tp	2	deep	100
+visorR31	68	3R	6655000	inversion	tp	2	deep	100
+visorR31	63	3L	12489000	deletion	tp	2	deep	100
+visorR31	71	3R	7810000	deletion	tp	2	deep	100
+visorR31	120	X	11987000	tandem duplication	tp	2	deep	100
+visorR31	80	3R	10970000	tandem duplication	tp	2	deep	100
+visorR31	28	2R	6655000	inversion	tp	2	deep	100
+visorR33	34	2R	9938000	deletion	tp	2	deep	80
+visorR33	52	3L	8887000	deletion	tp	2	deep	80
+visorR33	20	2L	12489000	deletion	tp	2	deep	80
+visorR33	4	2L	6655000	inversion	tp	2	deep	80
+visorR33	26	2R	7160000	deletion	tp	2	deep	80
+visorR33	12	2L	9437000	inversion	tp	2	deep	80
+visorR33	23	2R	5550000	deletion	tp	2	deep	80
+visorR33	103	4	969000	deletion	tp	2	deep	80
+visorR33	42	2R	12489000	deletion	tp	2	deep	80
+visorR33	107	X	6655000	inversion	tp	2	deep	80
+visorR33	24	2R	6150000	tandem duplication	tp	2	deep	80
+visorR33	58	3L	11485000	inversion	tp	2	deep	80
+visorR33	91	4	610000	deletion	tp	2	deep	80
+visorR33	-	4	415000	inversion	fn	2	deep	80
+visorR33	118	X	10970000	tandem duplication	tp	2	deep	80
+visorR33	16	2L	10970000	tandem duplication	tp	2	deep	80
+visorR33	39	2R	11485000	inversion	tp	2	deep	80
+visorR33	89	4	440000	deletion	tp	2	deep	80
+visorR33	36	2R	10463000	inversion	tp	2	deep	80
+visorR33	75	3R	9437000	inversion	tp	2	deep	80
+visorR33	-	3L	6150000	tandem duplication	fn	2	deep	80
+visorR33	69	3R	7160000	deletion	tp	2	deep	80
+visorR33	54	3L	9938000	deletion	tp	2	deep	80
+visorR33	122	X	12489000	deletion	tp	2	deep	80
+visorR33	33	2R	9437000	inversion	tp	2	deep	80
+visorR33	96	4	818000	deletion	tp	2	deep	80
+visorR33	-	3R	12489000	deletion	fn	2	deep	80
+visorR33	5	2L	7160000	deletion	tp	2	deep	80
+visorR33	111	X	8312000	tandem duplication	tp	2	deep	80
+visorR33	66	3R	6150000	tandem duplication	tp	2	deep	80
+visorR33	15	2L	10463000	inversion	tp	2	deep	80
+visorR33	62	3R	5000000	deletion	tp	2	deep	80
+visorR33	105	X	5550000	deletion	tp	2	deep	80
+visorR33	50	3L	8312000	tandem duplication	tp	2	deep	80
+visorR33	99	4	890000	tandem duplication	tp	2	deep	80
+visorR33	59	3L	11987000	tandem duplication	tp	2	deep	80
+visorR33	10	2L	8887000	deletion	tp	2	deep	80
+visorR33	114	X	9437000	inversion	tp	2	deep	80
+visorR33	41	2R	11987000	tandem duplication	tp	2	deep	80
+visorR33	86	4	270000	deletion	tp	2	deep	80
+visorR33	92	4	632000	tandem duplication	tp	2	deep	80
+visorR33	53	3L	9437000	inversion	tp	2	deep	80
+visorR33	1	2L	5000000	deletion	tp	2	deep	80
+visorR33	28	2R	7810000	deletion	tp	2	deep	80
+visorR33	38	2R	10970000	tandem duplication	tp	2	deep	80
+visorR33	110	X	7810000	deletion	tp	2	deep	80
+visorR33	102	4	947000	tandem duplication	tp	2	deep	80
+visorR33	76	3R	9938000	deletion	tp	2	deep	80
+visorR33	73	3R	8312000	tandem duplication	tp	2	deep	80
+visorR33	7	2L	7810000	deletion	tp	2	deep	80
+visorR33	19	2L	11987000	tandem duplication	tp	2	deep	80
+visorR33	64	3R	5550000	deletion	tp	2	deep	80
+visorR33	48	3L	7810000	deletion	tp	2	deep	80
+visorR33	106	X	6150000	tandem duplication	tp	2	deep	80
+visorR33	116	X	9938000	deletion	tp	2	deep	80
+visorR33	47	3L	7160000	deletion	tp	2	deep	80
+visorR33	44	3L	5550000	deletion	tp	2	deep	80
+visorR33	22	2R	5000000	deletion	tp	2	deep	80
+visorR33	18	2L	11485000	inversion	tp	2	deep	80
+visorR33	119	X	11485000	inversion	tp	2	deep	80
+visorR33	2	2L	5550000	deletion	tp	2	deep	80
+visorR33	88	4	390000	tandem duplication	tp	2	deep	80
+visorR33	29	2R	8312000	tandem duplication	tp	2	deep	80
+visorR33	104	X	5000000	deletion	tp	2	deep	80
+visorR33	109	X	7160000	deletion	tp	2	deep	80
+visorR33	113	X	8887000	deletion	tp	2	deep	80
+visorR33	94	4	727000	deletion	tp	2	deep	80
+visorR33	74	3R	8887000	deletion	tp	2	deep	80
+visorR33	3	2L	6150000	tandem duplication	tp	2	deep	80
+visorR33	117	X	10463000	inversion	tp	2	deep	80
+visorR33	8	2L	8312000	tandem duplication	tp	2	deep	80
+visorR33	55	3L	10463000	inversion	tp	2	deep	80
+visorR33	82	3R	11987000	tandem duplication	tp	2	deep	80
+visorR33	84	4	200000	deletion	tp	2	deep	80
+visorR33	56	3L	10970000	tandem duplication	tp	2	deep	80
+visorR33	78	3R	10463000	inversion	tp	2	deep	80
+visorR33	98	4	863000	inversion	tp	2	deep	80
+visorR33	-	4	797000	inversion	fn	2	deep	80
+visorR33	81	3R	11485000	inversion	tp	2	deep	80
+visorR33	13	2L	9938000	deletion	tp	2	deep	80
+visorR33	101	4	925000	inversion	tp	2	deep	80
+visorR33	31	2R	8887000	deletion	tp	2	deep	80
+visorR33	45	3L	6655000	inversion	tp	2	deep	80
+visorR33	43	3L	5000000	deletion	tp	2	deep	80
+visorR33	67	3R	6655000	inversion	tp	2	deep	80
+visorR33	61	3L	12489000	deletion	tp	2	deep	80
+visorR33	70	3R	7810000	deletion	tp	2	deep	80
+visorR33	120	X	11987000	tandem duplication	tp	2	deep	80
+visorR33	80	3R	10970000	tandem duplication	tp	2	deep	80
+visorR33	25	2R	6655000	inversion	tp	2	deep	80
+visorR35	37	2R	9938000	deletion	tp	2	deep	60
+visorR35	55	3L	8887000	deletion	tp	2	deep	60
+visorR35	20	2L	12489000	deletion	tp	2	deep	60
+visorR35	4	2L	6655000	inversion	tp	2	deep	60
+visorR35	28	2R	7160000	deletion	tp	2	deep	60
+visorR35	12	2L	9437000	inversion	tp	2	deep	60
+visorR35	23	2R	5550000	deletion	tp	2	deep	60
+visorR35	103	4	969000	deletion	tp	2	deep	60
+visorR35	44	2R	12489000	deletion	tp	2	deep	60
+visorR35	107	X	6655000	inversion	tp	2	deep	60
+visorR35	25	2R	6150000	tandem duplication	tp	2	deep	60
+visorR35	61	3L	11485000	inversion	tp	2	deep	60
+visorR35	91	4	610000	deletion	tp	2	deep	60
+visorR35	-	4	415000	inversion	fn	2	deep	60
+visorR35	115	X	10970000	tandem duplication	tp	2	deep	60
+visorR35	16	2L	10970000	tandem duplication	tp	2	deep	60
+visorR35	42	2R	11485000	inversion	tp	2	deep	60
+visorR35	89	4	440000	deletion	tp	2	deep	60
+visorR35	39	2R	10463000	inversion	tp	2	deep	60
+visorR35	75	3R	9437000	inversion	tp	2	deep	60
+visorR35	-	3L	6150000	tandem duplication	fn	2	deep	60
+visorR35	70	3R	7160000	deletion	tp	2	deep	60
+visorR35	57	3L	9938000	deletion	tp	2	deep	60
+visorR35	118	X	12489000	deletion	tp	2	deep	60
+visorR35	36	2R	9437000	inversion	tp	2	deep	60
+visorR35	96	4	818000	deletion	tp	2	deep	60
+visorR35	-	3R	12489000	deletion	fn	2	deep	60
+visorR35	5	2L	7160000	deletion	tp	2	deep	60
+visorR35	110	X	8312000	tandem duplication	tp	2	deep	60
+visorR35	67	3R	6150000	tandem duplication	tp	2	deep	60
+visorR35	15	2L	10463000	inversion	tp	2	deep	60
+visorR35	65	3R	5000000	deletion	tp	2	deep	60
+visorR35	105	X	5550000	deletion	tp	2	deep	60
+visorR35	52	3L	8312000	tandem duplication	tp	2	deep	60
+visorR35	99	4	890000	tandem duplication	tp	2	deep	60
+visorR35	62	3L	11987000	tandem duplication	tp	2	deep	60
+visorR35	10	2L	8887000	deletion	tp	2	deep	60
+visorR35	112	X	9437000	inversion	tp	2	deep	60
+visorR35	43	2R	11987000	tandem duplication	tp	2	deep	60
+visorR35	86	4	270000	deletion	tp	2	deep	60
+visorR35	92	4	632000	tandem duplication	tp	2	deep	60
+visorR35	56	3L	9437000	inversion	tp	2	deep	60
+visorR35	1	2L	5000000	deletion	tp	2	deep	60
+visorR35	30	2R	7810000	deletion	tp	2	deep	60
+visorR35	41	2R	10970000	tandem duplication	tp	2	deep	60
+visorR35	109	X	7810000	deletion	tp	2	deep	60
+visorR35	-	X	10463000	inversion	fn	2	deep	60
+visorR35	76	3R	9938000	deletion	tp	2	deep	60
+visorR35	73	3R	8312000	tandem duplication	tp	2	deep	60
+visorR35	7	2L	7810000	deletion	tp	2	deep	60
+visorR35	19	2L	11987000	tandem duplication	tp	2	deep	60
+visorR35	66	3R	5550000	deletion	tp	2	deep	60
+visorR35	51	3L	7810000	deletion	tp	2	deep	60
+visorR35	106	X	6150000	tandem duplication	tp	2	deep	60
+visorR35	113	X	9938000	deletion	tp	2	deep	60
+visorR35	50	3L	7160000	deletion	tp	2	deep	60
+visorR35	47	3L	5550000	deletion	tp	2	deep	60
+visorR35	22	2R	5000000	deletion	tp	2	deep	60
+visorR35	18	2L	11485000	inversion	tp	2	deep	60
+visorR35	116	X	11485000	inversion	tp	2	deep	60
+visorR35	2	2L	5550000	deletion	tp	2	deep	60
+visorR35	88	4	390000	tandem duplication	tp	2	deep	60
+visorR35	31	2R	8312000	tandem duplication	tp	2	deep	60
+visorR35	104	X	5000000	deletion	tp	2	deep	60
+visorR35	108	X	7160000	deletion	tp	2	deep	60
+visorR35	111	X	8887000	deletion	tp	2	deep	60
+visorR35	95	4	727000	deletion	tp	2	deep	60
+visorR35	74	3R	8887000	deletion	tp	2	deep	60
+visorR35	3	2L	6150000	tandem duplication	tp	2	deep	60
+visorR35	102	4	947000	tandem duplication	tp	2	deep	60
+visorR35	8	2L	8312000	tandem duplication	tp	2	deep	60
+visorR35	58	3L	10463000	inversion	tp	2	deep	60
+visorR35	82	3R	11987000	tandem duplication	tp	2	deep	60
+visorR35	84	4	200000	deletion	tp	2	deep	60
+visorR35	59	3L	10970000	tandem duplication	tp	2	deep	60
+visorR35	24	2R	5611257	deletion	fp	2	deep	60
+visorR35	78	3R	10463000	inversion	tp	2	deep	60
+visorR35	98	4	863000	inversion	tp	2	deep	60
+visorR35	-	4	797000	inversion	fn	2	deep	60
+visorR35	81	3R	11485000	inversion	tp	2	deep	60
+visorR35	13	2L	9938000	deletion	tp	2	deep	60
+visorR35	101	4	925000	inversion	tp	2	deep	60
+visorR35	34	2R	8887000	deletion	tp	2	deep	60
+visorR35	48	3L	6655000	inversion	tp	2	deep	60
+visorR35	45	3L	5000000	deletion	tp	2	deep	60
+visorR35	69	3R	6655000	inversion	tp	2	deep	60
+visorR35	64	3L	12489000	deletion	tp	2	deep	60
+visorR35	72	3R	7810000	deletion	tp	2	deep	60
+visorR35	117	X	11987000	tandem duplication	tp	2	deep	60
+visorR35	80	3R	10970000	tandem duplication	tp	2	deep	60
+visorR35	27	2R	6655000	inversion	tp	2	deep	60
+visorR37	33	2R	9938000	deletion	tp	2	deep	40
+visorR37	49	3L	8887000	deletion	tp	2	deep	40
+visorR37	-	2L	12489000	deletion	fn	2	deep	40
+visorR37	5	2L	6655000	inversion	tp	2	deep	40
+visorR37	25	2R	7160000	deletion	tp	2	deep	40
+visorR37	-	2L	9437000	inversion	fn	2	deep	40
+visorR37	21	2R	5550000	deletion	tp	2	deep	40
+visorR37	-	4	969000	deletion	fn	2	deep	40
+visorR37	-	2R	12489000	deletion	fn	2	deep	40
+visorR37	99	X	6655000	inversion	tp	2	deep	40
+visorR37	23	2R	6150000	tandem duplication	tp	2	deep	40
+visorR37	-	3L	11485000	inversion	fn	2	deep	40
+visorR37	-	4	610000	deletion	fn	2	deep	40
+visorR37	-	4	415000	inversion	fn	2	deep	40
+visorR37	107	X	10970000	tandem duplication	tp	2	deep	40
+visorR37	-	2L	10970000	tandem duplication	fn	2	deep	40
+visorR37	38	2R	11485000	inversion	tp	2	deep	40
+visorR37	81	4	440000	deletion	tp	2	deep	40
+visorR37	35	2R	10463000	inversion	tp	2	deep	40
+visorR37	68	3R	9437000	inversion	tp	2	deep	40
+visorR37	-	3L	6150000	tandem duplication	fn	2	deep	40
+visorR37	64	3R	7160000	deletion	tp	2	deep	40
+visorR37	-	3L	9938000	deletion	fn	2	deep	40
+visorR37	-	X	12489000	deletion	fn	2	deep	40
+visorR37	-	2R	9437000	inversion	fn	2	deep	40
+visorR37	88	4	818000	deletion	tp	2	deep	40
+visorR37	-	3R	12489000	deletion	fn	2	deep	40
+visorR37	6	2L	7160000	deletion	tp	2	deep	40
+visorR37	102	X	8312000	tandem duplication	tp	2	deep	40
+visorR37	-	3R	6150000	tandem duplication	fn	2	deep	40
+visorR37	16	2L	10463000	inversion	tp	2	deep	40
+visorR37	-	3R	5000000	deletion	fn	2	deep	40
+visorR37	97	X	5550000	deletion	tp	2	deep	40
+visorR37	47	3L	8312000	tandem duplication	tp	2	deep	40
+visorR37	91	4	890000	tandem duplication	tp	2	deep	40
+visorR37	56	3L	11987000	tandem duplication	tp	2	deep	40
+visorR37	11	2L	8887000	deletion	tp	2	deep	40
+visorR37	104	X	9437000	inversion	tp	2	deep	40
+visorR37	-	2R	11987000	tandem duplication	fn	2	deep	40
+visorR37	79	4	270000	deletion	tp	2	deep	40
+visorR37	84	4	632000	tandem duplication	tp	2	deep	40
+visorR37	50	3L	9437000	inversion	tp	2	deep	40
+visorR37	1	2L	5000000	deletion	tp	2	deep	40
+visorR37	27	2R	7810000	deletion	tp	2	deep	40
+visorR37	37	2R	10970000	tandem duplication	tp	2	deep	40
+visorR37	101	X	7810000	deletion	tp	2	deep	40
+visorR37	-	X	10463000	inversion	fn	2	deep	40
+visorR37	69	3R	9938000	deletion	tp	2	deep	40
+visorR37	-	3R	8312000	tandem duplication	fn	2	deep	40
+visorR37	8	2L	7810000	deletion	tp	2	deep	40
+visorR37	-	2L	11987000	tandem duplication	fn	2	deep	40
+visorR37	61	3R	5550000	deletion	tp	2	deep	40
+visorR37	45	3L	7810000	deletion	tp	2	deep	40
+visorR37	98	X	6150000	tandem duplication	tp	2	deep	40
+visorR37	105	X	9938000	deletion	tp	2	deep	40
+visorR37	44	3L	7160000	deletion	tp	2	deep	40
+visorR37	41	3L	5550000	deletion	tp	2	deep	40
+visorR37	-	2R	5000000	deletion	fn	2	deep	40
+visorR37	18	2L	11485000	inversion	tp	2	deep	40
+visorR37	74	3R	11485000	inversion	tp	2	deep	40
+visorR37	2	2L	5550000	deletion	tp	2	deep	40
+visorR37	-	4	390000	tandem duplication	fn	2	deep	40
+visorR37	28	2R	8312000	tandem duplication	tp	2	deep	40
+visorR37	96	X	5000000	deletion	tp	2	deep	40
+visorR37	100	X	7160000	deletion	tp	2	deep	40
+visorR37	103	X	8887000	deletion	tp	2	deep	40
+visorR37	86	4	727000	deletion	tp	2	deep	40
+visorR37	67	3R	8887000	deletion	tp	2	deep	40
+visorR37	4	2L	6150000	tandem duplication	tp	2	deep	40
+visorR37	94	4	947000	tandem duplication	tp	2	deep	40
+visorR37	9	2L	8312000	tandem duplication	tp	2	deep	40
+visorR37	52	3L	10463000	inversion	tp	2	deep	40
+visorR37	75	3R	11987000	tandem duplication	tp	2	deep	40
+visorR37	77	4	200000	deletion	tp	2	deep	40
+visorR37	54	3L	10970000	tandem duplication	tp	2	deep	40
+visorR37	71	3R	10463000	inversion	tp	2	deep	40
+visorR37	90	4	863000	inversion	tp	2	deep	40
+visorR37	73	3R	10970000	tandem duplication	tp	2	deep	40
+visorR37	-	X	11485000	inversion	fn	2	deep	40
+visorR37	14	2L	9938000	deletion	tp	2	deep	40
+visorR37	93	4	925000	inversion	tp	2	deep	40
+visorR37	30	2R	8887000	deletion	tp	2	deep	40
+visorR37	42	3L	6655000	inversion	tp	2	deep	40
+visorR37	-	3L	5000000	deletion	fn	2	deep	40
+visorR37	62	3R	6655000	inversion	tp	2	deep	40
+visorR37	57	3L	12489000	deletion	tp	2	deep	40
+visorR37	65	3R	7810000	deletion	tp	2	deep	40
+visorR37	109	X	11987000	tandem duplication	tp	2	deep	40
+visorR37	-	4	797000	inversion	fn	2	deep	40
+visorR37	24	2R	6655000	inversion	tp	2	deep	40
+visorR39	-	2R	9938000	deletion	fn	2	deep	20
+visorR39	15	3L	8887000	deletion	tp	2	deep	20
+visorR39	-	2L	12489000	deletion	fn	2	deep	20
+visorR39	-	2R	7160000	deletion	fn	2	deep	20
+visorR39	-	2L	9437000	inversion	fn	2	deep	20
+visorR39	-	2R	5550000	deletion	fn	2	deep	20
+visorR39	-	4	969000	deletion	fn	2	deep	20
+visorR39	-	2R	12489000	deletion	fn	2	deep	20
+visorR39	36	X	6655000	inversion	tp	2	deep	20
+visorR39	-	2R	6150000	tandem duplication	fn	2	deep	20
+visorR39	-	3R	5000000	deletion	fn	2	deep	20
+visorR39	18	3L	11485000	inversion	tp	2	deep	20
+visorR39	-	4	610000	deletion	fn	2	deep	20
+visorR39	-	4	415000	inversion	fn	2	deep	20
+visorR39	-	X	10970000	tandem duplication	fn	2	deep	20
+visorR39	-	2L	10970000	tandem duplication	fn	2	deep	20
+visorR39	-	2R	11485000	inversion	fn	2	deep	20
+visorR39	-	4	440000	deletion	fn	2	deep	20
+visorR39	11	2R	10463000	inversion	tp	2	deep	20
+visorR39	24	3R	9437000	inversion	tp	2	deep	20
+visorR39	-	3L	6150000	tandem duplication	fn	2	deep	20
+visorR39	22	3R	7160000	deletion	tp	2	deep	20
+visorR39	-	3L	9938000	deletion	fn	2	deep	20
+visorR39	-	X	12489000	deletion	fn	2	deep	20
+visorR39	-	2R	9437000	inversion	fn	2	deep	20
+visorR39	-	4	818000	deletion	fn	2	deep	20
+visorR39	-	3R	12489000	deletion	fn	2	deep	20
+visorR39	-	2L	7160000	deletion	fn	2	deep	20
+visorR39	-	X	8312000	tandem duplication	fn	2	deep	20
+visorR39	20	3R	6150000	tandem duplication	tp	2	deep	20
+visorR39	6	2L	10463000	inversion	tp	2	deep	20
+visorR39	1	2L	6655000	inversion	tp	2	deep	20
+visorR39	-	X	5550000	deletion	fn	2	deep	20
+visorR39	-	3L	8312000	tandem duplication	fn	2	deep	20
+visorR39	-	4	890000	tandem duplication	fn	2	deep	20
+visorR39	-	3L	11987000	tandem duplication	fn	2	deep	20
+visorR39	4	2L	8887000	deletion	tp	2	deep	20
+visorR39	39	X	9437000	inversion	tp	2	deep	20
+visorR39	-	2R	11987000	tandem duplication	fn	2	deep	20
+visorR39	30	4	270000	deletion	tp	2	deep	20
+visorR39	-	4	632000	tandem duplication	fn	2	deep	20
+visorR39	16	3L	9437000	inversion	tp	2	deep	20
+visorR39	-	2L	5000000	deletion	fn	2	deep	20
+visorR39	-	2R	7810000	deletion	fn	2	deep	20
+visorR39	-	2R	10970000	tandem duplication	fn	2	deep	20
+visorR39	-	X	7810000	deletion	fn	2	deep	20
+visorR39	-	X	10463000	inversion	fn	2	deep	20
+visorR39	-	3R	9938000	deletion	fn	2	deep	20
+visorR39	-	3R	8312000	tandem duplication	fn	2	deep	20
+visorR39	2	2L	7810000	deletion	tp	2	deep	20
+visorR39	-	2L	11987000	tandem duplication	fn	2	deep	20
+visorR39	-	3R	5550000	deletion	fn	2	deep	20
+visorR39	-	3L	7810000	deletion	fn	2	deep	20
+visorR39	-	X	6150000	tandem duplication	fn	2	deep	20
+visorR39	40	X	9938000	deletion	tp	2	deep	20
+visorR39	-	3L	7160000	deletion	fn	2	deep	20
+visorR39	12	3L	5550000	deletion	tp	2	deep	20
+visorR39	-	2R	5000000	deletion	fn	2	deep	20
+visorR39	-	2L	11485000	inversion	fn	2	deep	20
+visorR39	-	3R	11485000	inversion	fn	2	deep	20
+visorR39	-	2L	5550000	deletion	fn	2	deep	20
+visorR39	-	4	390000	tandem duplication	fn	2	deep	20
+visorR39	-	2R	8312000	tandem duplication	fn	2	deep	20
+visorR39	-	X	5000000	deletion	fn	2	deep	20
+visorR39	-	X	7160000	deletion	fn	2	deep	20
+visorR39	-	X	8887000	deletion	fn	2	deep	20
+visorR39	-	4	727000	deletion	fn	2	deep	20
+visorR39	-	3R	8887000	deletion	fn	2	deep	20
+visorR39	-	2L	6150000	tandem duplication	fn	2	deep	20
+visorR39	34	4	947000	tandem duplication	tp	2	deep	20
+visorR39	-	2L	8312000	tandem duplication	fn	2	deep	20
+visorR39	17	3L	10463000	inversion	tp	2	deep	20
+visorR39	-	3R	11987000	tandem duplication	fn	2	deep	20
+visorR39	29	4	200000	deletion	tp	2	deep	20
+visorR39	-	3L	10970000	tandem duplication	fn	2	deep	20
+visorR39	-	3R	10463000	inversion	fn	2	deep	20
+visorR39	-	4	863000	inversion	fn	2	deep	20
+visorR39	-	3R	10970000	tandem duplication	fn	2	deep	20
+visorR39	-	X	11485000	inversion	fn	2	deep	20
+visorR39	-	2L	9938000	deletion	fn	2	deep	20
+visorR39	33	4	925000	inversion	tp	2	deep	20
+visorR39	-	2R	8887000	deletion	fn	2	deep	20
+visorR39	13	3L	6655000	inversion	tp	2	deep	20
+visorR39	-	3L	5000000	deletion	fn	2	deep	20
+visorR39	21	3R	6655000	inversion	tp	2	deep	20
+visorR39	19	3L	12489000	deletion	tp	2	deep	20
+visorR39	-	3R	7810000	deletion	fn	2	deep	20
+visorR39	-	X	11987000	tandem duplication	fn	2	deep	20
+visorR39	-	4	797000	inversion	fn	2	deep	20
+visorR39	9	2R	6655000	inversion	tp	2	deep	20
+visorR41	35	2R	9938000	deletion	tp	3	shallow	100
+visorR41	51	3L	8887000	deletion	tp	3	shallow	100
+visorR41	21	2L	12489000	deletion	tp	3	shallow	100
+visorR41	6	2L	6655000	inversion	tp	3	shallow	100
+visorR41	26	2R	7160000	deletion	tp	3	shallow	100
+visorR41	-	2L	9437000	inversion	fn	3	shallow	100
+visorR41	22	2R	5550000	deletion	tp	3	shallow	100
+visorR41	61	3R	5023144	deletion	fp	3	shallow	100
+visorR41	94	4	969000	deletion	tp	3	shallow	100
+visorR41	-	2R	12489000	deletion	fn	3	shallow	100
+visorR41	-	X	6655000	inversion	fn	3	shallow	100
+visorR41	24	2R	6150000	tandem duplication	tp	3	shallow	100
+visorR41	57	3L	11485000	inversion	tp	3	shallow	100
+visorR41	-	4	610000	deletion	fn	3	shallow	100
+visorR41	-	4	415000	inversion	fn	3	shallow	100
+visorR41	110	X	10970000	tandem duplication	tp	3	shallow	100
+visorR41	17	2L	10970000	tandem duplication	tp	3	shallow	100
+visorR41	39	2R	11485000	inversion	tp	3	shallow	100
+visorR41	82	4	440000	deletion	tp	3	shallow	100
+visorR41	36	2R	10463000	inversion	tp	3	shallow	100
+visorR41	72	3R	9437000	inversion	tp	3	shallow	100
+visorR41	-	3L	6150000	tandem duplication	fn	3	shallow	100
+visorR41	31	2R	8887000	deletion	tp	3	shallow	100
+visorR41	53	3L	9938000	deletion	tp	3	shallow	100
+visorR41	114	X	12489000	deletion	tp	3	shallow	100
+visorR41	33	2R	9437000	inversion	tp	3	shallow	100
+visorR41	87	4	818000	deletion	tp	3	shallow	100
+visorR41	-	3R	12489000	deletion	fn	3	shallow	100
+visorR41	8	2L	7160000	deletion	tp	3	shallow	100
+visorR41	103	X	8312000	tandem duplication	tp	3	shallow	100
+visorR41	64	3R	6150000	tandem duplication	tp	3	shallow	100
+visorR41	16	2L	10463000	inversion	tp	3	shallow	100
+visorR41	-	3R	5000000	deletion	fn	3	shallow	100
+visorR41	98	X	5550000	deletion	tp	3	shallow	100
+visorR41	49	3L	8312000	tandem duplication	tp	3	shallow	100
+visorR41	90	4	890000	tandem duplication	tp	3	shallow	100
+visorR41	58	3L	11987000	tandem duplication	tp	3	shallow	100
+visorR41	11	2L	8887000	deletion	tp	3	shallow	100
+visorR41	107	X	9437000	inversion	tp	3	shallow	100
+visorR41	40	2R	11987000	tandem duplication	tp	3	shallow	100
+visorR41	-	3R	5550000	deletion	fn	3	shallow	100
+visorR41	-	4	270000	deletion	fn	3	shallow	100
+visorR41	84	4	632000	tandem duplication	tp	3	shallow	100
+visorR41	52	3L	9437000	inversion	tp	3	shallow	100
+visorR41	1	2L	5000000	deletion	tp	3	shallow	100
+visorR41	28	2R	7810000	deletion	tp	3	shallow	100
+visorR41	38	2R	10970000	tandem duplication	tp	3	shallow	100
+visorR41	-	X	7810000	deletion	fn	3	shallow	100
+visorR41	-	X	10463000	inversion	fn	3	shallow	100
+visorR41	74	3R	9938000	deletion	tp	3	shallow	100
+visorR41	70	3R	8312000	tandem duplication	tp	3	shallow	100
+visorR41	-	2L	7810000	deletion	fn	3	shallow	100
+visorR41	20	2L	11987000	tandem duplication	tp	3	shallow	100
+visorR41	43	3L	5550000	deletion	tp	3	shallow	100
+visorR41	47	3L	7810000	deletion	tp	3	shallow	100
+visorR41	99	X	6150000	tandem duplication	tp	3	shallow	100
+visorR41	108	X	9938000	deletion	tp	3	shallow	100
+visorR41	23	2R	5612284	deletion	fp	3	shallow	100
+visorR41	46	3L	7160000	deletion	tp	3	shallow	100
+visorR41	-	2R	5000000	deletion	fn	3	shallow	100
+visorR41	19	2L	11485000	inversion	tp	3	shallow	100
+visorR41	111	X	11485000	inversion	tp	3	shallow	100
+visorR41	3	2L	5550000	deletion	tp	3	shallow	100
+visorR41	81	4	390000	tandem duplication	tp	3	shallow	100
+visorR41	29	2R	8312000	tandem duplication	tp	3	shallow	100
+visorR41	96	X	5000000	deletion	tp	3	shallow	100
+visorR41	102	X	7160000	deletion	tp	3	shallow	100
+visorR41	106	X	8887000	deletion	tp	3	shallow	100
+visorR41	86	4	727000	deletion	tp	3	shallow	100
+visorR41	71	3R	8887000	deletion	tp	3	shallow	100
+visorR41	5	2L	6150000	tandem duplication	tp	3	shallow	100
+visorR41	93	4	947000	tandem duplication	tp	3	shallow	100
+visorR41	9	2L	8312000	tandem duplication	tp	3	shallow	100
+visorR41	-	3L	10463000	inversion	fn	3	shallow	100
+visorR41	-	3R	11987000	tandem duplication	fn	3	shallow	100
+visorR41	78	4	200000	deletion	tp	3	shallow	100
+visorR41	62	3R	5549999	deletion	fp	3	shallow	100
+visorR41	56	3L	10970000	tandem duplication	tp	3	shallow	100
+visorR41	75	3R	10463000	inversion	tp	3	shallow	100
+visorR41	89	4	863000	inversion	tp	3	shallow	100
+visorR41	76	3R	10970000	tandem duplication	tp	3	shallow	100
+visorR41	77	3R	11485000	inversion	tp	3	shallow	100
+visorR41	14	2L	9938000	deletion	tp	3	shallow	100
+visorR41	92	4	925000	inversion	tp	3	shallow	100
+visorR41	67	3R	7160000	deletion	tp	3	shallow	100
+visorR41	44	3L	6655000	inversion	tp	3	shallow	100
+visorR41	41	3L	5000000	deletion	tp	3	shallow	100
+visorR41	65	3R	6655000	inversion	tp	3	shallow	100
+visorR41	59	3L	12489000	deletion	tp	3	shallow	100
+visorR41	68	3R	7810000	deletion	tp	3	shallow	100
+visorR41	112	X	11987000	tandem duplication	tp	3	shallow	100
+visorR41	-	4	797000	inversion	fn	3	shallow	100
+visorR41	25	2R	6655000	inversion	tp	3	shallow	100
+visorR43	35	2R	9938000	deletion	tp	3	shallow	80
+visorR43	49	3L	8887000	deletion	tp	3	shallow	80
+visorR43	21	2L	12489000	deletion	tp	3	shallow	80
+visorR43	6	2L	6655000	inversion	tp	3	shallow	80
+visorR43	28	2R	7160000	deletion	tp	3	shallow	80
+visorR43	13	2L	9437000	inversion	tp	3	shallow	80
+visorR43	24	2R	5550000	deletion	tp	3	shallow	80
+visorR43	59	3R	5023144	deletion	fp	3	shallow	80
+visorR43	42	3L	5550000	deletion	tp	3	shallow	80
+visorR43	-	2R	12489000	deletion	fn	3	shallow	80
+visorR43	96	X	6655000	inversion	tp	3	shallow	80
+visorR43	26	2R	6150000	tandem duplication	tp	3	shallow	80
+visorR43	55	3L	11485000	inversion	tp	3	shallow	80
+visorR43	81	4	610000	deletion	tp	3	shallow	80
+visorR43	-	4	415000	inversion	fn	3	shallow	80
+visorR43	-	X	10970000	tandem duplication	fn	3	shallow	80
+visorR43	17	2L	10970000	tandem duplication	tp	3	shallow	80
+visorR43	39	2R	11485000	inversion	tp	3	shallow	80
+visorR43	80	4	440000	deletion	tp	3	shallow	80
+visorR43	36	2R	10463000	inversion	tp	3	shallow	80
+visorR43	70	3R	9437000	inversion	tp	3	shallow	80
+visorR43	-	3L	6150000	tandem duplication	fn	3	shallow	80
+visorR43	65	3R	7160000	deletion	tp	3	shallow	80
+visorR43	52	3L	9938000	deletion	tp	3	shallow	80
+visorR43	109	X	12489000	deletion	tp	3	shallow	80
+visorR43	33	2R	9437000	inversion	tp	3	shallow	80
+visorR43	86	4	818000	deletion	tp	3	shallow	80
+visorR43	-	4	969000	deletion	fn	3	shallow	80
+visorR43	-	3R	12489000	deletion	fn	3	shallow	80
+visorR43	7	2L	7160000	deletion	tp	3	shallow	80
+visorR43	-	X	8312000	tandem duplication	fn	3	shallow	80
+visorR43	62	3R	6150000	tandem duplication	tp	3	shallow	80
+visorR43	-	2L	10463000	inversion	fn	3	shallow	80
+visorR43	-	3R	5000000	deletion	fn	3	shallow	80
+visorR43	94	X	5550000	deletion	tp	3	shallow	80
+visorR43	47	3L	8312000	tandem duplication	tp	3	shallow	80
+visorR43	89	4	890000	tandem duplication	tp	3	shallow	80
+visorR43	56	3L	11987000	tandem duplication	tp	3	shallow	80
+visorR43	11	2L	8887000	deletion	tp	3	shallow	80
+visorR43	102	X	9437000	inversion	tp	3	shallow	80
+visorR43	-	2R	11987000	tandem duplication	fn	3	shallow	80
+visorR43	-	4	270000	deletion	fn	3	shallow	80
+visorR43	82	4	632000	tandem duplication	tp	3	shallow	80
+visorR43	51	3L	9437000	inversion	tp	3	shallow	80
+visorR43	1	2L	5000000	deletion	tp	3	shallow	80
+visorR43	30	2R	7810000	deletion	tp	3	shallow	80
+visorR43	38	2R	10970000	tandem duplication	tp	3	shallow	80
+visorR43	98	X	7810000	deletion	tp	3	shallow	80
+visorR43	91	4	947000	tandem duplication	tp	3	shallow	80
+visorR43	72	3R	9938000	deletion	tp	3	shallow	80
+visorR43	68	3R	8312000	tandem duplication	tp	3	shallow	80
+visorR43	9	2L	7810000	deletion	tp	3	shallow	80
+visorR43	20	2L	11987000	tandem duplication	tp	3	shallow	80
+visorR43	23	2R	5028599	deletion	fp	3	shallow	80
+visorR43	60	3R	5550000	deletion	tp	3	shallow	80
+visorR43	46	3L	7810000	deletion	tp	3	shallow	80
+visorR43	95	X	6150000	tandem duplication	tp	3	shallow	80
+visorR43	104	X	9938000	deletion	tp	3	shallow	80
+visorR43	25	2R	5612284	deletion	fp	3	shallow	80
+visorR43	45	3L	7160000	deletion	tp	3	shallow	80
+visorR43	-	2R	5000000	deletion	fn	3	shallow	80
+visorR43	19	2L	11485000	inversion	tp	3	shallow	80
+visorR43	107	X	11485000	inversion	tp	3	shallow	80
+visorR43	3	2L	5550000	deletion	tp	3	shallow	80
+visorR43	79	4	390000	tandem duplication	tp	3	shallow	80
+visorR43	31	2R	8312000	tandem duplication	tp	3	shallow	80
+visorR43	92	X	5000000	deletion	tp	3	shallow	80
+visorR43	97	X	7160000	deletion	tp	3	shallow	80
+visorR43	101	X	8887000	deletion	tp	3	shallow	80
+visorR43	84	4	727000	deletion	tp	3	shallow	80
+visorR43	69	3R	8887000	deletion	tp	3	shallow	80
+visorR43	5	2L	6150000	tandem duplication	tp	3	shallow	80
+visorR43	105	X	10463000	inversion	tp	3	shallow	80
+visorR43	10	2L	8312000	tandem duplication	tp	3	shallow	80
+visorR43	53	3L	10463000	inversion	tp	3	shallow	80
+visorR43	76	3R	11987000	tandem duplication	tp	3	shallow	80
+visorR43	78	4	200000	deletion	tp	3	shallow	80
+visorR43	54	3L	10970000	tandem duplication	tp	3	shallow	80
+visorR43	73	3R	10463000	inversion	tp	3	shallow	80
+visorR43	88	4	863000	inversion	tp	3	shallow	80
+visorR43	74	3R	10970000	tandem duplication	tp	3	shallow	80
+visorR43	75	3R	11485000	inversion	tp	3	shallow	80
+visorR43	14	2L	9938000	deletion	tp	3	shallow	80
+visorR43	90	4	925000	inversion	tp	3	shallow	80
+visorR43	32	2R	8887000	deletion	tp	3	shallow	80
+visorR43	43	3L	6655000	inversion	tp	3	shallow	80
+visorR43	40	3L	5000000	deletion	tp	3	shallow	80
+visorR43	63	3R	6655000	inversion	tp	3	shallow	80
+visorR43	57	3L	12489000	deletion	tp	3	shallow	80
+visorR43	66	3R	7810000	deletion	tp	3	shallow	80
+visorR43	108	X	11987000	tandem duplication	tp	3	shallow	80
+visorR43	-	4	797000	inversion	fn	3	shallow	80
+visorR43	27	2R	6655000	inversion	tp	3	shallow	80
+visorR45	29	2R	9938000	deletion	tp	3	shallow	60
+visorR45	42	3L	8887000	deletion	tp	3	shallow	60
+visorR45	18	2L	12489000	deletion	tp	3	shallow	60
+visorR45	6	2L	6655000	inversion	tp	3	shallow	60
+visorR45	22	2R	7160000	deletion	tp	3	shallow	60
+visorR45	13	2L	9437000	inversion	tp	3	shallow	60
+visorR45	-	2R	5550000	deletion	fn	3	shallow	60
+visorR45	50	3R	5023144	deletion	fp	3	shallow	60
+visorR45	77	4	969000	deletion	tp	3	shallow	60
+visorR45	-	2R	12489000	deletion	fn	3	shallow	60
+visorR45	81	X	6655000	inversion	tp	3	shallow	60
+visorR45	20	2R	6150000	tandem duplication	tp	3	shallow	60
+visorR45	48	3L	11485000	inversion	tp	3	shallow	60
+visorR45	-	4	610000	deletion	fn	3	shallow	60
+visorR45	-	4	415000	inversion	fn	3	shallow	60
+visorR45	59	3R	8923469	deletion	fp	3	shallow	60
+visorR45	89	X	10970000	tandem duplication	tp	3	shallow	60
+visorR45	-	2L	10970000	tandem duplication	fn	3	shallow	60
+visorR45	33	2R	11485000	inversion	tp	3	shallow	60
+visorR45	-	4	440000	deletion	fn	3	shallow	60
+visorR45	30	2R	10463000	inversion	tp	3	shallow	60
+visorR45	60	3R	9437000	inversion	tp	3	shallow	60
+visorR45	-	3L	6150000	tandem duplication	fn	3	shallow	60
+visorR45	55	3R	7160000	deletion	tp	3	shallow	60
+visorR45	45	3L	9938000	deletion	tp	3	shallow	60
+visorR45	91	X	12489000	deletion	tp	3	shallow	60
+visorR45	27	2R	9437000	inversion	tp	3	shallow	60
+visorR45	73	4	818000	deletion	tp	3	shallow	60
+visorR45	1	2L	4999949	deletion	fp	3	shallow	60
+visorR45	-	3R	12489000	deletion	fn	3	shallow	60
+visorR45	7	2L	7160000	deletion	tp	3	shallow	60
+visorR45	84	X	8312000	tandem duplication	tp	3	shallow	60
+visorR45	53	3R	6150000	tandem duplication	tp	3	shallow	60
+visorR45	15	2L	10463000	inversion	tp	3	shallow	60
+visorR45	-	3R	5000000	deletion	fn	3	shallow	60
+visorR45	-	X	5550000	deletion	fn	3	shallow	60
+visorR45	41	3L	8312000	tandem duplication	tp	3	shallow	60
+visorR45	-	4	890000	tandem duplication	fn	3	shallow	60
+visorR45	49	3L	11987000	tandem duplication	tp	3	shallow	60
+visorR45	11	2L	8887000	deletion	tp	3	shallow	60
+visorR45	-	X	9437000	inversion	fn	3	shallow	60
+visorR45	-	2R	11987000	tandem duplication	fn	3	shallow	60
+visorR45	-	4	270000	deletion	fn	3	shallow	60
+visorR45	69	4	632000	tandem duplication	tp	3	shallow	60
+visorR45	44	3L	9437000	inversion	tp	3	shallow	60
+visorR45	-	2L	5000000	deletion	fn	3	shallow	60
+visorR45	24	2R	7810000	deletion	tp	3	shallow	60
+visorR45	31	2R	10970000	tandem duplication	tp	3	shallow	60
+visorR45	83	X	7810000	deletion	tp	3	shallow	60
+visorR45	-	4	947000	tandem duplication	fn	3	shallow	60
+visorR45	61	3R	9938000	deletion	tp	3	shallow	60
+visorR45	-	3R	8312000	tandem duplication	fn	3	shallow	60
+visorR45	8	2L	7810000	deletion	tp	3	shallow	60
+visorR45	-	2L	11987000	tandem duplication	fn	3	shallow	60
+visorR45	51	3R	5550000	deletion	tp	3	shallow	60
+visorR45	39	3L	7810000	deletion	tp	3	shallow	60
+visorR45	-	X	6150000	tandem duplication	fn	3	shallow	60
+visorR45	-	X	9938000	deletion	fn	3	shallow	60
+visorR45	19	2R	5612284	deletion	fp	3	shallow	60
+visorR45	37	3L	7160000	deletion	tp	3	shallow	60
+visorR45	35	3L	5550000	deletion	tp	3	shallow	60
+visorR45	-	2R	5000000	deletion	fn	3	shallow	60
+visorR45	17	2L	11485000	inversion	tp	3	shallow	60
+visorR45	64	3R	11485000	inversion	tp	3	shallow	60
+visorR45	3	2L	5550000	deletion	tp	3	shallow	60
+visorR45	68	4	390000	tandem duplication	tp	3	shallow	60
+visorR45	-	2R	8312000	tandem duplication	fn	3	shallow	60
+visorR45	78	X	5000000	deletion	tp	3	shallow	60
+visorR45	82	X	7160000	deletion	tp	3	shallow	60
+visorR45	85	X	8887000	deletion	tp	3	shallow	60
+visorR45	71	4	727000	deletion	tp	3	shallow	60
+visorR45	58	3R	8887000	deletion	tp	3	shallow	60
+visorR45	5	2L	6150000	tandem duplication	tp	3	shallow	60
+visorR45	88	X	10463000	inversion	tp	3	shallow	60
+visorR45	9	2L	8312000	tandem duplication	tp	3	shallow	60
+visorR45	46	3L	10463000	inversion	tp	3	shallow	60
+visorR45	65	3R	11987000	tandem duplication	tp	3	shallow	60
+visorR45	66	4	200000	deletion	tp	3	shallow	60
+visorR45	-	3L	10970000	tandem duplication	fn	3	shallow	60
+visorR45	62	3R	10463000	inversion	tp	3	shallow	60
+visorR45	-	4	863000	inversion	fn	3	shallow	60
+visorR45	63	3R	10970000	tandem duplication	tp	3	shallow	60
+visorR45	-	X	11485000	inversion	fn	3	shallow	60
+visorR45	14	2L	9938000	deletion	tp	3	shallow	60
+visorR45	76	4	925000	inversion	tp	3	shallow	60
+visorR45	26	2R	8887000	deletion	tp	3	shallow	60
+visorR45	36	3L	6655000	inversion	tp	3	shallow	60
+visorR45	34	3L	5000000	deletion	tp	3	shallow	60
+visorR45	54	3R	6655000	inversion	tp	3	shallow	60
+visorR45	-	3L	12489000	deletion	fn	3	shallow	60
+visorR45	-	3R	7810000	deletion	fn	3	shallow	60
+visorR45	-	X	11987000	tandem duplication	fn	3	shallow	60
+visorR45	-	4	797000	inversion	fn	3	shallow	60
+visorR45	21	2R	6655000	inversion	tp	3	shallow	60
+visorR47	21	2R	9938000	deletion	tp	3	shallow	40
+visorR47	-	3L	8887000	deletion	fn	3	shallow	40
+visorR47	-	2L	12489000	deletion	fn	3	shallow	40
+visorR47	-	2R	7160000	deletion	fn	3	shallow	40
+visorR47	-	2L	9437000	inversion	fn	3	shallow	40
+visorR47	-	2R	5550000	deletion	fn	3	shallow	40
+visorR47	-	4	969000	deletion	fn	3	shallow	40
+visorR47	-	2R	12489000	deletion	fn	3	shallow	40
+visorR47	51	X	6655000	inversion	tp	3	shallow	40
+visorR47	14	2R	6150000	tandem duplication	tp	3	shallow	40
+visorR47	-	3R	5000000	deletion	fn	3	shallow	40
+visorR47	34	3L	11485000	inversion	tp	3	shallow	40
+visorR47	-	4	610000	deletion	fn	3	shallow	40
+visorR47	-	4	415000	inversion	fn	3	shallow	40
+visorR47	55	X	10970000	tandem duplication	tp	3	shallow	40
+visorR47	12	2L	10970000	tandem duplication	tp	3	shallow	40
+visorR47	-	2R	11485000	inversion	fn	3	shallow	40
+visorR47	-	4	440000	deletion	fn	3	shallow	40
+visorR47	-	2R	10463000	inversion	fn	3	shallow	40
+visorR47	-	3R	9437000	inversion	fn	3	shallow	40
+visorR47	-	3L	6150000	tandem duplication	fn	3	shallow	40
+visorR47	-	2R	8887000	deletion	fn	3	shallow	40
+visorR47	-	3L	9938000	deletion	fn	3	shallow	40
+visorR47	-	X	12489000	deletion	fn	3	shallow	40
+visorR47	-	2R	9437000	inversion	fn	3	shallow	40
+visorR47	-	4	818000	deletion	fn	3	shallow	40
+visorR47	-	3R	12489000	deletion	fn	3	shallow	40
+visorR47	-	2L	7160000	deletion	fn	3	shallow	40
+visorR47	-	X	8312000	tandem duplication	fn	3	shallow	40
+visorR47	-	3R	6150000	tandem duplication	fn	3	shallow	40
+visorR47	11	2L	10463000	inversion	tp	3	shallow	40
+visorR47	4	2L	6655000	inversion	tp	3	shallow	40
+visorR47	50	X	5550000	deletion	tp	3	shallow	40
+visorR47	-	3L	8312000	tandem duplication	fn	3	shallow	40
+visorR47	-	4	890000	tandem duplication	fn	3	shallow	40
+visorR47	-	3L	11987000	tandem duplication	fn	3	shallow	40
+visorR47	-	2L	8887000	deletion	fn	3	shallow	40
+visorR47	53	X	9437000	inversion	tp	3	shallow	40
+visorR47	23	2R	11987000	tandem duplication	tp	3	shallow	40
+visorR47	-	3R	5550000	deletion	fn	3	shallow	40
+visorR47	-	4	270000	deletion	fn	3	shallow	40
+visorR47	-	4	632000	tandem duplication	fn	3	shallow	40
+visorR47	-	3L	9437000	inversion	fn	3	shallow	40
+visorR47	1	2L	5000000	deletion	tp	3	shallow	40
+visorR47	-	2R	7810000	deletion	fn	3	shallow	40
+visorR47	-	2R	10970000	tandem duplication	fn	3	shallow	40
+visorR47	-	X	7810000	deletion	fn	3	shallow	40
+visorR47	-	4	947000	tandem duplication	fn	3	shallow	40
+visorR47	-	3R	9938000	deletion	fn	3	shallow	40
+visorR47	39	3R	8312000	tandem duplication	tp	3	shallow	40
+visorR47	6	2L	7810000	deletion	tp	3	shallow	40
+visorR47	-	2L	11987000	tandem duplication	fn	3	shallow	40
+visorR47	26	3L	5550000	deletion	tp	3	shallow	40
+visorR47	-	3L	7810000	deletion	fn	3	shallow	40
+visorR47	-	X	6150000	tandem duplication	fn	3	shallow	40
+visorR47	-	X	9938000	deletion	fn	3	shallow	40
+visorR47	-	3L	7160000	deletion	fn	3	shallow	40
+visorR47	-	2R	5000000	deletion	fn	3	shallow	40
+visorR47	13	2L	11485000	inversion	tp	3	shallow	40
+visorR47	-	3R	11485000	inversion	fn	3	shallow	40
+visorR47	3	2L	5550000	deletion	tp	3	shallow	40
+visorR47	-	4	390000	tandem duplication	fn	3	shallow	40
+visorR47	16	2R	8312000	tandem duplication	tp	3	shallow	40
+visorR47	-	X	5000000	deletion	fn	3	shallow	40
+visorR47	-	X	7160000	deletion	fn	3	shallow	40
+visorR47	52	X	8887000	deletion	tp	3	shallow	40
+visorR47	-	4	727000	deletion	fn	3	shallow	40
+visorR47	-	3R	8887000	deletion	fn	3	shallow	40
+visorR47	-	2L	6150000	tandem duplication	fn	3	shallow	40
+visorR47	54	X	10463000	inversion	tp	3	shallow	40
+visorR47	7	2L	8312000	tandem duplication	tp	3	shallow	40
+visorR47	-	3L	10463000	inversion	fn	3	shallow	40
+visorR47	-	3R	11987000	tandem duplication	fn	3	shallow	40
+visorR47	-	4	200000	deletion	fn	3	shallow	40
+visorR47	33	3L	10970000	tandem duplication	tp	3	shallow	40
+visorR47	41	3R	10463000	inversion	tp	3	shallow	40
+visorR47	48	4	863000	inversion	tp	3	shallow	40
+visorR47	-	3R	10970000	tandem duplication	fn	3	shallow	40
+visorR47	-	X	11485000	inversion	fn	3	shallow	40
+visorR47	-	2L	9938000	deletion	fn	3	shallow	40
+visorR47	49	4	925000	inversion	tp	3	shallow	40
+visorR47	-	3R	7160000	deletion	fn	3	shallow	40
+visorR47	28	3L	6655000	inversion	tp	3	shallow	40
+visorR47	-	3L	5000000	deletion	fn	3	shallow	40
+visorR47	37	3R	6655000	inversion	tp	3	shallow	40
+visorR47	-	3L	12489000	deletion	fn	3	shallow	40
+visorR47	-	3R	7810000	deletion	fn	3	shallow	40
+visorR47	-	X	11987000	tandem duplication	fn	3	shallow	40
+visorR47	-	4	797000	inversion	fn	3	shallow	40
+visorR47	-	2R	6655000	inversion	fn	3	shallow	40
+visorR49	-	2R	9938000	deletion	fn	3	shallow	20
+visorR49	-	3L	8887000	deletion	fn	3	shallow	20
+visorR49	-	2L	12489000	deletion	fn	3	shallow	20
+visorR49	-	2R	7160000	deletion	fn	3	shallow	20
+visorR49	-	2L	9437000	inversion	fn	3	shallow	20
+visorR49	-	2R	5550000	deletion	fn	3	shallow	20
+visorR49	-	3L	5550000	deletion	fn	3	shallow	20
+visorR49	-	2R	12489000	deletion	fn	3	shallow	20
+visorR49	-	X	6655000	inversion	fn	3	shallow	20
+visorR49	-	2R	6150000	tandem duplication	fn	3	shallow	20
+visorR49	-	3R	5000000	deletion	fn	3	shallow	20
+visorR49	3	3L	11485000	inversion	tp	3	shallow	20
+visorR49	-	4	610000	deletion	fn	3	shallow	20
+visorR49	-	4	415000	inversion	fn	3	shallow	20
+visorR49	-	X	10970000	tandem duplication	fn	3	shallow	20
+visorR49	-	2L	10970000	tandem duplication	fn	3	shallow	20
+visorR49	-	2R	11485000	inversion	fn	3	shallow	20
+visorR49	-	4	440000	deletion	fn	3	shallow	20
+visorR49	-	2R	10463000	inversion	fn	3	shallow	20
+visorR49	-	3R	9437000	inversion	fn	3	shallow	20
+visorR49	-	3L	6150000	tandem duplication	fn	3	shallow	20
+visorR49	-	2R	8887000	deletion	fn	3	shallow	20
+visorR49	-	3L	9938000	deletion	fn	3	shallow	20
+visorR49	-	X	12489000	deletion	fn	3	shallow	20
+visorR49	-	2R	9437000	inversion	fn	3	shallow	20
+visorR49	-	4	818000	deletion	fn	3	shallow	20
+visorR49	-	3R	12489000	deletion	fn	3	shallow	20
+visorR49	-	2L	7160000	deletion	fn	3	shallow	20
+visorR49	-	X	8312000	tandem duplication	fn	3	shallow	20
+visorR49	-	3R	6150000	tandem duplication	fn	3	shallow	20
+visorR49	-	2L	10463000	inversion	fn	3	shallow	20
+visorR49	1	2L	6655000	inversion	tp	3	shallow	20
+visorR49	-	X	5550000	deletion	fn	3	shallow	20
+visorR49	-	3L	8312000	tandem duplication	fn	3	shallow	20
+visorR49	-	4	890000	tandem duplication	fn	3	shallow	20
+visorR49	4	3L	11987000	tandem duplication	tp	3	shallow	20
+visorR49	-	2L	8887000	deletion	fn	3	shallow	20
+visorR49	7	X	9437000	inversion	tp	3	shallow	20
+visorR49	-	2R	11987000	tandem duplication	fn	3	shallow	20
+visorR49	-	3R	5550000	deletion	fn	3	shallow	20
+visorR49	-	4	270000	deletion	fn	3	shallow	20
+visorR49	-	4	632000	tandem duplication	fn	3	shallow	20
+visorR49	-	3L	9437000	inversion	fn	3	shallow	20
+visorR49	-	2L	5000000	deletion	fn	3	shallow	20
+visorR49	-	2R	7810000	deletion	fn	3	shallow	20
+visorR49	-	2R	10970000	tandem duplication	fn	3	shallow	20
+visorR49	-	X	7810000	deletion	fn	3	shallow	20
+visorR49	-	X	10463000	inversion	fn	3	shallow	20
+visorR49	-	3R	9938000	deletion	fn	3	shallow	20
+visorR49	-	3R	8312000	tandem duplication	fn	3	shallow	20
+visorR49	-	2L	7810000	deletion	fn	3	shallow	20
+visorR49	-	2L	11987000	tandem duplication	fn	3	shallow	20
+visorR49	-	4	969000	deletion	fn	3	shallow	20
+visorR49	-	3L	7810000	deletion	fn	3	shallow	20
+visorR49	-	X	6150000	tandem duplication	fn	3	shallow	20
+visorR49	-	X	9938000	deletion	fn	3	shallow	20
+visorR49	-	3L	7160000	deletion	fn	3	shallow	20
+visorR49	-	2R	5000000	deletion	fn	3	shallow	20
+visorR49	-	2L	11485000	inversion	fn	3	shallow	20
+visorR49	-	3R	11485000	inversion	fn	3	shallow	20
+visorR49	-	2L	5550000	deletion	fn	3	shallow	20
+visorR49	-	4	390000	tandem duplication	fn	3	shallow	20
+visorR49	-	2R	8312000	tandem duplication	fn	3	shallow	20
+visorR49	-	X	5000000	deletion	fn	3	shallow	20
+visorR49	-	X	7160000	deletion	fn	3	shallow	20
+visorR49	-	X	8887000	deletion	fn	3	shallow	20
+visorR49	-	4	727000	deletion	fn	3	shallow	20
+visorR49	-	3R	8887000	deletion	fn	3	shallow	20
+visorR49	-	2L	6150000	tandem duplication	fn	3	shallow	20
+visorR49	-	4	947000	tandem duplication	fn	3	shallow	20
+visorR49	-	2L	8312000	tandem duplication	fn	3	shallow	20
+visorR49	-	3L	10463000	inversion	fn	3	shallow	20
+visorR49	-	3R	11987000	tandem duplication	fn	3	shallow	20
+visorR49	-	4	200000	deletion	fn	3	shallow	20
+visorR49	-	3L	10970000	tandem duplication	fn	3	shallow	20
+visorR49	-	3R	10463000	inversion	fn	3	shallow	20
+visorR49	-	4	863000	inversion	fn	3	shallow	20
+visorR49	-	3R	10970000	tandem duplication	fn	3	shallow	20
+visorR49	-	X	11485000	inversion	fn	3	shallow	20
+visorR49	-	2L	9938000	deletion	fn	3	shallow	20
+visorR49	6	4	925000	inversion	tp	3	shallow	20
+visorR49	-	3R	7160000	deletion	fn	3	shallow	20
+visorR49	-	3L	6655000	inversion	fn	3	shallow	20
+visorR49	-	3L	5000000	deletion	fn	3	shallow	20
+visorR49	5	3R	6655000	inversion	tp	3	shallow	20
+visorR49	-	3L	12489000	deletion	fn	3	shallow	20
+visorR49	-	3R	7810000	deletion	fn	3	shallow	20
+visorR49	-	X	11987000	tandem duplication	fn	3	shallow	20
+visorR49	-	4	797000	inversion	fn	3	shallow	20
+visorR49	-	2R	6655000	inversion	fn	3	shallow	20
+visorR51	36	2R	9938000	deletion	tp	3	deep	100
+visorR51	52	3L	8887000	deletion	tp	3	deep	100
+visorR51	20	2L	12489000	deletion	tp	3	deep	100
+visorR51	4	2L	6655000	inversion	tp	3	deep	100
+visorR51	27	2R	7160000	deletion	tp	3	deep	100
+visorR51	12	2L	9437000	inversion	tp	3	deep	100
+visorR51	23	2R	5550000	deletion	tp	3	deep	100
+visorR51	100	4	969000	deletion	tp	3	deep	100
+visorR51	42	2R	12489000	deletion	tp	3	deep	100
+visorR51	104	X	6655000	inversion	tp	3	deep	100
+visorR51	24	2R	6150000	tandem duplication	tp	3	deep	100
+visorR51	58	3L	11485000	inversion	tp	3	deep	100
+visorR51	88	4	610000	deletion	tp	3	deep	100
+visorR51	-	4	415000	inversion	fn	3	deep	100
+visorR51	115	X	10970000	tandem duplication	tp	3	deep	100
+visorR51	16	2L	10970000	tandem duplication	tp	3	deep	100
+visorR51	40	2R	11485000	inversion	tp	3	deep	100
+visorR51	86	4	440000	deletion	tp	3	deep	100
+visorR51	37	2R	10463000	inversion	tp	3	deep	100
+visorR51	72	3R	9437000	inversion	tp	3	deep	100
+visorR51	-	3L	6150000	tandem duplication	fn	3	deep	100
+visorR51	67	3R	7160000	deletion	tp	3	deep	100
+visorR51	54	3L	9938000	deletion	tp	3	deep	100
+visorR51	119	X	12489000	deletion	tp	3	deep	100
+visorR51	34	2R	9437000	inversion	tp	3	deep	100
+visorR51	93	4	818000	deletion	tp	3	deep	100
+visorR51	-	3R	12489000	deletion	fn	3	deep	100
+visorR51	5	2L	7160000	deletion	tp	3	deep	100
+visorR51	108	X	8312000	tandem duplication	tp	3	deep	100
+visorR51	64	3R	6150000	tandem duplication	tp	3	deep	100
+visorR51	15	2L	10463000	inversion	tp	3	deep	100
+visorR51	62	3R	5000000	deletion	tp	3	deep	100
+visorR51	102	X	5550000	deletion	tp	3	deep	100
+visorR51	49	3L	8312000	tandem duplication	tp	3	deep	100
+visorR51	96	4	890000	tandem duplication	tp	3	deep	100
+visorR51	59	3L	11987000	tandem duplication	tp	3	deep	100
+visorR51	10	2L	8887000	deletion	tp	3	deep	100
+visorR51	111	X	9437000	inversion	tp	3	deep	100
+visorR51	41	2R	11987000	tandem duplication	tp	3	deep	100
+visorR51	82	4	270000	deletion	tp	3	deep	100
+visorR51	89	4	632000	tandem duplication	tp	3	deep	100
+visorR51	53	3L	9437000	inversion	tp	3	deep	100
+visorR51	1	2L	5000000	deletion	tp	3	deep	100
+visorR51	29	2R	7810000	deletion	tp	3	deep	100
+visorR51	39	2R	10970000	tandem duplication	tp	3	deep	100
+visorR51	107	X	7810000	deletion	tp	3	deep	100
+visorR51	99	4	947000	tandem duplication	tp	3	deep	100
+visorR51	74	3R	9938000	deletion	tp	3	deep	100
+visorR51	70	3R	8312000	tandem duplication	tp	3	deep	100
+visorR51	7	2L	7810000	deletion	tp	3	deep	100
+visorR51	19	2L	11987000	tandem duplication	tp	3	deep	100
+visorR51	63	3R	5550000	deletion	tp	3	deep	100
+visorR51	48	3L	7810000	deletion	tp	3	deep	100
+visorR51	103	X	6150000	tandem duplication	tp	3	deep	100
+visorR51	113	X	9938000	deletion	tp	3	deep	100
+visorR51	47	3L	7160000	deletion	tp	3	deep	100
+visorR51	44	3L	5550000	deletion	tp	3	deep	100
+visorR51	22	2R	5000000	deletion	tp	3	deep	100
+visorR51	18	2L	11485000	inversion	tp	3	deep	100
+visorR51	116	X	11485000	inversion	tp	3	deep	100
+visorR51	2	2L	5550000	deletion	tp	3	deep	100
+visorR51	84	4	390000	tandem duplication	tp	3	deep	100
+visorR51	30	2R	8312000	tandem duplication	tp	3	deep	100
+visorR51	101	X	5000000	deletion	tp	3	deep	100
+visorR51	105	X	7160000	deletion	tp	3	deep	100
+visorR51	110	X	8887000	deletion	tp	3	deep	100
+visorR51	91	4	727000	deletion	tp	3	deep	100
+visorR51	71	3R	8887000	deletion	tp	3	deep	100
+visorR51	3	2L	6150000	tandem duplication	tp	3	deep	100
+visorR51	114	X	10463000	inversion	tp	3	deep	100
+visorR51	8	2L	8312000	tandem duplication	tp	3	deep	100
+visorR51	55	3L	10463000	inversion	tp	3	deep	100
+visorR51	79	3R	11987000	tandem duplication	tp	3	deep	100
+visorR51	80	4	200000	deletion	tp	3	deep	100
+visorR51	56	3L	10970000	tandem duplication	tp	3	deep	100
+visorR51	75	3R	10463000	inversion	tp	3	deep	100
+visorR51	95	4	863000	inversion	tp	3	deep	100
+visorR51	-	4	797000	inversion	fn	3	deep	100
+visorR51	78	3R	11485000	inversion	tp	3	deep	100
+visorR51	13	2L	9938000	deletion	tp	3	deep	100
+visorR51	98	4	925000	inversion	tp	3	deep	100
+visorR51	32	2R	8887000	deletion	tp	3	deep	100
+visorR51	45	3L	6655000	inversion	tp	3	deep	100
+visorR51	43	3L	5000000	deletion	tp	3	deep	100
+visorR51	65	3R	6655000	inversion	tp	3	deep	100
+visorR51	61	3L	12489000	deletion	tp	3	deep	100
+visorR51	68	3R	7810000	deletion	tp	3	deep	100
+visorR51	117	X	11987000	tandem duplication	tp	3	deep	100
+visorR51	77	3R	10970000	tandem duplication	tp	3	deep	100
+visorR51	26	2R	6655000	inversion	tp	3	deep	100
+visorR53	37	2R	9938000	deletion	tp	3	deep	80
+visorR53	54	3L	8887000	deletion	tp	3	deep	80
+visorR53	21	2L	12489000	deletion	tp	3	deep	80
+visorR53	5	2L	6655000	inversion	tp	3	deep	80
+visorR53	29	2R	7160000	deletion	tp	3	deep	80
+visorR53	13	2L	9437000	inversion	tp	3	deep	80
+visorR53	24	2R	5550000	deletion	tp	3	deep	80
+visorR53	102	4	969000	deletion	tp	3	deep	80
+visorR53	44	2R	12489000	deletion	tp	3	deep	80
+visorR53	106	X	6655000	inversion	tp	3	deep	80
+visorR53	26	2R	6150000	tandem duplication	tp	3	deep	80
+visorR53	60	3L	11485000	inversion	tp	3	deep	80
+visorR53	90	4	610000	deletion	tp	3	deep	80
+visorR53	-	4	415000	inversion	fn	3	deep	80
+visorR53	116	X	10970000	tandem duplication	tp	3	deep	80
+visorR53	17	2L	10970000	tandem duplication	tp	3	deep	80
+visorR53	42	2R	11485000	inversion	tp	3	deep	80
+visorR53	88	4	440000	deletion	tp	3	deep	80
+visorR53	39	2R	10463000	inversion	tp	3	deep	80
+visorR53	74	3R	9437000	inversion	tp	3	deep	80
+visorR53	-	3L	6150000	tandem duplication	fn	3	deep	80
+visorR53	69	3R	7160000	deletion	tp	3	deep	80
+visorR53	56	3L	9938000	deletion	tp	3	deep	80
+visorR53	120	X	12489000	deletion	tp	3	deep	80
+visorR53	36	2R	9437000	inversion	tp	3	deep	80
+visorR53	95	4	818000	deletion	tp	3	deep	80
+visorR53	-	3R	12489000	deletion	fn	3	deep	80
+visorR53	6	2L	7160000	deletion	tp	3	deep	80
+visorR53	110	X	8312000	tandem duplication	tp	3	deep	80
+visorR53	66	3R	6150000	tandem duplication	tp	3	deep	80
+visorR53	16	2L	10463000	inversion	tp	3	deep	80
+visorR53	64	3R	5000000	deletion	tp	3	deep	80
+visorR53	104	X	5550000	deletion	tp	3	deep	80
+visorR53	51	3L	8312000	tandem duplication	tp	3	deep	80
+visorR53	98	4	890000	tandem duplication	tp	3	deep	80
+visorR53	61	3L	11987000	tandem duplication	tp	3	deep	80
+visorR53	11	2L	8887000	deletion	tp	3	deep	80
+visorR53	112	X	9437000	inversion	tp	3	deep	80
+visorR53	43	2R	11987000	tandem duplication	tp	3	deep	80
+visorR53	84	4	270000	deletion	tp	3	deep	80
+visorR53	91	4	632000	tandem duplication	tp	3	deep	80
+visorR53	55	3L	9437000	inversion	tp	3	deep	80
+visorR53	1	2L	5000000	deletion	tp	3	deep	80
+visorR53	31	2R	7810000	deletion	tp	3	deep	80
+visorR53	41	2R	10970000	tandem duplication	tp	3	deep	80
+visorR53	109	X	7810000	deletion	tp	3	deep	80
+visorR53	101	4	947000	tandem duplication	tp	3	deep	80
+visorR53	75	3R	9938000	deletion	tp	3	deep	80
+visorR53	72	3R	8312000	tandem duplication	tp	3	deep	80
+visorR53	8	2L	7810000	deletion	tp	3	deep	80
+visorR53	20	2L	11987000	tandem duplication	tp	3	deep	80
+visorR53	65	3R	5550000	deletion	tp	3	deep	80
+visorR53	50	3L	7810000	deletion	tp	3	deep	80
+visorR53	105	X	6150000	tandem duplication	tp	3	deep	80
+visorR53	114	X	9938000	deletion	tp	3	deep	80
+visorR53	49	3L	7160000	deletion	tp	3	deep	80
+visorR53	46	3L	5550000	deletion	tp	3	deep	80
+visorR53	23	2R	5000000	deletion	tp	3	deep	80
+visorR53	19	2L	11485000	inversion	tp	3	deep	80
+visorR53	117	X	11485000	inversion	tp	3	deep	80
+visorR53	3	2L	5550000	deletion	tp	3	deep	80
+visorR53	86	4	390000	tandem duplication	tp	3	deep	80
+visorR53	32	2R	8312000	tandem duplication	tp	3	deep	80
+visorR53	103	X	5000000	deletion	tp	3	deep	80
+visorR53	108	X	7160000	deletion	tp	3	deep	80
+visorR53	111	X	8887000	deletion	tp	3	deep	80
+visorR53	93	4	727000	deletion	tp	3	deep	80
+visorR53	73	3R	8887000	deletion	tp	3	deep	80
+visorR53	4	2L	6150000	tandem duplication	tp	3	deep	80
+visorR53	115	X	10463000	inversion	tp	3	deep	80
+visorR53	9	2L	8312000	tandem duplication	tp	3	deep	80
+visorR53	57	3L	10463000	inversion	tp	3	deep	80
+visorR53	81	3R	11987000	tandem duplication	tp	3	deep	80
+visorR53	82	4	200000	deletion	tp	3	deep	80
+visorR53	58	3L	10970000	tandem duplication	tp	3	deep	80
+visorR53	25	2R	5611257	deletion	fp	3	deep	80
+visorR53	77	3R	10463000	inversion	tp	3	deep	80
+visorR53	97	4	863000	inversion	tp	3	deep	80
+visorR53	-	4	797000	inversion	fn	3	deep	80
+visorR53	80	3R	11485000	inversion	tp	3	deep	80
+visorR53	14	2L	9938000	deletion	tp	3	deep	80
+visorR53	100	4	925000	inversion	tp	3	deep	80
+visorR53	34	2R	8887000	deletion	tp	3	deep	80
+visorR53	47	3L	6655000	inversion	tp	3	deep	80
+visorR53	45	3L	5000000	deletion	tp	3	deep	80
+visorR53	67	3R	6655000	inversion	tp	3	deep	80
+visorR53	63	3L	12489000	deletion	tp	3	deep	80
+visorR53	70	3R	7810000	deletion	tp	3	deep	80
+visorR53	118	X	11987000	tandem duplication	tp	3	deep	80
+visorR53	79	3R	10970000	tandem duplication	tp	3	deep	80
+visorR53	28	2R	6655000	inversion	tp	3	deep	80
+visorR55	37	2R	9938000	deletion	tp	3	deep	60
+visorR55	54	3L	8887000	deletion	tp	3	deep	60
+visorR55	22	2L	12489000	deletion	tp	3	deep	60
+visorR55	29	2R	7160000	deletion	tp	3	deep	60
+visorR55	14	2L	9437000	inversion	tp	3	deep	60
+visorR55	25	2R	5550000	deletion	tp	3	deep	60
+visorR55	46	3L	5550000	deletion	tp	3	deep	60
+visorR55	-	2R	12489000	deletion	fn	3	deep	60
+visorR55	103	X	6655000	inversion	tp	3	deep	60
+visorR55	27	2R	6150000	tandem duplication	tp	3	deep	60
+visorR55	-	3R	5000000	deletion	fn	3	deep	60
+visorR55	-	3L	11485000	inversion	fn	3	deep	60
+visorR55	90	4	610000	deletion	tp	3	deep	60
+visorR55	-	4	415000	inversion	fn	3	deep	60
+visorR55	113	X	10970000	tandem duplication	tp	3	deep	60
+visorR55	18	2L	10970000	tandem duplication	tp	3	deep	60
+visorR55	42	2R	11485000	inversion	tp	3	deep	60
+visorR55	88	4	440000	deletion	tp	3	deep	60
+visorR55	39	2R	10463000	inversion	tp	3	deep	60
+visorR55	74	3R	9437000	inversion	tp	3	deep	60
+visorR55	-	3L	6150000	tandem duplication	fn	3	deep	60
+visorR55	68	3R	7160000	deletion	tp	3	deep	60
+visorR55	56	3L	9938000	deletion	tp	3	deep	60
+visorR55	116	X	12489000	deletion	tp	3	deep	60
+visorR55	36	2R	9437000	inversion	tp	3	deep	60
+visorR55	95	4	818000	deletion	tp	3	deep	60
+visorR55	-	4	969000	deletion	fn	3	deep	60
+visorR55	-	3R	12489000	deletion	fn	3	deep	60
+visorR55	7	2L	7160000	deletion	tp	3	deep	60
+visorR55	107	X	8312000	tandem duplication	tp	3	deep	60
+visorR55	66	3R	6150000	tandem duplication	tp	3	deep	60
+visorR55	17	2L	10463000	inversion	tp	3	deep	60
+visorR55	6	2L	6655000	inversion	tp	3	deep	60
+visorR55	101	X	5550000	deletion	tp	3	deep	60
+visorR55	51	3L	8312000	tandem duplication	tp	3	deep	60
+visorR55	97	4	890000	tandem duplication	tp	3	deep	60
+visorR55	61	3L	11987000	tandem duplication	tp	3	deep	60
+visorR55	12	2L	8887000	deletion	tp	3	deep	60
+visorR55	109	X	9437000	inversion	tp	3	deep	60
+visorR55	43	2R	11987000	tandem duplication	tp	3	deep	60
+visorR55	85	4	270000	deletion	tp	3	deep	60
+visorR55	91	4	632000	tandem duplication	tp	3	deep	60
+visorR55	55	3L	9437000	inversion	tp	3	deep	60
+visorR55	2	2L	5000000	deletion	tp	3	deep	60
+visorR55	31	2R	7810000	deletion	tp	3	deep	60
+visorR55	41	2R	10970000	tandem duplication	tp	3	deep	60
+visorR55	106	X	7810000	deletion	tp	3	deep	60
+visorR55	99	4	947000	tandem duplication	tp	3	deep	60
+visorR55	75	3R	9938000	deletion	tp	3	deep	60
+visorR55	72	3R	8312000	tandem duplication	tp	3	deep	60
+visorR55	9	2L	7810000	deletion	tp	3	deep	60
+visorR55	21	2L	11987000	tandem duplication	tp	3	deep	60
+visorR55	65	3R	5550000	deletion	tp	3	deep	60
+visorR55	50	3L	7810000	deletion	tp	3	deep	60
+visorR55	102	X	6150000	tandem duplication	tp	3	deep	60
+visorR55	111	X	9938000	deletion	tp	3	deep	60
+visorR55	49	3L	7160000	deletion	tp	3	deep	60
+visorR55	24	2R	5000000	deletion	tp	3	deep	60
+visorR55	20	2L	11485000	inversion	tp	3	deep	60
+visorR55	114	X	11485000	inversion	tp	3	deep	60
+visorR55	3	2L	5550000	deletion	tp	3	deep	60
+visorR55	87	4	390000	tandem duplication	tp	3	deep	60
+visorR55	32	2R	8312000	tandem duplication	tp	3	deep	60
+visorR55	100	X	5000000	deletion	tp	3	deep	60
+visorR55	104	X	7160000	deletion	tp	3	deep	60
+visorR55	108	X	8887000	deletion	tp	3	deep	60
+visorR55	93	4	727000	deletion	tp	3	deep	60
+visorR55	73	3R	8887000	deletion	tp	3	deep	60
+visorR55	4	2L	6150000	tandem duplication	tp	3	deep	60
+visorR55	112	X	10463000	inversion	tp	3	deep	60
+visorR55	10	2L	8312000	tandem duplication	tp	3	deep	60
+visorR55	57	3L	10463000	inversion	tp	3	deep	60
+visorR55	81	3R	11987000	tandem duplication	tp	3	deep	60
+visorR55	83	4	200000	deletion	tp	3	deep	60
+visorR55	58	3L	10970000	tandem duplication	tp	3	deep	60
+visorR55	26	2R	5611257	deletion	fp	3	deep	60
+visorR55	77	3R	10463000	inversion	tp	3	deep	60
+visorR55	64	3R	5020407	deletion	fp	3	deep	60
+visorR55	96	4	863000	inversion	tp	3	deep	60
+visorR55	-	4	797000	inversion	fn	3	deep	60
+visorR55	80	3R	11485000	inversion	tp	3	deep	60
+visorR55	15	2L	9938000	deletion	tp	3	deep	60
+visorR55	98	4	925000	inversion	tp	3	deep	60
+visorR55	34	2R	8887000	deletion	tp	3	deep	60
+visorR55	47	3L	6655000	inversion	tp	3	deep	60
+visorR55	45	3L	5000000	deletion	tp	3	deep	60
+visorR55	67	3R	6655000	inversion	tp	3	deep	60
+visorR55	63	3L	12489000	deletion	tp	3	deep	60
+visorR55	70	3R	7810000	deletion	tp	3	deep	60
+visorR55	115	X	11987000	tandem duplication	tp	3	deep	60
+visorR55	79	3R	10970000	tandem duplication	tp	3	deep	60
+visorR55	82	4	105	inversion	fp	3	deep	60
+visorR55	28	2R	6655000	inversion	tp	3	deep	60
+visorR57	33	2R	9938000	deletion	tp	3	deep	40
+visorR57	47	3L	8887000	deletion	tp	3	deep	40
+visorR57	20	2L	12489000	deletion	tp	3	deep	40
+visorR57	-	2L	6655000	inversion	fn	3	deep	40
+visorR57	26	2R	7160000	deletion	tp	3	deep	40
+visorR57	-	2L	9437000	inversion	fn	3	deep	40
+visorR57	21	2R	5550000	deletion	tp	3	deep	40
+visorR57	-	4	969000	deletion	fn	3	deep	40
+visorR57	-	2R	12489000	deletion	fn	3	deep	40
+visorR57	98	X	6655000	inversion	tp	3	deep	40
+visorR57	24	2R	6150000	tandem duplication	tp	3	deep	40
+visorR57	54	3L	11485000	inversion	tp	3	deep	40
+visorR57	-	4	610000	deletion	fn	3	deep	40
+visorR57	-	4	415000	inversion	fn	3	deep	40
+visorR57	106	X	10970000	tandem duplication	tp	3	deep	40
+visorR57	-	2L	10970000	tandem duplication	fn	3	deep	40
+visorR57	38	2R	11485000	inversion	tp	3	deep	40
+visorR57	84	4	440000	deletion	tp	3	deep	40
+visorR57	35	2R	10463000	inversion	tp	3	deep	40
+visorR57	68	3R	9437000	inversion	tp	3	deep	40
+visorR57	-	3L	6150000	tandem duplication	fn	3	deep	40
+visorR57	65	3R	7160000	deletion	tp	3	deep	40
+visorR57	-	3L	9938000	deletion	fn	3	deep	40
+visorR57	108	X	12489000	deletion	tp	3	deep	40
+visorR57	32	2R	9437000	inversion	tp	3	deep	40
+visorR57	89	4	818000	deletion	tp	3	deep	40
+visorR57	-	3R	12489000	deletion	fn	3	deep	40
+visorR57	6	2L	7160000	deletion	tp	3	deep	40
+visorR57	101	X	8312000	tandem duplication	tp	3	deep	40
+visorR57	61	3R	6150000	tandem duplication	tp	3	deep	40
+visorR57	16	2L	10463000	inversion	tp	3	deep	40
+visorR57	-	3R	5000000	deletion	fn	3	deep	40
+visorR57	96	X	5550000	deletion	tp	3	deep	40
+visorR57	45	3L	8312000	tandem duplication	tp	3	deep	40
+visorR57	92	4	890000	tandem duplication	tp	3	deep	40
+visorR57	55	3L	11987000	tandem duplication	tp	3	deep	40
+visorR57	11	2L	8887000	deletion	tp	3	deep	40
+visorR57	103	X	9437000	inversion	tp	3	deep	40
+visorR57	-	2R	11987000	tandem duplication	fn	3	deep	40
+visorR57	80	4	270000	deletion	tp	3	deep	40
+visorR57	85	4	632000	tandem duplication	tp	3	deep	40
+visorR57	49	3L	9437000	inversion	tp	3	deep	40
+visorR57	1	2L	5000000	deletion	tp	3	deep	40
+visorR57	28	2R	7810000	deletion	tp	3	deep	40
+visorR57	36	2R	10970000	tandem duplication	tp	3	deep	40
+visorR57	100	X	7810000	deletion	tp	3	deep	40
+visorR57	-	X	10463000	inversion	fn	3	deep	40
+visorR57	69	3R	9938000	deletion	tp	3	deep	40
+visorR57	-	3R	8312000	tandem duplication	fn	3	deep	40
+visorR57	8	2L	7810000	deletion	tp	3	deep	40
+visorR57	19	2L	11987000	tandem duplication	tp	3	deep	40
+visorR57	59	3R	5550000	deletion	tp	3	deep	40
+visorR57	-	3L	7810000	deletion	fn	3	deep	40
+visorR57	97	X	6150000	tandem duplication	tp	3	deep	40
+visorR57	104	X	9938000	deletion	tp	3	deep	40
+visorR57	44	3L	7160000	deletion	tp	3	deep	40
+visorR57	40	3L	5550000	deletion	tp	3	deep	40
+visorR57	-	2R	5000000	deletion	fn	3	deep	40
+visorR57	18	2L	11485000	inversion	tp	3	deep	40
+visorR57	107	X	11485000	inversion	tp	3	deep	40
+visorR57	2	2L	5550000	deletion	tp	3	deep	40
+visorR57	82	4	390000	tandem duplication	tp	3	deep	40
+visorR57	29	2R	8312000	tandem duplication	tp	3	deep	40
+visorR57	95	X	5000000	deletion	tp	3	deep	40
+visorR57	99	X	7160000	deletion	tp	3	deep	40
+visorR57	102	X	8887000	deletion	tp	3	deep	40
+visorR57	87	4	727000	deletion	tp	3	deep	40
+visorR57	-	3R	8887000	deletion	fn	3	deep	40
+visorR57	4	2L	6150000	tandem duplication	tp	3	deep	40
+visorR57	-	4	947000	tandem duplication	fn	3	deep	40
+visorR57	9	2L	8312000	tandem duplication	tp	3	deep	40
+visorR57	-	3L	10463000	inversion	fn	3	deep	40
+visorR57	75	3R	11987000	tandem duplication	tp	3	deep	40
+visorR57	78	4	200000	deletion	tp	3	deep	40
+visorR57	52	3L	10970000	tandem duplication	tp	3	deep	40
+visorR57	71	3R	10463000	inversion	tp	3	deep	40
+visorR57	91	4	863000	inversion	tp	3	deep	40
+visorR57	73	3R	10970000	tandem duplication	tp	3	deep	40
+visorR57	74	3R	11485000	inversion	tp	3	deep	40
+visorR57	14	2L	9938000	deletion	tp	3	deep	40
+visorR57	93	4	925000	inversion	tp	3	deep	40
+visorR57	-	2R	8887000	deletion	fn	3	deep	40
+visorR57	42	3L	6655000	inversion	tp	3	deep	40
+visorR57	-	3L	5000000	deletion	fn	3	deep	40
+visorR57	63	3R	6655000	inversion	tp	3	deep	40
+visorR57	57	3L	12489000	deletion	tp	3	deep	40
+visorR57	66	3R	7810000	deletion	tp	3	deep	40
+visorR57	39	2R	11987044	tandem duplication	fp	3	deep	40
+visorR57	-	X	11987000	tandem duplication	fn	3	deep	40
+visorR57	-	4	797000	inversion	fn	3	deep	40
+visorR57	25	2R	6655000	inversion	tp	3	deep	40
+visorR59	11	2R	9938000	deletion	tp	3	deep	20
+visorR59	-	3L	8887000	deletion	fn	3	deep	20
+visorR59	7	2L	12489000	deletion	tp	3	deep	20
+visorR59	-	2R	7160000	deletion	fn	3	deep	20
+visorR59	4	2L	9437000	inversion	tp	3	deep	20
+visorR59	-	2R	5550000	deletion	fn	3	deep	20
+visorR59	-	3L	5550000	deletion	fn	3	deep	20
+visorR59	-	2R	12489000	deletion	fn	3	deep	20
+visorR59	33	X	6655000	inversion	tp	3	deep	20
+visorR59	-	2R	6150000	tandem duplication	fn	3	deep	20
+visorR59	-	3R	5000000	deletion	fn	3	deep	20
+visorR59	22	3L	11485000	inversion	tp	3	deep	20
+visorR59	-	4	610000	deletion	fn	3	deep	20
+visorR59	-	4	415000	inversion	fn	3	deep	20
+visorR59	-	X	10970000	tandem duplication	fn	3	deep	20
+visorR59	-	2L	10970000	tandem duplication	fn	3	deep	20
+visorR59	-	2R	11485000	inversion	fn	3	deep	20
+visorR59	-	4	440000	deletion	fn	3	deep	20
+visorR59	12	2R	10463000	inversion	tp	3	deep	20
+visorR59	26	3R	9437000	inversion	tp	3	deep	20
+visorR59	-	3L	6150000	tandem duplication	fn	3	deep	20
+visorR59	24	3R	7160000	deletion	tp	3	deep	20
+visorR59	-	3L	9938000	deletion	fn	3	deep	20
+visorR59	-	X	12489000	deletion	fn	3	deep	20
+visorR59	10	2R	9437000	inversion	tp	3	deep	20
+visorR59	28	4	818000	deletion	tp	3	deep	20
+visorR59	-	4	969000	deletion	fn	3	deep	20
+visorR59	-	3R	12489000	deletion	fn	3	deep	20
+visorR59	-	2L	7160000	deletion	fn	3	deep	20
+visorR59	-	X	8312000	tandem duplication	fn	3	deep	20
+visorR59	-	3R	6150000	tandem duplication	fn	3	deep	20
+visorR59	-	2L	10463000	inversion	fn	3	deep	20
+visorR59	2	2L	6655000	inversion	tp	3	deep	20
+visorR59	-	X	5550000	deletion	fn	3	deep	20
+visorR59	17	3L	8312000	tandem duplication	tp	3	deep	20
+visorR59	-	4	890000	tandem duplication	fn	3	deep	20
+visorR59	-	3L	11987000	tandem duplication	fn	3	deep	20
+visorR59	-	2L	8887000	deletion	fn	3	deep	20
+visorR59	-	X	9437000	inversion	fn	3	deep	20
+visorR59	14	2R	11987000	tandem duplication	tp	3	deep	20
+visorR59	-	4	270000	deletion	fn	3	deep	20
+visorR59	-	4	632000	tandem duplication	fn	3	deep	20
+visorR59	19	3L	9437000	inversion	tp	3	deep	20
+visorR59	-	2L	5000000	deletion	fn	3	deep	20
+visorR59	-	2R	7810000	deletion	fn	3	deep	20
+visorR59	-	2R	10970000	tandem duplication	fn	3	deep	20
+visorR59	-	X	7810000	deletion	fn	3	deep	20
+visorR59	-	4	947000	tandem duplication	fn	3	deep	20
+visorR59	-	3R	9938000	deletion	fn	3	deep	20
+visorR59	25	3R	8312000	tandem duplication	tp	3	deep	20
+visorR59	3	2L	7810000	deletion	tp	3	deep	20
+visorR59	-	2L	11987000	tandem duplication	fn	3	deep	20
+visorR59	-	3R	5550000	deletion	fn	3	deep	20
+visorR59	16	3L	7810000	deletion	tp	3	deep	20
+visorR59	32	X	6150000	tandem duplication	tp	3	deep	20
+visorR59	-	X	9938000	deletion	fn	3	deep	20
+visorR59	-	3L	7160000	deletion	fn	3	deep	20
+visorR59	-	2R	5000000	deletion	fn	3	deep	20
+visorR59	-	2L	11485000	inversion	fn	3	deep	20
+visorR59	27	3R	11485000	inversion	tp	3	deep	20
+visorR59	-	2L	5550000	deletion	fn	3	deep	20
+visorR59	-	4	390000	tandem duplication	fn	3	deep	20
+visorR59	-	2R	8312000	tandem duplication	fn	3	deep	20
+visorR59	-	X	5000000	deletion	fn	3	deep	20
+visorR59	-	X	7160000	deletion	fn	3	deep	20
+visorR59	-	X	8887000	deletion	fn	3	deep	20
+visorR59	-	4	727000	deletion	fn	3	deep	20
+visorR59	-	3R	8887000	deletion	fn	3	deep	20
+visorR59	-	2L	6150000	tandem duplication	fn	3	deep	20
+visorR59	35	X	10463000	inversion	tp	3	deep	20
+visorR59	-	2L	8312000	tandem duplication	fn	3	deep	20
+visorR59	20	3L	10463000	inversion	tp	3	deep	20
+visorR59	-	3R	11987000	tandem duplication	fn	3	deep	20
+visorR59	-	4	200000	deletion	fn	3	deep	20
+visorR59	21	3L	10970000	tandem duplication	tp	3	deep	20
+visorR59	-	3R	10463000	inversion	fn	3	deep	20
+visorR59	29	4	863000	inversion	tp	3	deep	20
+visorR59	-	3R	10970000	tandem duplication	fn	3	deep	20
+visorR59	-	X	11485000	inversion	fn	3	deep	20
+visorR59	-	2L	9938000	deletion	fn	3	deep	20
+visorR59	30	4	925000	inversion	tp	3	deep	20
+visorR59	-	2R	8887000	deletion	fn	3	deep	20
+visorR59	15	3L	6655000	inversion	tp	3	deep	20
+visorR59	-	3L	5000000	deletion	fn	3	deep	20
+visorR59	23	3R	6655000	inversion	tp	3	deep	20
+visorR59	-	3L	12489000	deletion	fn	3	deep	20
+visorR59	-	3R	7810000	deletion	fn	3	deep	20
+visorR59	-	X	11987000	tandem duplication	fn	3	deep	20
+visorR59	-	4	797000	inversion	fn	3	deep	20
+visorR59	8	2R	6655000	inversion	tp	3	deep	20
