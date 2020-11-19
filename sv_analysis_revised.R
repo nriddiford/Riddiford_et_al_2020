@@ -355,21 +355,55 @@ error_rates_df$sample = factor(error_rates_df$sample, levels=c("visorR1", "visor
 total_true_positives <- 8
 
 error_rates_df %>%
-  dplyr::group_by(sample, type, error_group) %>%
+  dplyr::group_by(sample, type, error_group)
+
+error_rates_df %>%
+  dplyr::group_by(sample, type, depth, error_group) %>%
   dplyr::tally() %>% 
   # tidyr::complete(sample, type, error_group) %>% 
   dplyr::mutate(n = ifelse(is.na(n), 0, n)) %>% 
-  dplyr::mutate(seq_depth = ifelse(grepl('s', sample), 'shallow', 'deep')) %>%
+  # dplyr::mutate(seq_depth = ifelse(grepl('s', sample), 'shallow', 'deep')) %>%
   ggplot(., aes(sample, n, fill=error_group)) +
   # geom_bar(position = position_dodge(width = .8), width=.8, stat='identity') +
   geom_bar(stat='identity') +
   # geom_hline(yintercept = total_true_positives, linetype="dashed", color = "red") +
-  facet_wrap(seq_depth~type, scales = 'free')
+  facet_wrap(depth~type, scales = 'free')
            
+  
+install.packages('lemon')
+library(lemon)
+error_rates_df %>%
+  dplyr::group_by(type, error_group, depth, purity, rep) %>% 
+  dplyr::tally() %>%
+  tidyr::complete(type, error_group, depth, purity, rep) %>% 
+  dplyr::mutate(n = ifelse(is.na(n), 0, n)) %>%
+  dplyr::summarise(mean_muts = mean(n), 
+                   sd_muts = sd(n)) %>%
+  dplyr::mutate(vaf = paste0(purity, '%')) %>%
+  ggplot(., aes(type, mean_muts, fill=error_group)) +
+  geom_col(alpha=0.8, position = position_dodge(width = .7), width=.7) +
+  geom_errorbar(aes(ymin = mean_muts - sd_muts, ymax = mean_muts + sd_muts), position = position_dodge(width = .7), width=0.2) +
+  facet_rep_wrap(depth~vaf, nrow = 2, repeat.tick.labels = T) +
+  guides(colour = FALSE, fill=FALSE) +
+  cleanTheme() +
+  theme(
+    panel.grid.major.y = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
+    axis.text.x = element_blank(),
+    axis.text.y = element_text(size=12),
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(size=15)
+  )
 
+
+#   p <- p + cleanTheme() +
+#     theme(
+#       panel.grid.major.y = element_line(color = "grey80", size = 0.5, linetype = "dotted"),
+#       axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5, size=20),
+#       axis.title.x = element_blank()
+#     )
+  
 
 # Quantification of error rates
-
 error_rates_df %>% 
   dplyr::group_by(sample, type, error_group) %>% 
   dplyr::tally() %>% 
