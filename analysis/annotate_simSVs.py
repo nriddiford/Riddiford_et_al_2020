@@ -8,7 +8,7 @@ test = False
 
 # truth_set_in = 'data/visor_svs.bed'
 truth_set_in = 'data/tumour_svs.bed'
-vars_in = 'data/all_sim_samples_merged_filt.txt'
+vars_in = 'data/all_sim_samples_merged_reps_filt.txt'
 if test:
     vars_in = 'data/R11_merged_filt_annotated.txt'
 
@@ -150,12 +150,11 @@ def annotate_vars(vars, truth):
 def add_false_negatives(keys, true_calls):
     for s in keys:
         for c in true_calls:
-            print(c)
             for pos in true_calls[c]:
                 k = '_'.join([c, pos])
                 # keys['truth'][k] = ['-', 'tp', true_calls[c][pos][3]]
                 if k not in keys[s]:
-                    print("false negative: [%s] %s:%s-%s" % (true_calls[c][pos][3], true_calls[c][pos][0], true_calls[c][pos][1], true_calls[c][pos][2]))
+                    # print("false negative: [%s] %s:%s-%s" % (true_calls[c][pos][3], true_calls[c][pos][0], true_calls[c][pos][1], true_calls[c][pos][2]))
                     keys[s][k] = ['-', 'fn', true_calls[c][pos][3]]
 
     return keys
@@ -182,18 +181,37 @@ def write_bed(bed):
 
 
 def write_error_rates(vars):
-    print(json.dumps(vars, indent=4, sort_keys=True))
+    # print(json.dumps(vars, indent=4, sort_keys=True))
 
     df_out = os.path.join(out_dir, 'error_rates.txt')
     with open(df_out, 'w') as out:
-        l = '\t'.join(['sample', 'event', 'chrom', 'start', 'type', 'error_group'])
+        l = '\t'.join(['sample', 'event', 'chrom', 'start', 'type', 'error_group', 'rep', 'depth', 'purity'])
         out.write(l + '\n')
-        for s in vars.keys():
+
+        sample_count = 0
+        rep = 1
+        purity_adj = 0
+
+        for s in sorted(vars.keys(), key=lambda x: int(x.split('R')[1])):
+            if sample_count % 5 == 0: purity_adj = 0
+
+            sample_count += 1
+            condition = 'shallow'
+            if sample_count > 10:
+                rep += 1
+                sample_count = 1
+
+            if sample_count > 5: condition = 'deep'
+
+            purity = 100 - purity_adj
+            purity_adj += 20
+
+            print("[%s] %s: rep %s (%s). Purity: %s" % (sample_count, s, rep, condition, purity))
             for key in vars[s]:
                 l = vars[s][key]
                 e, et, sv = l
                 c, pos = key.split('_')
-                l = '\t'.join(map(str, [s, e, c, pos, sv, et]))
+                l = '\t'.join(map(str, [s, e, c, pos, sv, et, rep, condition, purity]))
                 # print(l)
                 out.write(l + '\n')
                 # print("sample:%s, tp total: %s, tp types: %s, tp counts: %s, fp types: %s, fp counts: %s" % (s, len(tp_counts[s]), tp[s].keys(), tp[s].values(), fp[s].keys(), fp[s].values()))
