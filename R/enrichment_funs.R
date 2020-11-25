@@ -138,7 +138,8 @@ plot_all <- function(l, escore_threshold=5, maxp=50){
 }
 
 
-run_reldist <- function(a, b, verbose = FALSE, print=TRUE, chroms = chromosomes, type='bed', sim=FALSE, merge_regions=FALSE){
+run_reldist <- function(a, b, verbose = FALSE, print=TRUE, chroms = chromosomes, type='bed', sim=FALSE, merge_regions=FALSE, justBed=FALSE){
+  if(!check.binary(x = "bedtools", verbose = TRUE)) stop("Bedtools must be installed...")
   if(!is.null(nrow(a))) {
     a_bed <- getBed(f = a, verbose = verbose, type=type, chr %in% chroms) %>% 
       droplevels()
@@ -156,7 +157,8 @@ run_reldist <- function(a, b, verbose = FALSE, print=TRUE, chroms = chromosomes,
     b_bed <- getBed(f = b, verbose = verbose, chr %in% chroms)
     if(merge_regions) b_bed <- bedr.merge.region(b_bed, check.chr = FALSE, verbose = verbose)
   }
-
+  if(justBed) return(list(a_bed, b_bed))
+  
   cat("Running reldist...\n")
   
   dist <- reldist(rownames(a_bed), rownames(b_bed), check.chr = FALSE, verbose = verbose);
@@ -207,7 +209,7 @@ getBed <- function(..., f, verbose=FALSE, type='bed'){
     colnames(b) <- c('chr', 'start', 'end')
   }
   b <- b %>% 
-    dplyr::filter(...) %>% 
+    # dplyr::filter(...) %>% 
     dplyr::select(chr, start, end) %>% 
     droplevels() %>% 
     as.data.frame()

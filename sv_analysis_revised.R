@@ -281,8 +281,11 @@ wg_sv_count <- wholegut_svs_df %>%
 sv_counts <- bind_rows(male_sv_count, wg_sv_count)
 sv_counts$group <- 'sv'
 
-combined_muts <-  bind_rows(snv_counts, indel_counts, sv_counts)
-combined_muts$group = factor(combined_muts$group, levels=c("sv", "snv", "indel"), labels=c("SV", "SNV", "INDEL")) 
+combined_muts <-  bind_rows(snv_counts, indel_counts, sv_counts) %>% 
+  dplyr::filter(!sample %in% c('A373R1', 'D050R24'))
+
+combined_muts$group = factor(combined_muts$group, levels=c("sv", "snv", "indel"), labels=c("SV", "SNV", "INDEL"))
+  
 
 combined_muts %>% 
   dplyr::filter(!sample %in% c('A373R1', 'D050R24')) %>% 
@@ -302,16 +305,24 @@ combined_muts %>%
     axis.title.y =element_text(size=15)
   )
 
+#####
+## stats on wholegut mut counts
+#####
 
-#################
-##   WG DELS  ###
-#################
+combined_muts %>%
+  group_by(type, group) %>%
+  summarise(median = median(n),
+            mean = mean(n),
+            sd = sd(n)
+            )
 
-# wholegut_svs_df <- read.delim('data/all_WG_samples_merged_filt_annotated.txt') %>% 
-#   dplyr::mutate(wg_del = grepl("wg_del", notes)) %>%
-#   dplyr::filter(!wg_del)
-# 
-# 
+tum <- combined_muts[combined_muts$type=='tumour',]
+wg <- combined_muts[combined_muts$type=='wholegut_young',]
+
+# t.test(tum[tum$group=='SV',]$n, wg[wg$group=='SV',]$n, alternative = "two.sided", var.equal = FALSE)
+wilcox.test(tum[tum$group=='INDEL',]$n, wg[wg$group=='INDEL',]$n, alternative = "two.sided")
+
+
 
 ################
 ##  SIM data ###
