@@ -628,11 +628,29 @@ all_mutations <- bind_rows(list(bps_as_snvs, combined_muts)) %>%
   dplyr::select(chrom, pos) %>% 
   dplyr::distinct(chrom, pos)
 
+repeats_file <- 'data/repeats_merged.bed'
+repeats_file <- '~/iCloud/Desktop/script_test/SV_paper_20/data/repeats_merged.bed'
+dist <- run_reldist(a = all_mutations, b = repeats_file,
+                    chroms = chromosomes, verbose = FALSE, type='snv', print = FALSE, sim=T, justBed=F)
+#####
+## ks.test on distribution 
+## p-value < 0.00000000000000022
+####
 
-dist <- run_reldist(a = all_mutations, b = 'data/repeats_merged.bed',
-                    chroms = chromosomes, verbose = FALSE, type='snv', print = FALSE, sim=T)
+wide_rdf <- dist %>% group_by(reldist, group) %>% expand(count_2 = 1:count)
+real_dist <- wide_rdf[wide_rdf$group=='real',]
+sim_dist <- wide_rdf[wide_rdf$group=='simulated',]
 
+ks.test(x = real_dist$reldist , y = sim_dist$reldist)
+
+  ggplot(., aes(reldist)) %>%
+  stat_ecdf(aes(fill=group, colour=group), geom = "point")
+  # geom_density(aes(fill=group, colour=group), alpha=0.6)
+
+## Fig 5C - relative dist
 plot_reldist(dist)
+
+
 
 
 
