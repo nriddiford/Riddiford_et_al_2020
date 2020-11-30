@@ -4,3 +4,8 @@
 .Ruserdata
 SV_paper_20.Rproj
 .idea
+svParser/*
+svSupport/*
+plots/*
+data/*
+Figs/*
