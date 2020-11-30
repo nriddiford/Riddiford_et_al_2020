@@ -691,6 +691,17 @@ all_muts$group = factor(all_muts$class, levels=c("Notch","SV","SNV", "INDEL"), l
 all_muts$medN <- 1-(median(notch_hits$highest_n))
 
 
+# all_muts %>% 
+#   ggplot2::ggplot(., aes(time)) +
+#   ggplot2::geom_density(aes(colour=group, fill=group), alpha=.6)
+
+####
+## KS test between VAF distributions
+####
+
+ks.test(x = all_muts[all_muts$group=='Notch',]$time , y = all_muts[all_muts$group=='SV',]$time)
+
+
 ggplot(all_muts, aes(time, colour = group)) + 
   geom_line(stat='ecdf', size=1.5, alpha=.7) + 
   scale_y_continuous('Cumulative mutations') +
