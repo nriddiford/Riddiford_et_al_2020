@@ -3,7 +3,6 @@
 #PBS -l mem=2GB
 
 sample=$VAR1
-# normal_sample=$VAR2
 purity=$VAR2
 group=$VAR3
 coverage=$VAR4
@@ -14,18 +13,7 @@ out_dir=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/vi
 h1=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor/data/${group}_h1.bed
 h2=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor/data/${group}_h2.bed
 regions=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor/data/${group}_regions_80_${purity}.bed
-
-# normal_h1=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor/data/normal_h1.bed
-# normal_h2=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor/data/normal_h2.bed
-# normal_regions=/data/kdi_prod/project_result/948/01.00/Analysis/Analysis/SV_paper_20/visor/data/normal_regions_80_${purity}.bed
-
 sample_out=${out_dir}/$sample
-# normal_out=${out_dir}/$normal_sample
-
-# tumour_coverage=10
-# normal_coverage=20
-
-# coverage=10
 
 log=$out_dir/log
 mkdir -p $log
@@ -33,24 +21,15 @@ exec &> "$log/${sample}_${purity}_visor.txt"
 
 echo "Purity : $purity"
 echo "Sample: $sample"
-# echo "normal sample: $normal_sample"
 echo "Regions: $regions"
-# echo "Normal regions: $normal_regions"
 
 
 setup() {
     # mkdir -p $out_dir $tumour_out $normal_out
     rm -r $sample_out
-    # rm -r $normal_out
-    #perl -p -i -e 's/ /\t/g' $tumour_h1
-    #perl -p -i -e 's/ /\t/g' $tumour_h2
-    #perl -p -i -e 's/ /\t/g' $normal_h1
-    #perl -p -i -e 's/ /\t/g' $normal_h2
-    #perl -p -i -e 's/ /\t/g' $tumour_regions
-    #perl -p -i -e 's/ /\t/g' $normal_regions
     cat $h1 $h2 > $out_dir/data/${group}_svs.bed
-    # cat $normal_h1 $normal_h2 > $out_dir/data/normal_svs.bed
 }
+
 
 runvisor() {
     export PATH=/bioinfo/guests/nriddifo/miniconda3/bin:$PATH
@@ -65,16 +44,9 @@ runvisor() {
     VISOR SHORtS --length 100 --error 0.00001 --coverage $coverage -s $sample_out -bed $regions -g $genome -o $sample_out/bam
     mv $sample_out/bam/sim.srt.bam $sample_out/bam/${sample}.bam
     samtools index $sample_out/bam/${sample}.bam
-    # echo """
-    # Running for normal sample
-    # VISOR HACk -bed $normal_h1 $normal_h2 -g $genome -o $normal_out
-    # VISOR SHORtS --length 100 --error 0.00001 --coverage $normal_coverage -s $normal_out -bed $normal_regions -g $genome  -o $normal_out/bam
-    # """
-    # VISOR HACk -bed $normal_h1 $normal_h2 -g $genome -o $normal_out
-    # VISOR SHORtS --length 100 --error 0.00001 --coverage $normal_coverage -s $normal_out -bed $normal_regions -g $genome -o $normal_out/bam
-    # mv $normal_out/bam/sim.srt.bam $normal_out/bam/${normal_sample}.bam
-    # samtools index $normal_out/bam/${normal_sample}.bam
 }
+
+
 cleanup(){
     export PATH=/bioinfo/guests/nriddifo/miniconda2/bin:$PATH
     source activate picard
@@ -89,17 +61,8 @@ cleanup(){
         RGPU=1 \
         RGSM=${sample}
     samtools index $bwa_out/${sample}.tagged.filt.SC.RG.bam
-    # picard AddOrReplaceReadGroups \
-    #     INPUT=$normal_out/bam/${normal_sample}.bam \
-    #     OUTPUT=$bwa_out/${normal_sample}.tagged.filt.SC.RG.bam \
-    #     VALIDATION_STRINGENCY=LENIENT \
-    #     RGID=${normal_sample} \
-    #     RGLB=visor \
-    #     RGPL=illumina \
-    #     RGPU=1 \
-    #     RGSM=${normal_sample}
-    # samtools index $bwa_out/${normal_sample}.tagged.filt.SC.RG.bam
 }
+
 
 setup
 runvisor
