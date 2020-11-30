@@ -5,11 +5,11 @@ cnv_calls=~/Desktop/visorCNV/
 
 bash ~/iCloud/Desktop/script_test/svParser/script/freecFilt.sh -e $unmappable -d .
 
-
+visor_dir=visor_reps
 # svParser
 bash runParser \
-  -d ~/Desktop/SV_paper_20/svParser/visor/data/ \
-  -o ~/Desktop/SV_paper_20/svParser/visor/ \
+  -d ~/Desktop/SV_paper_20/svParser/${visor_dir}/data/ \
+  -o ~/Desktop/SV_paper_20/svParser/${visor_dir}/ \
   -c $cnv_calls \
   -fma \
   -e $unmappable \
@@ -18,10 +18,10 @@ bash runParser \
 
 # svSupport
 bash scripts/run_all.sh \
-  -v ~/Desktop/SV_paper_20/svParser/visor/summary/merged/ \
+  -v ~/Desktop/SV_paper_20/svParser/${visor_dir}/summary/merged/ \
   -p data/tumour_purity.txt \
   -o /Users/Nick/Desktop/SV_paper_20/svSupport \
-  -cs
+  -s
 
 
 # svStitch
@@ -41,7 +41,7 @@ done
 #   -g /Users/Nick/Documents/Curie/Data/Genomes/Dmel_v6.12/Features/dmel-all-r6.12.gtf \
 #   -r
 
-out_dir=~/Desktop/SV_paper_20/svParser/visor/summary/merged
+out_dir=~/Desktop/SV_paper_20/svParser/${visor_dir}/summary/merged
 for file in ${out_dir}/*_stitched.txt
   do
   stem=$(basename "${file}")
